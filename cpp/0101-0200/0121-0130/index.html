@@ -903,22 +903,21 @@
 <span class="lineno" data-linenos=" 3 "></span>  <span class="kt">int</span> <span class="n">maxPathSum</span><span class="p">(</span><span class="n">TreeNode</span><span class="o">*</span> <span class="n">root</span><span class="p">)</span> <span class="p">{</span>
 <span class="lineno" data-linenos=" 4 "></span>    <span class="kt">int</span> <span class="n">ans</span> <span class="o">=</span> <span class="n">INT_MIN</span><span class="p">;</span>
 <span class="lineno" data-linenos=" 5 "></span>
-<span class="lineno" data-linenos=" 6 "></span>    <span class="n">maxPathSumDownFrom</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">ans</span><span class="p">);</span>
-<span class="lineno" data-linenos=" 7 "></span>
-<span class="lineno" data-linenos=" 8 "></span>    <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
-<span class="lineno" data-linenos=" 9 "></span>  <span class="p">}</span>
-<span class="lineno" data-linenos="10 "></span>
-<span class="lineno" data-linenos="11 "></span> <span class="k">private</span><span class="o">:</span>
-<span class="lineno" data-linenos="12 "></span>  <span class="kt">int</span> <span class="n">maxPathSumDownFrom</span><span class="p">(</span><span class="n">TreeNode</span><span class="o">*</span> <span class="n">root</span><span class="p">,</span> <span class="kt">int</span><span class="o">&amp;</span> <span class="n">ans</span><span class="p">)</span> <span class="p">{</span>
-<span class="lineno" data-linenos="13 "></span>    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">root</span><span class="p">)</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="lineno" data-linenos="14 "></span>
-<span class="lineno" data-linenos="15 "></span>    <span class="kt">int</span> <span class="n">left</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">maxPathSumDownFrom</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">,</span> <span class="n">ans</span><span class="p">),</span> <span class="mi">0</span><span class="p">);</span>
-<span class="lineno" data-linenos="16 "></span>    <span class="kt">int</span> <span class="n">right</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">maxPathSumDownFrom</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">,</span> <span class="n">ans</span><span class="p">),</span> <span class="mi">0</span><span class="p">);</span>
-<span class="lineno" data-linenos="17 "></span>    <span class="n">ans</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">ans</span><span class="p">,</span> <span class="n">root</span><span class="o">-&gt;</span><span class="n">val</span> <span class="o">+</span> <span class="n">left</span> <span class="o">+</span> <span class="n">right</span><span class="p">);</span>
-<span class="lineno" data-linenos="18 "></span>
-<span class="lineno" data-linenos="19 "></span>    <span class="k">return</span> <span class="n">root</span><span class="o">-&gt;</span><span class="n">val</span> <span class="o">+</span> <span class="n">max</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">);</span>
-<span class="lineno" data-linenos="20 "></span>  <span class="p">}</span>
-<span class="lineno" data-linenos="21 "></span><span class="p">};</span>
+<span class="lineno" data-linenos=" 6 "></span>    <span class="n">function</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">(</span><span class="n">TreeNode</span><span class="o">*</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">maxPathSumDownFrom</span> <span class="o">=</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="n">TreeNode</span><span class="o">*</span> <span class="n">root</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 7 "></span>      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">root</span><span class="p">)</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="lineno" data-linenos=" 8 "></span>
+<span class="lineno" data-linenos=" 9 "></span>      <span class="kt">int</span> <span class="n">left</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">maxPathSumDownFrom</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">),</span> <span class="mi">0</span><span class="p">);</span>
+<span class="lineno" data-linenos="10 "></span>      <span class="kt">int</span> <span class="n">right</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">maxPathSumDownFrom</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">),</span> <span class="mi">0</span><span class="p">);</span>
+<span class="lineno" data-linenos="11 "></span>      <span class="n">ans</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">ans</span><span class="p">,</span> <span class="n">root</span><span class="o">-&gt;</span><span class="n">val</span> <span class="o">+</span> <span class="n">left</span> <span class="o">+</span> <span class="n">right</span><span class="p">);</span>
+<span class="lineno" data-linenos="12 "></span>
+<span class="lineno" data-linenos="13 "></span>      <span class="k">return</span> <span class="n">root</span><span class="o">-&gt;</span><span class="n">val</span> <span class="o">+</span> <span class="n">max</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">);</span>
+<span class="lineno" data-linenos="14 "></span>    <span class="p">};</span>
+<span class="lineno" data-linenos="15 "></span>
+<span class="lineno" data-linenos="16 "></span>    <span class="n">maxPathSumDownFrom</span><span class="p">(</span><span class="n">root</span><span class="p">);</span>
+<span class="lineno" data-linenos="17 "></span>
+<span class="lineno" data-linenos="18 "></span>    <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
+<span class="lineno" data-linenos="19 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos="20 "></span><span class="p">};</span>
 </code></pre></div>
 
 <h2 id="125-valid-palindrome-star">125. Valid Palindrome <a href="https://leetcode.com/problems/valid-palindrome">$\star$</a> <img alt="👎" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44e.svg" title=":thumbsdown:" /></h2>
@@ -1091,23 +1090,22 @@
 <span class="lineno" data-linenos=" 3 "></span>  <span class="kt">int</span> <span class="n">sumNumbers</span><span class="p">(</span><span class="n">TreeNode</span><span class="o">*</span> <span class="n">root</span><span class="p">)</span> <span class="p">{</span>
 <span class="lineno" data-linenos=" 4 "></span>    <span class="kt">int</span> <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 <span class="lineno" data-linenos=" 5 "></span>
-<span class="lineno" data-linenos=" 6 "></span>    <span class="n">dfs</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">ans</span><span class="p">);</span>
-<span class="lineno" data-linenos=" 7 "></span>
-<span class="lineno" data-linenos=" 8 "></span>    <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
-<span class="lineno" data-linenos=" 9 "></span>  <span class="p">}</span>
-<span class="lineno" data-linenos="10 "></span>
-<span class="lineno" data-linenos="11 "></span> <span class="k">private</span><span class="o">:</span>
-<span class="lineno" data-linenos="12 "></span>  <span class="kt">void</span> <span class="n">dfs</span><span class="p">(</span><span class="n">TreeNode</span><span class="o">*</span> <span class="n">root</span><span class="p">,</span> <span class="kt">int</span> <span class="n">path</span><span class="p">,</span> <span class="kt">int</span><span class="o">&amp;</span> <span class="n">ans</span><span class="p">)</span> <span class="p">{</span>
-<span class="lineno" data-linenos="13 "></span>    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">root</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
-<span class="lineno" data-linenos="14 "></span>    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">)</span> <span class="p">{</span>
-<span class="lineno" data-linenos="15 "></span>      <span class="n">ans</span> <span class="o">+=</span> <span class="n">path</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">root</span><span class="o">-&gt;</span><span class="n">val</span><span class="p">;</span>
-<span class="lineno" data-linenos="16 "></span>      <span class="k">return</span><span class="p">;</span>
-<span class="lineno" data-linenos="17 "></span>    <span class="p">}</span>
+<span class="lineno" data-linenos=" 6 "></span>    <span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span><span class="n">TreeNode</span><span class="o">*</span><span class="p">,</span> <span class="kt">int</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">dfs</span> <span class="o">=</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="n">TreeNode</span><span class="o">*</span> <span class="n">root</span><span class="p">,</span> <span class="kt">int</span> <span class="n">path</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 7 "></span>      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">root</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+<span class="lineno" data-linenos=" 8 "></span>      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 9 "></span>        <span class="n">ans</span> <span class="o">+=</span> <span class="n">path</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">root</span><span class="o">-&gt;</span><span class="n">val</span><span class="p">;</span>
+<span class="lineno" data-linenos="10 "></span>        <span class="k">return</span><span class="p">;</span>
+<span class="lineno" data-linenos="11 "></span>      <span class="p">}</span>
+<span class="lineno" data-linenos="12 "></span>
+<span class="lineno" data-linenos="13 "></span>      <span class="n">dfs</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">,</span> <span class="n">path</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">root</span><span class="o">-&gt;</span><span class="n">val</span><span class="p">);</span>
+<span class="lineno" data-linenos="14 "></span>      <span class="n">dfs</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">,</span> <span class="n">path</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">root</span><span class="o">-&gt;</span><span class="n">val</span><span class="p">);</span>
+<span class="lineno" data-linenos="15 "></span>    <span class="p">};</span>
+<span class="lineno" data-linenos="16 "></span>
+<span class="lineno" data-linenos="17 "></span>    <span class="n">dfs</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
 <span class="lineno" data-linenos="18 "></span>
-<span class="lineno" data-linenos="19 "></span>    <span class="n">dfs</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">,</span> <span class="n">path</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">root</span><span class="o">-&gt;</span><span class="n">val</span><span class="p">,</span> <span class="n">ans</span><span class="p">);</span>
-<span class="lineno" data-linenos="20 "></span>    <span class="n">dfs</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">,</span> <span class="n">path</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">root</span><span class="o">-&gt;</span><span class="n">val</span><span class="p">,</span> <span class="n">ans</span><span class="p">);</span>
-<span class="lineno" data-linenos="21 "></span>  <span class="p">}</span>
-<span class="lineno" data-linenos="22 "></span><span class="p">};</span>
+<span class="lineno" data-linenos="19 "></span>    <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
+<span class="lineno" data-linenos="20 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos="21 "></span><span class="p">};</span>
 </code></pre></div>
 
 <h2 id="130-surrounded-regions-starstar">130. Surrounded Regions <a href="https://leetcode.com/problems/surrounded-regions">$\star\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>
