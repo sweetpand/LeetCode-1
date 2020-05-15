@@ -766,24 +766,34 @@
 <span class="lineno" data-linenos="16 "></span>        <span class="k">return</span> <span class="n">cut</span><span class="p">[</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
 </code></pre></div>
 
-<h2 id="133-clone-graph-starstar">133. Clone Graph <a href="https://leetcode.com/problems/clone-graph">$\star\star$</a></h2>
+<h2 id="133-clone-graph-starstar">133. Clone Graph <a href="https://leetcode.com/problems/clone-graph">$\star\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>
+<p><img alt="" src="https://img.shields.io/badge/-Depth%20First%20Search-86C166.svg?style=flat-square" /> <img alt="" src="https://img.shields.io/badge/-Hash%20Table-7BA23F.svg?style=flat-square" /></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(n)$</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(n)$</li>
+</ul>
 <div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
 <span class="lineno" data-linenos=" 2 "></span>    <span class="k">def</span> <span class="nf">cloneGraph</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">:</span> <span class="s1">&#39;Node&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;Node&#39;</span><span class="p">:</span>
 <span class="lineno" data-linenos=" 3 "></span>        <span class="k">if</span> <span class="ow">not</span> <span class="n">node</span><span class="p">:</span>
 <span class="lineno" data-linenos=" 4 "></span>            <span class="k">return</span> <span class="kc">None</span>
-<span class="lineno" data-linenos=" 5 "></span>        <span class="k">if</span> <span class="n">node</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">dict</span><span class="p">:</span>
-<span class="lineno" data-linenos=" 6 "></span>            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">dict</span><span class="p">[</span><span class="n">node</span><span class="p">]</span>
+<span class="lineno" data-linenos=" 5 "></span>        <span class="k">if</span> <span class="n">node</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">lookup</span><span class="p">:</span>
+<span class="lineno" data-linenos=" 6 "></span>            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">lookup</span><span class="p">[</span><span class="n">node</span><span class="p">]</span>
 <span class="lineno" data-linenos=" 7 "></span>
-<span class="lineno" data-linenos=" 8 "></span>        <span class="bp">self</span><span class="o">.</span><span class="n">dict</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">val</span><span class="p">,</span> <span class="p">[])</span>
+<span class="lineno" data-linenos=" 8 "></span>        <span class="bp">self</span><span class="o">.</span><span class="n">lookup</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">val</span><span class="p">,</span> <span class="p">[])</span>
 <span class="lineno" data-linenos=" 9 "></span>        <span class="k">for</span> <span class="n">neighbor</span> <span class="ow">in</span> <span class="n">node</span><span class="o">.</span><span class="n">neighbors</span><span class="p">:</span>
-<span class="lineno" data-linenos="10 "></span>            <span class="bp">self</span><span class="o">.</span><span class="n">dict</span><span class="p">[</span><span class="n">node</span><span class="p">]</span><span class="o">.</span><span class="n">neighbors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cloneGraph</span><span class="p">(</span><span class="n">neighbor</span><span class="p">))</span>
+<span class="lineno" data-linenos="10 "></span>            <span class="bp">self</span><span class="o">.</span><span class="n">lookup</span><span class="p">[</span><span class="n">node</span><span class="p">]</span><span class="o">.</span><span class="n">neighbors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cloneGraph</span><span class="p">(</span><span class="n">neighbor</span><span class="p">))</span>
 <span class="lineno" data-linenos="11 "></span>
-<span class="lineno" data-linenos="12 "></span>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">dict</span><span class="p">[</span><span class="n">node</span><span class="p">]</span>
+<span class="lineno" data-linenos="12 "></span>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">lookup</span><span class="p">[</span><span class="n">node</span><span class="p">]</span>
 <span class="lineno" data-linenos="13 "></span>
-<span class="lineno" data-linenos="14 "></span>    <span class="nb">dict</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="lineno" data-linenos="14 "></span>    <span class="n">lookup</span> <span class="o">=</span> <span class="p">{}</span>
 </code></pre></div>
 
-<h2 id="134-gas-station-starstar">134. Gas Station <a href="https://leetcode.com/problems/gas-station">$\star\star$</a></h2>
+<h2 id="134-gas-station-starstar">134. Gas Station <a href="https://leetcode.com/problems/gas-station">$\star\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>
+<p><img alt="" src="https://img.shields.io/badge/-Greedy-0B346E.svg?style=flat-square" /></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(n)$</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(1)$</li>
+</ul>
 <div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
 <span class="lineno" data-linenos=" 2 "></span>    <span class="k">def</span> <span class="nf">canCompleteCircuit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gas</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">cost</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
 <span class="lineno" data-linenos=" 3 "></span>        <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span>
@@ -800,8 +810,13 @@
 <span class="lineno" data-linenos="14 "></span>        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span> <span class="k">if</span> <span class="n">net</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">ans</span>
 </code></pre></div>
 
-<h2 id="135-candy-starstarstar">135. Candy <a href="https://leetcode.com/problems/candy">$\star\star\star$</a></h2>
-<h2 id="136-single-number-star">136. Single Number <a href="https://leetcode.com/problems/single-number">$\star$</a></h2>
+<h2 id="135-candy-starstarstar">135. Candy <a href="https://leetcode.com/problems/candy">$\star\star\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>
+<h2 id="136-single-number-star">136. Single Number <a href="https://leetcode.com/problems/single-number">$\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>
+<p><img alt="" src="https://img.shields.io/badge/-Bit%20Manipulation-A36336.svg?style=flat-square" /></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(n)$</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(1)$</li>
+</ul>
 <div class="highlight"><pre><span></span><code><span class="lineno" data-linenos="1 "></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
 <span class="lineno" data-linenos="2 "></span>    <span class="k">def</span> <span class="nf">singleNumber</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
 <span class="lineno" data-linenos="3 "></span>        <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span>
@@ -812,7 +827,12 @@
 <span class="lineno" data-linenos="8 "></span>        <span class="k">return</span> <span class="n">ans</span>
 </code></pre></div>
 
-<h2 id="137-single-number-ii-starstar">137. Single Number II <a href="https://leetcode.com/problems/single-number-ii">$\star\star$</a></h2>
+<h2 id="137-single-number-ii-starstar">137. Single Number II <a href="https://leetcode.com/problems/single-number-ii">$\star\star$</a> <img alt="💪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4aa.svg" title=":muscle:" /></h2>
+<p><img alt="" src="https://img.shields.io/badge/-Bit%20Manipulation-A36336.svg?style=flat-square" /></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(n)$</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(1)$</li>
+</ul>
 <div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
 <span class="lineno" data-linenos=" 2 "></span>    <span class="k">def</span> <span class="nf">singleNumber</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
 <span class="lineno" data-linenos=" 3 "></span>        <span class="n">ones</span> <span class="o">=</span> <span class="mi">0</span>
@@ -825,7 +845,12 @@
 <span class="lineno" data-linenos="10 "></span>        <span class="k">return</span> <span class="n">ones</span>
 </code></pre></div>
 
-<h2 id="138-copy-list-with-random-pointer-starstar">138. Copy List with Random Pointer <a href="https://leetcode.com/problems/copy-list-with-random-pointer">$\star\star$</a></h2>
+<h2 id="138-copy-list-with-random-pointer-starstar">138. Copy List with Random Pointer <a href="https://leetcode.com/problems/copy-list-with-random-pointer">$\star\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>
+<p><img alt="" src="https://img.shields.io/badge/-Hash%20Table-7BA23F.svg?style=flat-square" /> <img alt="" src="https://img.shields.io/badge/-Linked%20List-90B44B.svg?style=flat-square" /></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(n)$</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(n)$</li>
+</ul>
 <div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
 <span class="lineno" data-linenos=" 2 "></span>    <span class="k">def</span> <span class="nf">copyRandomList</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">head</span><span class="p">:</span> <span class="s1">&#39;Node&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;Node&#39;</span><span class="p">:</span>
 <span class="lineno" data-linenos=" 3 "></span>        <span class="k">if</span> <span class="n">head</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -842,7 +867,12 @@
 <span class="lineno" data-linenos="14 "></span>    <span class="nb">dict</span> <span class="o">=</span> <span class="p">{}</span>
 </code></pre></div>
 
-<h2 id="139-word-break-starstar">139. Word Break <a href="https://leetcode.com/problems/word-break">$\star\star$</a></h2>
+<h2 id="139-word-break-starstar">139. Word Break <a href="https://leetcode.com/problems/word-break">$\star\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>
+<p><img alt="" src="https://img.shields.io/badge/-Dynamic%20Programming-113285.svg?style=flat-square" /></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(n^2)$</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(n)$</li>
+</ul>
 <div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
 <span class="lineno" data-linenos=" 2 "></span>    <span class="k">def</span> <span class="nf">wordBreak</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">wordDict</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
 <span class="lineno" data-linenos=" 3 "></span>        <span class="k">def</span> <span class="nf">wordBreak</span><span class="p">(</span><span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
@@ -866,7 +896,7 @@
 <span class="lineno" data-linenos="21 "></span>        <span class="k">return</span> <span class="n">wordBreak</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 </code></pre></div>
 
-<h2 id="140-word-break-ii-starstarstar">140. Word Break II <a href="https://leetcode.com/problems/word-break-ii">$\star\star\star$</a></h2>
+<h2 id="140-word-break-ii-starstarstar">140. Word Break II <a href="https://leetcode.com/problems/word-break-ii">$\star\star\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>
                 
               
               
