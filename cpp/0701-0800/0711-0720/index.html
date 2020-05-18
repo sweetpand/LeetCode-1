@@ -2619,7 +2619,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../1401-1500/1451-1460.md" title="1451-1460" class="md-nav__link">
+    <a href="../../1401-1500/1451-1460/" title="1451-1460" class="md-nav__link">
       1451-1460
     </a>
   </li>
@@ -4911,7 +4911,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../java/1401-1500/1451-1460.md" title="1451-1460" class="md-nav__link">
+    <a href="../../../java/1401-1500/1451-1460/" title="1451-1460" class="md-nav__link">
       1451-1460
     </a>
   </li>
@@ -7203,7 +7203,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../python3/1401-1500/1451-1460.md" title="1451-1460" class="md-nav__link">
+    <a href="../../../python3/1401-1500/1451-1460/" title="1451-1460" class="md-nav__link">
       1451-1460
     </a>
   </li>
@@ -7385,7 +7385,11 @@
                 <h2 id="711-number-of-distinct-islands-ii-starstarstar">711. Number of Distinct Islands II <a href="https://leetcode.com/problems/number-of-distinct-islands-ii">$\star\star\star$</a> 🔒</h2>
 <h2 id="712-minimum-ascii-delete-sum-for-two-strings-starstar">712. Minimum ASCII Delete Sum for Two Strings <a href="https://leetcode.com/problems/minimum-ascii-delete-sum-for-two-strings">$\star\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>
 <h2 id="713-subarray-product-less-than-k-starstar">713. Subarray Product Less Than K <a href="https://leetcode.com/problems/subarray-product-less-than-k">$\star\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>
-<p><img alt="" src="https://img.shields.io/badge/-Two%20Pointers-2EA9DF.svg?style=flat-square" /></p>
+<p><img alt="" src="https://img.shields.io/badge/-Sliding%20Window-1E88A8.svg?style=flat-square" /> <img alt="" src="https://img.shields.io/badge/-Two%20Pointers-2EA9DF.svg?style=flat-square" /></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(n)$</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(n)$</li>
+</ul>
 <div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
 <span class="lineno" data-linenos=" 2 "></span> <span class="k">public</span><span class="o">:</span>
 <span class="lineno" data-linenos=" 3 "></span>  <span class="kt">int</span> <span class="n">numSubarrayProductLessThanK</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">nums</span><span class="p">,</span> <span class="kt">int</span> <span class="n">k</span><span class="p">)</span> <span class="p">{</span>
@@ -7394,15 +7398,16 @@
 <span class="lineno" data-linenos=" 6 "></span>    <span class="kt">int</span> <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 <span class="lineno" data-linenos=" 7 "></span>    <span class="kt">int</span> <span class="n">prod</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 <span class="lineno" data-linenos=" 8 "></span>
-<span class="lineno" data-linenos=" 9 "></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
-<span class="lineno" data-linenos="10 "></span>      <span class="n">prod</span> <span class="o">*=</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
-<span class="lineno" data-linenos="11 "></span>      <span class="k">while</span> <span class="p">(</span><span class="n">prod</span> <span class="o">&gt;=</span> <span class="n">k</span><span class="p">)</span> <span class="n">prod</span> <span class="o">/=</span> <span class="n">nums</span><span class="p">[</span><span class="n">j</span><span class="o">++</span><span class="p">];</span>
-<span class="lineno" data-linenos="12 "></span>      <span class="n">ans</span> <span class="o">+=</span> <span class="n">i</span> <span class="o">-</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-<span class="lineno" data-linenos="13 "></span>    <span class="p">}</span>
-<span class="lineno" data-linenos="14 "></span>
-<span class="lineno" data-linenos="15 "></span>    <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
-<span class="lineno" data-linenos="16 "></span>  <span class="p">}</span>
-<span class="lineno" data-linenos="17 "></span><span class="p">};</span>
+<span class="lineno" data-linenos=" 9 "></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">l</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">r</span> <span class="o">&lt;</span> <span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="o">++</span><span class="n">r</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos="10 "></span>      <span class="n">prod</span> <span class="o">*=</span> <span class="n">nums</span><span class="p">[</span><span class="n">r</span><span class="p">];</span>
+<span class="lineno" data-linenos="11 "></span>      <span class="k">while</span> <span class="p">(</span><span class="n">prod</span> <span class="o">&gt;=</span> <span class="n">k</span><span class="p">)</span>
+<span class="lineno" data-linenos="12 "></span>        <span class="n">prod</span> <span class="o">/=</span> <span class="n">nums</span><span class="p">[</span><span class="n">l</span><span class="o">++</span><span class="p">];</span>
+<span class="lineno" data-linenos="13 "></span>      <span class="n">ans</span> <span class="o">+=</span> <span class="n">r</span> <span class="o">-</span> <span class="n">l</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+<span class="lineno" data-linenos="14 "></span>    <span class="p">}</span>
+<span class="lineno" data-linenos="15 "></span>
+<span class="lineno" data-linenos="16 "></span>    <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
+<span class="lineno" data-linenos="17 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos="18 "></span><span class="p">};</span>
 </code></pre></div>
 
 <h2 id="714-best-time-to-buy-and-sell-stock-with-transaction-fee-starstar">714. Best Time to Buy and Sell Stock with Transaction Fee <a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee">$\star\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>
@@ -7461,7 +7466,7 @@
 </code></pre></div>
 
 <h2 id="719-find-k-th-smallest-pair-distance-starstarstar">719. Find K-th Smallest Pair Distance <a href="https://leetcode.com/problems/find-k-th-smallest-pair-distance">$\star\star\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>
-<p><img alt="" src="https://img.shields.io/badge/-Binary%20Search-1B813E.svg?style=flat-square" /></p>
+<p><img alt="" src="https://img.shields.io/badge/-Binary%20Search-1B813E.svg?style=flat-square" /> <img alt="" src="https://img.shields.io/badge/-Heap-0F4C3A.svg?style=flat-square" /></p>
 <div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
 <span class="lineno" data-linenos=" 2 "></span> <span class="k">public</span><span class="o">:</span>
 <span class="lineno" data-linenos=" 3 "></span>  <span class="kt">int</span> <span class="n">smallestDistancePair</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">nums</span><span class="p">,</span> <span class="kt">int</span> <span class="n">k</span><span class="p">)</span> <span class="p">{</span>
@@ -7491,7 +7496,7 @@
 </code></pre></div>
 
 <h2 id="720-longest-word-in-dictionary-star">720. Longest Word in Dictionary <a href="https://leetcode.com/problems/longest-word-in-dictionary">$\star$</a> <img alt="👎" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44e.svg" title=":thumbsdown:" /></h2>
-<p><img alt="" src="https://img.shields.io/badge/-Hash%20Table-7BA23F.svg?style=flat-square" /> <img alt="" src="https://img.shields.io/badge/-Trie-5B622E.svg?style=flat-square" /></p>
+<p><img alt="" src="https://img.shields.io/badge/-Hash%20Table-7BA23F.svg?style=flat-square" /> <img alt="" src="https://img.shields.io/badge/-Trie-A5A051.svg?style=flat-square" /></p>
 <div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
 <span class="lineno" data-linenos=" 2 "></span> <span class="k">public</span><span class="o">:</span>
 <span class="lineno" data-linenos=" 3 "></span>  <span class="n">string</span> <span class="n">longestWord</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&amp;</span> <span class="n">words</span><span class="p">)</span> <span class="p">{</span>

@@ -2514,7 +2514,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../cpp/1401-1500/1451-1460.md" title="1451-1460" class="md-nav__link">
+    <a href="../../../cpp/1401-1500/1451-1460/" title="1451-1460" class="md-nav__link">
       1451-1460
     </a>
   </li>
@@ -4806,7 +4806,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../java/1401-1500/1451-1460.md" title="1451-1460" class="md-nav__link">
+    <a href="../../../java/1401-1500/1451-1460/" title="1451-1460" class="md-nav__link">
       1451-1460
     </a>
   </li>
@@ -5337,15 +5337,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#237-delete-node-in-a-linked-list-star" class="md-nav__link">
-    237. Delete Node in a Linked List $\star$
+  <a href="#235-lowest-common-ancestor-of-a-binary-search-tree-star" class="md-nav__link">
+    235. Lowest Common Ancestor of a Binary Search Tree $\star$
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#238-product-of-array-except-self-starstar" class="md-nav__link">
-    238. Product of Array Except Self $\star\star$
+  <a href="#236-lowest-common-ancestor-of-a-binary-tree-starstar" class="md-nav__link">
+    236. Lowest Common Ancestor of a Binary Tree $\star\star$
   </a>
   
 </li>
@@ -7189,7 +7189,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../1401-1500/1451-1460.md" title="1451-1460" class="md-nav__link">
+    <a href="../../1401-1500/1451-1460/" title="1451-1460" class="md-nav__link">
       1451-1460
     </a>
   </li>
@@ -7305,15 +7305,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#237-delete-node-in-a-linked-list-star" class="md-nav__link">
-    237. Delete Node in a Linked List $\star$
+  <a href="#235-lowest-common-ancestor-of-a-binary-search-tree-star" class="md-nav__link">
+    235. Lowest Common Ancestor of a Binary Search Tree $\star$
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#238-product-of-array-except-self-starstar" class="md-nav__link">
-    238. Product of Array Except Self $\star\star$
+  <a href="#236-lowest-common-ancestor-of-a-binary-tree-starstar" class="md-nav__link">
+    236. Lowest Common Ancestor of a Binary Tree $\star\star$
   </a>
   
 </li>
@@ -7402,65 +7402,79 @@
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(n)$</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(1)$</li>
 </ul>
+<div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+<span class="lineno" data-linenos=" 2 "></span>    <span class="k">def</span> <span class="nf">isPalindrome</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">head</span><span class="p">:</span> <span class="n">ListNode</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="lineno" data-linenos=" 3 "></span>        <span class="k">def</span> <span class="nf">reverseList</span><span class="p">(</span><span class="n">head</span><span class="p">:</span> <span class="n">ListNode</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ListNode</span><span class="p">:</span>
+<span class="lineno" data-linenos=" 4 "></span>            <span class="n">prev</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="lineno" data-linenos=" 5 "></span>            <span class="n">curr</span> <span class="o">=</span> <span class="n">head</span>
+<span class="lineno" data-linenos=" 6 "></span>
+<span class="lineno" data-linenos=" 7 "></span>            <span class="k">while</span> <span class="n">curr</span><span class="p">:</span>
+<span class="lineno" data-linenos=" 8 "></span>                <span class="nb">next</span> <span class="o">=</span> <span class="n">curr</span><span class="o">.</span><span class="n">next</span>
+<span class="lineno" data-linenos=" 9 "></span>                <span class="n">curr</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">prev</span>
+<span class="lineno" data-linenos="10 "></span>                <span class="n">prev</span> <span class="o">=</span> <span class="n">curr</span>
+<span class="lineno" data-linenos="11 "></span>                <span class="n">curr</span> <span class="o">=</span> <span class="nb">next</span>
+<span class="lineno" data-linenos="12 "></span>
+<span class="lineno" data-linenos="13 "></span>            <span class="k">return</span> <span class="n">prev</span>
+<span class="lineno" data-linenos="14 "></span>
+<span class="lineno" data-linenos="15 "></span>        <span class="n">slow</span> <span class="o">=</span> <span class="n">head</span>
+<span class="lineno" data-linenos="16 "></span>        <span class="n">fast</span> <span class="o">=</span> <span class="n">head</span>
+<span class="lineno" data-linenos="17 "></span>
+<span class="lineno" data-linenos="18 "></span>        <span class="k">while</span> <span class="n">fast</span> <span class="ow">and</span> <span class="n">fast</span><span class="o">.</span><span class="n">next</span><span class="p">:</span>
+<span class="lineno" data-linenos="19 "></span>            <span class="n">slow</span> <span class="o">=</span> <span class="n">slow</span><span class="o">.</span><span class="n">next</span>
+<span class="lineno" data-linenos="20 "></span>            <span class="n">fast</span> <span class="o">=</span> <span class="n">fast</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span>
+<span class="lineno" data-linenos="21 "></span>
+<span class="lineno" data-linenos="22 "></span>        <span class="k">if</span> <span class="n">fast</span><span class="p">:</span>
+<span class="lineno" data-linenos="23 "></span>            <span class="n">slow</span> <span class="o">=</span> <span class="n">slow</span><span class="o">.</span><span class="n">next</span>
+<span class="lineno" data-linenos="24 "></span>        <span class="n">slow</span> <span class="o">=</span> <span class="n">reverseList</span><span class="p">(</span><span class="n">slow</span><span class="p">)</span>
+<span class="lineno" data-linenos="25 "></span>
+<span class="lineno" data-linenos="26 "></span>        <span class="k">while</span> <span class="n">slow</span><span class="p">:</span>
+<span class="lineno" data-linenos="27 "></span>            <span class="k">if</span> <span class="n">slow</span><span class="o">.</span><span class="n">val</span> <span class="o">!=</span> <span class="n">head</span><span class="o">.</span><span class="n">val</span><span class="p">:</span>
+<span class="lineno" data-linenos="28 "></span>                <span class="k">return</span> <span class="kc">False</span>
+<span class="lineno" data-linenos="29 "></span>            <span class="n">slow</span> <span class="o">=</span> <span class="n">slow</span><span class="o">.</span><span class="n">next</span>
+<span class="lineno" data-linenos="30 "></span>            <span class="n">head</span> <span class="o">=</span> <span class="n">head</span><span class="o">.</span><span class="n">next</span>
+<span class="lineno" data-linenos="31 "></span>
+<span class="lineno" data-linenos="32 "></span>        <span class="k">return</span> <span class="kc">True</span>
+</code></pre></div>
+
+<h2 id="235-lowest-common-ancestor-of-a-binary-search-tree-star">235. Lowest Common Ancestor of a Binary Search Tree <a href="https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree">$\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>
+<h2 id="236-lowest-common-ancestor-of-a-binary-tree-starstar">236. Lowest Common Ancestor of a Binary Tree <a href="https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree">$\star\star$</a> <img alt="💪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4aa.svg" title=":muscle:" /></h2>
+<p><img alt="" src="https://img.shields.io/badge/-Recursion-0F2540.svg?style=flat-square" /> <img alt="" src="https://img.shields.io/badge/-Tree-227D51.svg?style=flat-square" /></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(\log n)$</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(\log n)$</li>
+</ul>
 <div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="n">Error</span><span class="err">```</span>
 <span class="lineno" data-linenos=" 2 "></span>
-<span class="lineno" data-linenos=" 3 "></span><span class="c1">## 235. Lowest Common Ancestor of a Binary Search Tree [$\star$](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree) :thumbsup:</span>
+<span class="lineno" data-linenos=" 3 "></span><span class="c1">## 237. Delete Node in a Linked List [$\star$](https://leetcode.com/problems/delete-node-in-a-linked-list) :thumbsdown:</span>
 <span class="lineno" data-linenos=" 4 "></span>
-<span class="lineno" data-linenos=" 5 "></span><span class="c1">## 236. Lowest Common Ancestor of a Binary Tree [$\star\star$](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree) :muscle:</span>
+<span class="lineno" data-linenos=" 5 "></span><span class="err">!</span><span class="p">[](</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">img</span><span class="o">.</span><span class="n">shields</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">badge</span><span class="o">/-</span><span class="n">Linked</span><span class="o">%</span><span class="mi">20</span><span class="n">List</span><span class="o">-</span><span class="mi">90</span><span class="n">B44B</span><span class="o">.</span><span class="n">svg</span><span class="err">?</span><span class="n">style</span><span class="o">=</span><span class="n">flat</span><span class="o">-</span><span class="n">square</span><span class="p">)</span>
 <span class="lineno" data-linenos=" 6 "></span>
-<span class="lineno" data-linenos=" 7 "></span><span class="err">!</span><span class="p">[](</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">img</span><span class="o">.</span><span class="n">shields</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">badge</span><span class="o">/-</span><span class="n">Recursion</span><span class="o">-</span><span class="mi">0</span><span class="n">F2540</span><span class="o">.</span><span class="n">svg</span><span class="err">?</span><span class="n">style</span><span class="o">=</span><span class="n">flat</span><span class="o">-</span><span class="n">square</span><span class="p">)</span> <span class="err">!</span><span class="p">[](</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">img</span><span class="o">.</span><span class="n">shields</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">badge</span><span class="o">/-</span><span class="n">Tree</span><span class="o">-</span><span class="mi">227</span><span class="n">D51</span><span class="o">.</span><span class="n">svg</span><span class="err">?</span><span class="n">style</span><span class="o">=</span><span class="n">flat</span><span class="o">-</span><span class="n">square</span><span class="p">)</span>
-<span class="lineno" data-linenos=" 8 "></span>
-<span class="lineno" data-linenos=" 9 "></span><span class="o">-</span> <span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="n">Time</span><span class="p">:</span> <span class="err">$</span><span class="n">O</span><span class="p">(</span>\<span class="n">log</span> <span class="n">n</span><span class="p">)</span><span class="err">$</span>
-<span class="lineno" data-linenos="10 "></span><span class="o">-</span> <span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="n">Space</span><span class="p">:</span> <span class="err">$</span><span class="n">O</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="err">$</span>
-<span class="lineno" data-linenos="11 "></span>
-<span class="lineno" data-linenos="12 "></span><span class="err">```</span><span class="n">python</span>
-<span class="lineno" data-linenos="13 "></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
-<span class="lineno" data-linenos="14 "></span>    <span class="k">def</span> <span class="nf">lowestCommonAncestor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">:</span> <span class="s1">&#39;TreeNode&#39;</span><span class="p">,</span> <span class="n">p</span><span class="p">:</span> <span class="s1">&#39;TreeNode&#39;</span><span class="p">,</span> <span class="n">q</span><span class="p">:</span> <span class="s1">&#39;TreeNode&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;TreeNode&#39;</span><span class="p">:</span>
-<span class="lineno" data-linenos="15 "></span>        <span class="k">if</span> <span class="ow">not</span> <span class="n">root</span> <span class="ow">or</span> <span class="n">root</span> <span class="o">==</span> <span class="n">p</span> <span class="ow">or</span> <span class="n">root</span> <span class="o">==</span> <span class="n">q</span><span class="p">:</span>
-<span class="lineno" data-linenos="16 "></span>            <span class="k">return</span> <span class="n">root</span>
-<span class="lineno" data-linenos="17 "></span>
-<span class="lineno" data-linenos="18 "></span>        <span class="n">left</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">lowestCommonAncestor</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">left</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">)</span>
-<span class="lineno" data-linenos="19 "></span>        <span class="n">right</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">lowestCommonAncestor</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">right</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">)</span>
-<span class="lineno" data-linenos="20 "></span>
-<span class="lineno" data-linenos="21 "></span>        <span class="k">if</span> <span class="ow">not</span> <span class="n">left</span><span class="p">:</span>
-<span class="lineno" data-linenos="22 "></span>            <span class="k">return</span> <span class="n">right</span>
-<span class="lineno" data-linenos="23 "></span>        <span class="k">if</span> <span class="ow">not</span> <span class="n">right</span><span class="p">:</span>
-<span class="lineno" data-linenos="24 "></span>            <span class="k">return</span> <span class="n">left</span>
-<span class="lineno" data-linenos="25 "></span>
-<span class="lineno" data-linenos="26 "></span>        <span class="k">return</span> <span class="n">root</span>
-</code></pre></div>
-
-<h2 id="237-delete-node-in-a-linked-list-star">237. Delete Node in a Linked List <a href="https://leetcode.com/problems/delete-node-in-a-linked-list">$\star$</a> <img alt="👎" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44e.svg" title=":thumbsdown:" /></h2>
-<p><img alt="" src="https://img.shields.io/badge/-Linked%20List-90B44B.svg?style=flat-square" /></p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(1)$</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(1)$</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="lineno" data-linenos="1 "></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
-<span class="lineno" data-linenos="2 "></span>    <span class="k">def</span> <span class="nf">deleteNode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
-<span class="lineno" data-linenos="3 "></span>        <span class="n">node</span><span class="o">.</span><span class="n">val</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">val</span>
-<span class="lineno" data-linenos="4 "></span>        <span class="n">node</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span>
-</code></pre></div>
-
-<h2 id="238-product-of-array-except-self-starstar">238. Product of Array Except Self <a href="https://leetcode.com/problems/product-of-array-except-self">$\star\star$</a> <img alt="💪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4aa.svg" title=":muscle:" /></h2>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(n)$</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(n) \to O(1)$</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
-<span class="lineno" data-linenos=" 2 "></span>    <span class="k">def</span> <span class="nf">productExceptSelf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
-<span class="lineno" data-linenos=" 3 "></span>        <span class="n">ans</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
-<span class="lineno" data-linenos=" 4 "></span>        <span class="n">ans</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="lineno" data-linenos=" 5 "></span>        <span class="n">r</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="lineno" data-linenos=" 6 "></span>
-<span class="lineno" data-linenos=" 7 "></span>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)):</span>
-<span class="lineno" data-linenos=" 8 "></span>            <span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">ans</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+<span class="lineno" data-linenos=" 7 "></span><span class="o">-</span> <span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="n">Time</span><span class="p">:</span> <span class="err">$</span><span class="n">O</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="err">$</span>
+<span class="lineno" data-linenos=" 8 "></span><span class="o">-</span> <span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="n">Space</span><span class="p">:</span> <span class="err">$</span><span class="n">O</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="err">$</span>
 <span class="lineno" data-linenos=" 9 "></span>
-<span class="lineno" data-linenos="10 "></span>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
-<span class="lineno" data-linenos="11 "></span>            <span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*=</span> <span class="n">r</span>
-<span class="lineno" data-linenos="12 "></span>            <span class="n">r</span> <span class="o">*=</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-<span class="lineno" data-linenos="13 "></span>
-<span class="lineno" data-linenos="14 "></span>        <span class="k">return</span> <span class="n">ans</span>
+<span class="lineno" data-linenos="10 "></span><span class="err">```</span><span class="n">python</span>
+<span class="lineno" data-linenos="11 "></span><span class="n">Error</span><span class="err">```</span>
+<span class="lineno" data-linenos="12 "></span>
+<span class="lineno" data-linenos="13 "></span><span class="c1">## 238. Product of Array Except Self [$\star\star$](https://leetcode.com/problems/product-of-array-except-self) :muscle:</span>
+<span class="lineno" data-linenos="14 "></span>
+<span class="lineno" data-linenos="15 "></span><span class="o">-</span> <span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="n">Time</span><span class="p">:</span> <span class="err">$</span><span class="n">O</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="err">$</span>
+<span class="lineno" data-linenos="16 "></span><span class="o">-</span> <span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="n">Space</span><span class="p">:</span> <span class="err">$</span><span class="n">O</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> \<span class="n">to</span> <span class="n">O</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="err">$</span>
+<span class="lineno" data-linenos="17 "></span>
+<span class="lineno" data-linenos="18 "></span><span class="err">```</span><span class="n">python</span>
+<span class="lineno" data-linenos="19 "></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+<span class="lineno" data-linenos="20 "></span>    <span class="k">def</span> <span class="nf">productExceptSelf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+<span class="lineno" data-linenos="21 "></span>        <span class="n">ans</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+<span class="lineno" data-linenos="22 "></span>        <span class="n">ans</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="lineno" data-linenos="23 "></span>        <span class="n">r</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="lineno" data-linenos="24 "></span>
+<span class="lineno" data-linenos="25 "></span>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)):</span>
+<span class="lineno" data-linenos="26 "></span>            <span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">ans</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+<span class="lineno" data-linenos="27 "></span>
+<span class="lineno" data-linenos="28 "></span>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+<span class="lineno" data-linenos="29 "></span>            <span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*=</span> <span class="n">r</span>
+<span class="lineno" data-linenos="30 "></span>            <span class="n">r</span> <span class="o">*=</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="lineno" data-linenos="31 "></span>
+<span class="lineno" data-linenos="32 "></span>        <span class="k">return</span> <span class="n">ans</span>
 </code></pre></div>
 
 <h2 id="239-sliding-window-maximum-starstarstar">239. Sliding Window Maximum <a href="https://leetcode.com/problems/sliding-window-maximum">$\star\star\star$</a> <img alt="💪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4aa.svg" title=":muscle:" /></h2>

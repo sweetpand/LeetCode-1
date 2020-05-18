@@ -2619,7 +2619,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../1401-1500/1451-1460.md" title="1451-1460" class="md-nav__link">
+    <a href="../../1401-1500/1451-1460/" title="1451-1460" class="md-nav__link">
       1451-1460
     </a>
   </li>
@@ -4911,7 +4911,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../java/1401-1500/1451-1460.md" title="1451-1460" class="md-nav__link">
+    <a href="../../../java/1401-1500/1451-1460/" title="1451-1460" class="md-nav__link">
       1451-1460
     </a>
   </li>
@@ -7203,7 +7203,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../python3/1401-1500/1451-1460.md" title="1451-1460" class="md-nav__link">
+    <a href="../../../python3/1401-1500/1451-1460/" title="1451-1460" class="md-nav__link">
       1451-1460
     </a>
   </li>
@@ -7384,14 +7384,121 @@
                 
                 <h2 id="291-word-pattern-ii-starstarstar">291. Word Pattern II <a href="https://leetcode.com/problems/word-pattern-ii">$\star\star\star$</a> 🔒</h2>
 <h2 id="292-nim-game-star">292. Nim Game <a href="https://leetcode.com/problems/nim-game">$\star$</a> <img alt="👎" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44e.svg" title=":thumbsdown:" /></h2>
+<p><img alt="" src="https://img.shields.io/badge/-Minimax-#1C1C1C.svg?style=flat-square" /></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(1)$</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(1)$</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="lineno" data-linenos="1 "></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="lineno" data-linenos="2 "></span> <span class="k">public</span><span class="o">:</span>
+<span class="lineno" data-linenos="3 "></span>  <span class="kt">bool</span> <span class="n">canWinNim</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">4</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">;</span> <span class="p">}</span>
+<span class="lineno" data-linenos="4 "></span><span class="p">};</span>
+</code></pre></div>
+
 <h2 id="293-flip-game-star">293. Flip Game <a href="https://leetcode.com/problems/flip-game">$\star$</a> 🔒</h2>
 <h2 id="294-flip-game-ii-starstar">294. Flip Game II <a href="https://leetcode.com/problems/flip-game-ii">$\star\star$</a> 🔒</h2>
 <h2 id="295-find-median-from-data-stream-starstarstar">295. Find Median from Data Stream <a href="https://leetcode.com/problems/find-median-from-data-stream">$\star\star\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>
+<p><img alt="" src="https://img.shields.io/badge/-Heap-0F4C3A.svg?style=flat-square" /></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(n\log n)$</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(n)$</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">MedianFinder</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 2 "></span> <span class="k">public</span><span class="o">:</span>
+<span class="lineno" data-linenos=" 3 "></span>  <span class="kt">void</span> <span class="n">addNum</span><span class="p">(</span><span class="kt">int</span> <span class="n">num</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 4 "></span>    <span class="k">if</span> <span class="p">(</span><span class="n">l</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="o">||</span> <span class="n">num</span> <span class="o">&lt;=</span> <span class="n">l</span><span class="p">.</span><span class="n">top</span><span class="p">())</span>
+<span class="lineno" data-linenos=" 5 "></span>      <span class="n">l</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">num</span><span class="p">);</span>
+<span class="lineno" data-linenos=" 6 "></span>    <span class="k">else</span>
+<span class="lineno" data-linenos=" 7 "></span>      <span class="n">r</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">num</span><span class="p">);</span>
+<span class="lineno" data-linenos=" 8 "></span>
+<span class="lineno" data-linenos=" 9 "></span>    <span class="c1">// balance two heaps</span>
+<span class="lineno" data-linenos="10 "></span>    <span class="k">if</span> <span class="p">(</span><span class="n">l</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">==</span> <span class="n">r</span><span class="p">.</span><span class="n">size</span><span class="p">())</span>
+<span class="lineno" data-linenos="11 "></span>      <span class="n">l</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="n">top</span><span class="p">()),</span> <span class="n">r</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+<span class="lineno" data-linenos="12 "></span>    <span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">l</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">==</span> <span class="n">r</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
+<span class="lineno" data-linenos="13 "></span>      <span class="n">r</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">l</span><span class="p">.</span><span class="n">top</span><span class="p">()),</span> <span class="n">l</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+<span class="lineno" data-linenos="14 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos="15 "></span>
+<span class="lineno" data-linenos="16 "></span>  <span class="kt">double</span> <span class="n">findMedian</span><span class="p">()</span> <span class="p">{</span>
+<span class="lineno" data-linenos="17 "></span>    <span class="k">if</span> <span class="p">(</span><span class="n">l</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">==</span> <span class="n">r</span><span class="p">.</span><span class="n">size</span><span class="p">())</span>
+<span class="lineno" data-linenos="18 "></span>      <span class="k">return</span> <span class="p">(</span><span class="n">l</span><span class="p">.</span><span class="n">top</span><span class="p">()</span> <span class="o">+</span> <span class="n">r</span><span class="p">.</span><span class="n">top</span><span class="p">())</span> <span class="o">/</span> <span class="mf">2.0</span><span class="p">;</span>
+<span class="lineno" data-linenos="19 "></span>    <span class="k">return</span> <span class="n">l</span><span class="p">.</span><span class="n">top</span><span class="p">();</span>
+<span class="lineno" data-linenos="20 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos="21 "></span>
+<span class="lineno" data-linenos="22 "></span> <span class="k">private</span><span class="o">:</span>
+<span class="lineno" data-linenos="23 "></span>  <span class="n">priority_queue</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">l</span><span class="p">;</span>             <span class="c1">// Max Heap</span>
+<span class="lineno" data-linenos="24 "></span>  <span class="n">priority_queue</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">greater</span><span class="o">&lt;&gt;&gt;</span> <span class="n">r</span><span class="p">;</span>  <span class="c1">// Min Heap</span>
+<span class="lineno" data-linenos="25 "></span><span class="p">};</span>
+</code></pre></div>
+
 <h2 id="296-best-meeting-point-starstarstar">296. Best Meeting Point <a href="https://leetcode.com/problems/best-meeting-point">$\star\star\star$</a> 🔒</h2>
 <h2 id="297-serialize-and-deserialize-binary-tree-starstarstar">297. Serialize and Deserialize Binary Tree <a href="https://leetcode.com/problems/serialize-and-deserialize-binary-tree">$\star\star\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>
+<p><img alt="" src="https://img.shields.io/badge/-Tree-227D51.svg?style=flat-square" /></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(n)$</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(n)$</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Codec</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 2 "></span> <span class="k">public</span><span class="o">:</span>
+<span class="lineno" data-linenos=" 3 "></span>  <span class="n">string</span> <span class="n">serialize</span><span class="p">(</span><span class="n">TreeNode</span><span class="o">*</span> <span class="n">root</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 4 "></span>    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">root</span><span class="p">)</span> <span class="k">return</span> <span class="s">&quot;&quot;</span><span class="p">;</span>
+<span class="lineno" data-linenos=" 5 "></span>
+<span class="lineno" data-linenos=" 6 "></span>    <span class="n">string</span> <span class="n">ans</span><span class="p">;</span>
+<span class="lineno" data-linenos=" 7 "></span>    <span class="n">queue</span><span class="o">&lt;</span><span class="n">TreeNode</span><span class="o">*&gt;</span> <span class="n">queue</span><span class="p">{{</span><span class="n">root</span><span class="p">}};</span>
+<span class="lineno" data-linenos=" 8 "></span>
+<span class="lineno" data-linenos=" 9 "></span>    <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">queue</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="p">{</span>
+<span class="lineno" data-linenos="10 "></span>      <span class="n">root</span> <span class="o">=</span> <span class="n">queue</span><span class="p">.</span><span class="n">front</span><span class="p">(),</span> <span class="n">queue</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+<span class="lineno" data-linenos="11 "></span>      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">root</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos="12 "></span>        <span class="n">ans</span> <span class="o">+=</span> <span class="s">&quot;n &quot;</span><span class="p">;</span>
+<span class="lineno" data-linenos="13 "></span>        <span class="k">continue</span><span class="p">;</span>
+<span class="lineno" data-linenos="14 "></span>      <span class="p">}</span>
+<span class="lineno" data-linenos="15 "></span>      <span class="n">ans</span> <span class="o">+=</span> <span class="n">to_string</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">val</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot; &quot;</span><span class="p">;</span>
+<span class="lineno" data-linenos="16 "></span>      <span class="n">queue</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">);</span>
+<span class="lineno" data-linenos="17 "></span>      <span class="n">queue</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">);</span>
+<span class="lineno" data-linenos="18 "></span>    <span class="p">}</span>
+<span class="lineno" data-linenos="19 "></span>
+<span class="lineno" data-linenos="20 "></span>    <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
+<span class="lineno" data-linenos="21 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos="22 "></span>
+<span class="lineno" data-linenos="23 "></span>  <span class="n">TreeNode</span><span class="o">*</span> <span class="n">deserialize</span><span class="p">(</span><span class="n">string</span> <span class="n">data</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos="24 "></span>    <span class="k">if</span> <span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="k">return</span> <span class="k">nullptr</span><span class="p">;</span>
+<span class="lineno" data-linenos="25 "></span>
+<span class="lineno" data-linenos="26 "></span>    <span class="n">istringstream</span> <span class="nf">iss</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+<span class="lineno" data-linenos="27 "></span>    <span class="n">string</span> <span class="n">val</span><span class="p">;</span>
+<span class="lineno" data-linenos="28 "></span>    <span class="n">iss</span> <span class="o">&gt;&gt;</span> <span class="n">val</span><span class="p">;</span>
+<span class="lineno" data-linenos="29 "></span>
+<span class="lineno" data-linenos="30 "></span>    <span class="n">TreeNode</span><span class="o">*</span> <span class="n">root</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TreeNode</span><span class="p">(</span><span class="n">stoi</span><span class="p">(</span><span class="n">val</span><span class="p">));</span>
+<span class="lineno" data-linenos="31 "></span>    <span class="n">queue</span><span class="o">&lt;</span><span class="n">TreeNode</span><span class="o">*&gt;</span> <span class="n">queue</span><span class="p">{{</span><span class="n">root</span><span class="p">}};</span>
+<span class="lineno" data-linenos="32 "></span>
+<span class="lineno" data-linenos="33 "></span>    <span class="k">while</span> <span class="p">(</span><span class="n">iss</span> <span class="o">&gt;&gt;</span> <span class="n">val</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos="34 "></span>      <span class="n">TreeNode</span><span class="o">*</span> <span class="n">parent</span> <span class="o">=</span> <span class="n">queue</span><span class="p">.</span><span class="n">front</span><span class="p">();</span>
+<span class="lineno" data-linenos="35 "></span>      <span class="n">queue</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+<span class="lineno" data-linenos="36 "></span>
+<span class="lineno" data-linenos="37 "></span>      <span class="c1">// left node</span>
+<span class="lineno" data-linenos="38 "></span>      <span class="k">if</span> <span class="p">(</span><span class="n">val</span> <span class="o">!=</span> <span class="s">&quot;n&quot;</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos="39 "></span>        <span class="n">parent</span><span class="o">-&gt;</span><span class="n">left</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TreeNode</span><span class="p">(</span><span class="n">stoi</span><span class="p">(</span><span class="n">val</span><span class="p">));</span>
+<span class="lineno" data-linenos="40 "></span>        <span class="n">queue</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">parent</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">);</span>
+<span class="lineno" data-linenos="41 "></span>      <span class="p">}</span>
+<span class="lineno" data-linenos="42 "></span>
+<span class="lineno" data-linenos="43 "></span>      <span class="c1">// right node</span>
+<span class="lineno" data-linenos="44 "></span>      <span class="n">iss</span> <span class="o">&gt;&gt;</span> <span class="n">val</span><span class="p">;</span>
+<span class="lineno" data-linenos="45 "></span>      <span class="k">if</span> <span class="p">(</span><span class="n">val</span> <span class="o">!=</span> <span class="s">&quot;n&quot;</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos="46 "></span>        <span class="n">parent</span><span class="o">-&gt;</span><span class="n">right</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TreeNode</span><span class="p">(</span><span class="n">stoi</span><span class="p">(</span><span class="n">val</span><span class="p">));</span>
+<span class="lineno" data-linenos="47 "></span>        <span class="n">queue</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">parent</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">);</span>
+<span class="lineno" data-linenos="48 "></span>      <span class="p">}</span>
+<span class="lineno" data-linenos="49 "></span>    <span class="p">}</span>
+<span class="lineno" data-linenos="50 "></span>
+<span class="lineno" data-linenos="51 "></span>    <span class="k">return</span> <span class="n">root</span><span class="p">;</span>
+<span class="lineno" data-linenos="52 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos="53 "></span><span class="p">};</span>
+</code></pre></div>
+
 <h2 id="298-binary-tree-longest-consecutive-sequence-starstar">298. Binary Tree Longest Consecutive Sequence <a href="https://leetcode.com/problems/binary-tree-longest-consecutive-sequence">$\star\star$</a> 🔒</h2>
 <h2 id="299-bulls-and-cows-star">299. Bulls and Cows <a href="https://leetcode.com/problems/bulls-and-cows">$\star$</a> <img alt="👎" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44e.svg" title=":thumbsdown:" /></h2>
 <p><img alt="" src="https://img.shields.io/badge/-Hash%20Table-7BA23F.svg?style=flat-square" /></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(n)$</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(10)$</li>
+</ul>
 <div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
 <span class="lineno" data-linenos=" 2 "></span> <span class="k">public</span><span class="o">:</span>
 <span class="lineno" data-linenos=" 3 "></span>  <span class="n">string</span> <span class="n">getHint</span><span class="p">(</span><span class="n">string</span> <span class="n">secret</span><span class="p">,</span> <span class="n">string</span> <span class="n">guess</span><span class="p">)</span> <span class="p">{</span>
@@ -7400,16 +7507,16 @@
 <span class="lineno" data-linenos=" 6 "></span>    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">count1</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
 <span class="lineno" data-linenos=" 7 "></span>    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">count2</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
 <span class="lineno" data-linenos=" 8 "></span>
-<span class="lineno" data-linenos=" 9 "></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">secret</span><span class="p">.</span><span class="n">length</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 9 "></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">secret</span><span class="p">.</span><span class="n">length</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
 <span class="lineno" data-linenos="10 "></span>      <span class="k">if</span> <span class="p">(</span><span class="n">secret</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">guess</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
 <span class="lineno" data-linenos="11 "></span>        <span class="o">++</span><span class="n">A</span><span class="p">;</span>
 <span class="lineno" data-linenos="12 "></span>      <span class="k">else</span> <span class="p">{</span>
 <span class="lineno" data-linenos="13 "></span>        <span class="o">++</span><span class="n">count1</span><span class="p">[</span><span class="n">secret</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="sc">&#39;0&#39;</span><span class="p">];</span>
 <span class="lineno" data-linenos="14 "></span>        <span class="o">++</span><span class="n">count2</span><span class="p">[</span><span class="n">guess</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="sc">&#39;0&#39;</span><span class="p">];</span>
 <span class="lineno" data-linenos="15 "></span>      <span class="p">}</span>
-<span class="lineno" data-linenos="16 "></span>    <span class="p">}</span>
-<span class="lineno" data-linenos="17 "></span>
-<span class="lineno" data-linenos="18 "></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">9</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="n">B</span> <span class="o">+=</span> <span class="n">min</span><span class="p">(</span><span class="n">count1</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">count2</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+<span class="lineno" data-linenos="16 "></span>
+<span class="lineno" data-linenos="17 "></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">9</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+<span class="lineno" data-linenos="18 "></span>      <span class="n">B</span> <span class="o">+=</span> <span class="n">min</span><span class="p">(</span><span class="n">count1</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">count2</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
 <span class="lineno" data-linenos="19 "></span>
 <span class="lineno" data-linenos="20 "></span>    <span class="k">return</span> <span class="nf">to_string</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot;A&quot;</span> <span class="o">+</span> <span class="n">to_string</span><span class="p">(</span><span class="n">B</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot;B&quot;</span><span class="p">;</span>
 <span class="lineno" data-linenos="21 "></span>  <span class="p">}</span>

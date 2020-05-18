@@ -2619,7 +2619,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../1401-1500/1451-1460.md" title="1451-1460" class="md-nav__link">
+    <a href="../../1401-1500/1451-1460/" title="1451-1460" class="md-nav__link">
       1451-1460
     </a>
   </li>
@@ -4911,7 +4911,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../java/1401-1500/1451-1460.md" title="1451-1460" class="md-nav__link">
+    <a href="../../../java/1401-1500/1451-1460/" title="1451-1460" class="md-nav__link">
       1451-1460
     </a>
   </li>
@@ -7203,7 +7203,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../python3/1401-1500/1451-1460.md" title="1451-1460" class="md-nav__link">
+    <a href="../../../python3/1401-1500/1451-1460/" title="1451-1460" class="md-nav__link">
       1451-1460
     </a>
   </li>
@@ -7386,21 +7386,30 @@
 <h2 id="262-trips-and-users-starstarstar">262. Trips and Users <a href="https://leetcode.com/problems/trips-and-users">$\star\star\star$</a></h2>
 <h2 id="263-ugly-number-star">263. Ugly Number <a href="https://leetcode.com/problems/ugly-number">$\star$</a> <img alt="👎" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44e.svg" title=":thumbsdown:" /></h2>
 <p><img alt="" src="https://img.shields.io/badge/-Math-434343.svg?style=flat-square" /></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(\log n)$</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(1)$</li>
+</ul>
 <div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
 <span class="lineno" data-linenos=" 2 "></span> <span class="k">public</span><span class="o">:</span>
 <span class="lineno" data-linenos=" 3 "></span>  <span class="kt">bool</span> <span class="n">isUgly</span><span class="p">(</span><span class="kt">int</span> <span class="n">num</span><span class="p">)</span> <span class="p">{</span>
 <span class="lineno" data-linenos=" 4 "></span>    <span class="k">if</span> <span class="p">(</span><span class="n">num</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
 <span class="lineno" data-linenos=" 5 "></span>
 <span class="lineno" data-linenos=" 6 "></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="nl">prime</span> <span class="p">:</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">})</span>
-<span class="lineno" data-linenos=" 7 "></span>      <span class="k">while</span> <span class="p">(</span><span class="n">num</span> <span class="o">%</span> <span class="n">prime</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="n">num</span> <span class="o">/=</span> <span class="n">prime</span><span class="p">;</span>
-<span class="lineno" data-linenos=" 8 "></span>
-<span class="lineno" data-linenos=" 9 "></span>    <span class="k">return</span> <span class="n">num</span> <span class="o">==</span> <span class="mi">1</span><span class="p">;</span>
-<span class="lineno" data-linenos="10 "></span>  <span class="p">}</span>
-<span class="lineno" data-linenos="11 "></span><span class="p">};</span>
+<span class="lineno" data-linenos=" 7 "></span>      <span class="k">while</span> <span class="p">(</span><span class="n">num</span> <span class="o">%</span> <span class="n">prime</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+<span class="lineno" data-linenos=" 8 "></span>        <span class="n">num</span> <span class="o">/=</span> <span class="n">prime</span><span class="p">;</span>
+<span class="lineno" data-linenos=" 9 "></span>
+<span class="lineno" data-linenos="10 "></span>    <span class="k">return</span> <span class="n">num</span> <span class="o">==</span> <span class="mi">1</span><span class="p">;</span>
+<span class="lineno" data-linenos="11 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos="12 "></span><span class="p">};</span>
 </code></pre></div>
 
 <h2 id="264-ugly-number-ii-starstar">264. Ugly Number II <a href="https://leetcode.com/problems/ugly-number-ii">$\star\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>
 <p><img alt="" src="https://img.shields.io/badge/-Dynamic%20Programming-113285.svg?style=flat-square" /> <img alt="" src="https://img.shields.io/badge/-Math-434343.svg?style=flat-square" /></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(n)$</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(n)$</li>
+</ul>
 <div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
 <span class="lineno" data-linenos=" 2 "></span> <span class="k">public</span><span class="o">:</span>
 <span class="lineno" data-linenos=" 3 "></span>  <span class="kt">int</span> <span class="n">nthUglyNumber</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
@@ -7413,7 +7422,7 @@
 <span class="lineno" data-linenos="10 "></span>      <span class="kt">int</span> <span class="n">next2</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="n">i2</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>
 <span class="lineno" data-linenos="11 "></span>      <span class="kt">int</span> <span class="n">next3</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="n">i3</span><span class="p">]</span> <span class="o">*</span> <span class="mi">3</span><span class="p">;</span>
 <span class="lineno" data-linenos="12 "></span>      <span class="kt">int</span> <span class="n">next5</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="n">i5</span><span class="p">]</span> <span class="o">*</span> <span class="mi">5</span><span class="p">;</span>
-<span class="lineno" data-linenos="13 "></span>      <span class="kt">int</span> <span class="n">next</span> <span class="o">=</span> <span class="n">min</span><span class="p">(</span><span class="n">next2</span><span class="p">,</span> <span class="n">min</span><span class="p">(</span><span class="n">next3</span><span class="p">,</span> <span class="n">next5</span><span class="p">));</span>
+<span class="lineno" data-linenos="13 "></span>      <span class="kt">int</span> <span class="n">next</span> <span class="o">=</span> <span class="n">min</span><span class="p">({</span><span class="n">next2</span><span class="p">,</span> <span class="n">next3</span><span class="p">,</span> <span class="n">next5</span><span class="p">});</span>
 <span class="lineno" data-linenos="14 "></span>      <span class="k">if</span> <span class="p">(</span><span class="n">next</span> <span class="o">==</span> <span class="n">next2</span><span class="p">)</span> <span class="o">++</span><span class="n">i2</span><span class="p">;</span>
 <span class="lineno" data-linenos="15 "></span>      <span class="k">if</span> <span class="p">(</span><span class="n">next</span> <span class="o">==</span> <span class="n">next3</span><span class="p">)</span> <span class="o">++</span><span class="n">i3</span><span class="p">;</span>
 <span class="lineno" data-linenos="16 "></span>      <span class="k">if</span> <span class="p">(</span><span class="n">next</span> <span class="o">==</span> <span class="n">next5</span><span class="p">)</span> <span class="o">++</span><span class="n">i5</span><span class="p">;</span>
@@ -7430,16 +7439,21 @@
 <h2 id="267-palindrome-permutation-ii-starstar">267. Palindrome Permutation II <a href="https://leetcode.com/problems/palindrome-permutation-ii">$\star\star$</a> 🔒</h2>
 <h2 id="268-missing-number-star">268. Missing Number <a href="https://leetcode.com/problems/missing-number">$\star$</a> <img alt="👎" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44e.svg" title=":thumbsdown:" /></h2>
 <p><img alt="" src="https://img.shields.io/badge/-Bit%20Manipulation-A36336.svg?style=flat-square" /> <img alt="" src="https://img.shields.io/badge/-Math-434343.svg?style=flat-square" /></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(n)$</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(1)$</li>
+</ul>
 <div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
 <span class="lineno" data-linenos=" 2 "></span> <span class="k">public</span><span class="o">:</span>
 <span class="lineno" data-linenos=" 3 "></span>  <span class="kt">int</span> <span class="n">missingNumber</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">nums</span><span class="p">)</span> <span class="p">{</span>
 <span class="lineno" data-linenos=" 4 "></span>    <span class="kt">int</span> <span class="n">ans</span> <span class="o">=</span> <span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
 <span class="lineno" data-linenos=" 5 "></span>
-<span class="lineno" data-linenos=" 6 "></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="n">ans</span> <span class="o">^=</span> <span class="n">i</span> <span class="o">^</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
-<span class="lineno" data-linenos=" 7 "></span>
-<span class="lineno" data-linenos=" 8 "></span>    <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
-<span class="lineno" data-linenos=" 9 "></span>  <span class="p">}</span>
-<span class="lineno" data-linenos="10 "></span><span class="p">};</span>
+<span class="lineno" data-linenos=" 6 "></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+<span class="lineno" data-linenos=" 7 "></span>      <span class="n">ans</span> <span class="o">^=</span> <span class="n">i</span> <span class="o">^</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="lineno" data-linenos=" 8 "></span>
+<span class="lineno" data-linenos=" 9 "></span>    <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
+<span class="lineno" data-linenos="10 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos="11 "></span><span class="p">};</span>
 </code></pre></div>
 
 <h2 id="269-alien-dictionary-starstarstar">269. Alien Dictionary <a href="https://leetcode.com/problems/alien-dictionary">$\star\star\star$</a> 🔒</h2>
