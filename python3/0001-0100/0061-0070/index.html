@@ -5107,6 +5107,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#70-climbing-stairs-star" class="md-nav__link">
+    70. Climbing Stairs $\star$
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -7346,6 +7353,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#70-climbing-stairs-star" class="md-nav__link">
+    70. Climbing Stairs $\star$
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -7585,29 +7599,40 @@
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(\log x)$</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(1)$</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="n">Error</span><span class="err">```</span>
-<span class="lineno" data-linenos=" 2 "></span>
-<span class="lineno" data-linenos=" 3 "></span><span class="c1">## 70. Climbing Stairs [$\star$](https://leetcode.com/problems/climbing-stairs) :thumbsup:</span>
-<span class="lineno" data-linenos=" 4 "></span>
-<span class="lineno" data-linenos=" 5 "></span><span class="err">!</span><span class="p">[](</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">img</span><span class="o">.</span><span class="n">shields</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">badge</span><span class="o">/-</span><span class="n">Dynamic</span><span class="o">%</span><span class="mi">20</span><span class="n">Programming</span><span class="o">-</span><span class="mf">113285.</span><span class="n">svg</span><span class="err">?</span><span class="n">style</span><span class="o">=</span><span class="n">flat</span><span class="o">-</span><span class="n">square</span><span class="p">)</span>
-<span class="lineno" data-linenos=" 6 "></span>
-<span class="lineno" data-linenos=" 7 "></span><span class="o">-</span> <span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="n">Time</span><span class="p">:</span> <span class="err">$</span><span class="n">O</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="err">$</span>
-<span class="lineno" data-linenos=" 8 "></span><span class="o">-</span> <span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="n">Space</span><span class="p">:</span> <span class="err">$</span><span class="n">O</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> \<span class="n">to</span> <span class="n">O</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="err">$</span>
+<div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+<span class="lineno" data-linenos=" 2 "></span>    <span class="k">def</span> <span class="nf">mySqrt</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="lineno" data-linenos=" 3 "></span>        <span class="n">l</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="lineno" data-linenos=" 4 "></span>        <span class="n">r</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="lineno" data-linenos=" 5 "></span>
+<span class="lineno" data-linenos=" 6 "></span>        <span class="k">while</span> <span class="n">l</span> <span class="o">&lt;</span> <span class="n">r</span><span class="p">:</span>
+<span class="lineno" data-linenos=" 7 "></span>            <span class="n">m</span> <span class="o">=</span> <span class="p">(</span><span class="n">l</span> <span class="o">+</span> <span class="n">r</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+<span class="lineno" data-linenos=" 8 "></span>            <span class="k">if</span> <span class="n">m</span> <span class="o">*</span> <span class="n">m</span> <span class="o">&gt;</span> <span class="n">x</span><span class="p">:</span>
+<span class="lineno" data-linenos=" 9 "></span>                <span class="n">r</span> <span class="o">=</span> <span class="n">m</span>
+<span class="lineno" data-linenos="10 "></span>            <span class="k">else</span><span class="p">:</span>
+<span class="lineno" data-linenos="11 "></span>                <span class="n">l</span> <span class="o">=</span> <span class="n">m</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="lineno" data-linenos="12 "></span>
+<span class="lineno" data-linenos="13 "></span>        <span class="k">return</span> <span class="n">l</span> <span class="o">-</span> <span class="mi">1</span>
+</code></pre></div>
+
+<h2 id="70-climbing-stairs-star">70. Climbing Stairs <a href="https://leetcode.com/problems/climbing-stairs">$\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>
+<p><img alt="" src="https://img.shields.io/badge/-Dynamic%20Programming-113285.svg?style=flat-square" /></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(n)$</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(n) \to O(1)$</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+<span class="lineno" data-linenos=" 2 "></span>    <span class="k">def</span> <span class="nf">climbStairs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="lineno" data-linenos=" 3 "></span>        <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<span class="lineno" data-linenos=" 4 "></span>            <span class="k">return</span> <span class="mi">1</span>
+<span class="lineno" data-linenos=" 5 "></span>
+<span class="lineno" data-linenos=" 6 "></span>        <span class="n">dp</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+<span class="lineno" data-linenos=" 7 "></span>        <span class="n">dp</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="lineno" data-linenos=" 8 "></span>        <span class="n">dp</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="lineno" data-linenos=" 9 "></span>
-<span class="lineno" data-linenos="10 "></span><span class="err">```</span><span class="n">python</span>
-<span class="lineno" data-linenos="11 "></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
-<span class="lineno" data-linenos="12 "></span>    <span class="k">def</span> <span class="nf">climbStairs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-<span class="lineno" data-linenos="13 "></span>        <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-<span class="lineno" data-linenos="14 "></span>            <span class="k">return</span> <span class="mi">1</span>
-<span class="lineno" data-linenos="15 "></span>
-<span class="lineno" data-linenos="16 "></span>        <span class="n">dp</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-<span class="lineno" data-linenos="17 "></span>        <span class="n">dp</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="lineno" data-linenos="18 "></span>        <span class="n">dp</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="lineno" data-linenos="19 "></span>
-<span class="lineno" data-linenos="20 "></span>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
-<span class="lineno" data-linenos="21 "></span>            <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">2</span><span class="p">]</span>
-<span class="lineno" data-linenos="22 "></span>
-<span class="lineno" data-linenos="23 "></span>        <span class="k">return</span> <span class="n">dp</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+<span class="lineno" data-linenos="10 "></span>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+<span class="lineno" data-linenos="11 "></span>            <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">2</span><span class="p">]</span>
+<span class="lineno" data-linenos="12 "></span>
+<span class="lineno" data-linenos="13 "></span>        <span class="k">return</span> <span class="n">dp</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
 </code></pre></div>
                 
               

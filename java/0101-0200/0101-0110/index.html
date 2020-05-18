@@ -7388,7 +7388,18 @@
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(n)$</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(1)$</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="lineno" data-linenos="1 "></span><span class="n">Error</span>
+<div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 2 "></span>  <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isSymmetric</span><span class="p">(</span><span class="n">TreeNode</span> <span class="n">root</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 3 "></span>    <span class="k">return</span> <span class="n">helper</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">root</span><span class="p">);</span>
+<span class="lineno" data-linenos=" 4 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos=" 5 "></span>
+<span class="lineno" data-linenos=" 6 "></span>  <span class="kd">private</span> <span class="kt">boolean</span> <span class="nf">helper</span><span class="p">(</span><span class="n">TreeNode</span> <span class="n">p</span><span class="p">,</span> <span class="n">TreeNode</span> <span class="n">q</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 7 "></span>    <span class="k">if</span> <span class="p">(</span><span class="n">p</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">||</span> <span class="n">q</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span>
+<span class="lineno" data-linenos=" 8 "></span>      <span class="k">return</span> <span class="n">p</span> <span class="o">==</span> <span class="n">q</span><span class="p">;</span>
+<span class="lineno" data-linenos=" 9 "></span>
+<span class="lineno" data-linenos="10 "></span>    <span class="k">return</span> <span class="n">p</span><span class="p">.</span><span class="na">val</span> <span class="o">==</span> <span class="n">q</span><span class="p">.</span><span class="na">val</span> <span class="o">&amp;&amp;</span> <span class="n">helper</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="na">left</span><span class="p">,</span> <span class="n">q</span><span class="p">.</span><span class="na">right</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">helper</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="na">right</span><span class="p">,</span> <span class="n">q</span><span class="p">.</span><span class="na">left</span><span class="p">);</span>
+<span class="lineno" data-linenos="11 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos="12 "></span><span class="p">}</span>
 </code></pre></div>
 
 <h2 id="102-binary-tree-level-order-traversal-starstar">102. Binary Tree Level Order Traversal <a href="https://leetcode.com/problems/binary-tree-level-order-traversal">$\star\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>

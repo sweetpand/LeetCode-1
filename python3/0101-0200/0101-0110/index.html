@@ -5130,6 +5130,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#102-binary-tree-level-order-traversal-starstar" class="md-nav__link">
+    102. Binary Tree Level Order Traversal $\star\star$
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#103-binary-tree-zigzag-level-order-traversal-starstar" class="md-nav__link">
     103. Binary Tree Zigzag Level Order Traversal $\star\star$
   </a>
@@ -7291,6 +7298,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#102-binary-tree-level-order-traversal-starstar" class="md-nav__link">
+    102. Binary Tree Level Order Traversal $\star\star$
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#103-binary-tree-zigzag-level-order-traversal-starstar" class="md-nav__link">
     103. Binary Tree Zigzag Level Order Traversal $\star\star$
   </a>
@@ -7374,37 +7388,46 @@
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(n)$</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(1)$</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="n">Error</span><span class="err">```</span>
-<span class="lineno" data-linenos=" 2 "></span>
-<span class="lineno" data-linenos=" 3 "></span><span class="c1">## 102. Binary Tree Level Order Traversal [$\star\star$](https://leetcode.com/problems/binary-tree-level-order-traversal) :thumbsup:</span>
-<span class="lineno" data-linenos=" 4 "></span>
-<span class="lineno" data-linenos=" 5 "></span><span class="err">!</span><span class="p">[](</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">img</span><span class="o">.</span><span class="n">shields</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">badge</span><span class="o">/-</span><span class="n">Tree</span><span class="o">-</span><span class="mi">227</span><span class="n">D51</span><span class="o">.</span><span class="n">svg</span><span class="err">?</span><span class="n">style</span><span class="o">=</span><span class="n">flat</span><span class="o">-</span><span class="n">square</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+<span class="lineno" data-linenos=" 2 "></span>    <span class="k">def</span> <span class="nf">isSymmetric</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">:</span> <span class="n">TreeNode</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="lineno" data-linenos=" 3 "></span>        <span class="k">def</span> <span class="nf">helper</span><span class="p">(</span><span class="n">p</span><span class="p">:</span> <span class="n">TreeNode</span><span class="p">,</span> <span class="n">q</span><span class="p">:</span> <span class="n">TreeNode</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="lineno" data-linenos=" 4 "></span>            <span class="k">if</span> <span class="ow">not</span> <span class="n">p</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">q</span><span class="p">:</span>
+<span class="lineno" data-linenos=" 5 "></span>                <span class="k">return</span> <span class="n">p</span> <span class="o">==</span> <span class="n">q</span>
 <span class="lineno" data-linenos=" 6 "></span>
-<span class="lineno" data-linenos=" 7 "></span><span class="o">-</span> <span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="n">Time</span><span class="p">:</span> <span class="err">$</span><span class="n">O</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="err">$</span>
-<span class="lineno" data-linenos=" 8 "></span><span class="o">-</span> <span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="n">Space</span><span class="p">:</span> <span class="err">$</span><span class="n">O</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="err">$</span>
+<span class="lineno" data-linenos=" 7 "></span>            <span class="k">return</span> <span class="n">p</span><span class="o">.</span><span class="n">val</span> <span class="o">==</span> <span class="n">q</span><span class="o">.</span><span class="n">val</span> <span class="ow">and</span> \
+<span class="lineno" data-linenos=" 8 "></span>                <span class="n">helper</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">left</span><span class="p">,</span> <span class="n">q</span><span class="o">.</span><span class="n">right</span><span class="p">)</span> <span class="ow">and</span> \
+<span class="lineno" data-linenos=" 9 "></span>                <span class="n">helper</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">right</span><span class="p">,</span> <span class="n">q</span><span class="o">.</span><span class="n">left</span><span class="p">)</span>
+<span class="lineno" data-linenos="10 "></span>
+<span class="lineno" data-linenos="11 "></span>        <span class="k">return</span> <span class="n">helper</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">root</span><span class="p">)</span>
+</code></pre></div>
+
+<h2 id="102-binary-tree-level-order-traversal-starstar">102. Binary Tree Level Order Traversal <a href="https://leetcode.com/problems/binary-tree-level-order-traversal">$\star\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>
+<p><img alt="" src="https://img.shields.io/badge/-Tree-227D51.svg?style=flat-square" /></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(n)$</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(n)$</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+<span class="lineno" data-linenos=" 2 "></span>    <span class="k">def</span> <span class="nf">levelOrder</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">:</span> <span class="n">TreeNode</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]:</span>
+<span class="lineno" data-linenos=" 3 "></span>        <span class="k">if</span> <span class="ow">not</span> <span class="n">root</span><span class="p">:</span>
+<span class="lineno" data-linenos=" 4 "></span>            <span class="k">return</span> <span class="p">[]</span>
+<span class="lineno" data-linenos=" 5 "></span>
+<span class="lineno" data-linenos=" 6 "></span>        <span class="n">ans</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="lineno" data-linenos=" 7 "></span>
+<span class="lineno" data-linenos=" 8 "></span>        <span class="n">queue</span> <span class="o">=</span> <span class="n">collections</span><span class="o">.</span><span class="n">deque</span><span class="p">([</span><span class="n">root</span><span class="p">])</span>
 <span class="lineno" data-linenos=" 9 "></span>
-<span class="lineno" data-linenos="10 "></span><span class="err">```</span><span class="n">python</span>
-<span class="lineno" data-linenos="11 "></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
-<span class="lineno" data-linenos="12 "></span>    <span class="k">def</span> <span class="nf">levelOrder</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">:</span> <span class="n">TreeNode</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]:</span>
-<span class="lineno" data-linenos="13 "></span>        <span class="k">if</span> <span class="ow">not</span> <span class="n">root</span><span class="p">:</span>
-<span class="lineno" data-linenos="14 "></span>            <span class="k">return</span> <span class="p">[]</span>
-<span class="lineno" data-linenos="15 "></span>
-<span class="lineno" data-linenos="16 "></span>        <span class="n">ans</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="lineno" data-linenos="17 "></span>
-<span class="lineno" data-linenos="18 "></span>        <span class="n">queue</span> <span class="o">=</span> <span class="n">collections</span><span class="o">.</span><span class="n">deque</span><span class="p">([</span><span class="n">root</span><span class="p">])</span>
-<span class="lineno" data-linenos="19 "></span>
-<span class="lineno" data-linenos="20 "></span>        <span class="k">while</span> <span class="n">queue</span><span class="p">:</span>
-<span class="lineno" data-linenos="21 "></span>            <span class="n">currLevel</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="lineno" data-linenos="22 "></span>            <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">queue</span><span class="p">)):</span>
-<span class="lineno" data-linenos="23 "></span>                <span class="n">node</span> <span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="n">popleft</span><span class="p">()</span>
-<span class="lineno" data-linenos="24 "></span>                <span class="n">currLevel</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
-<span class="lineno" data-linenos="25 "></span>                <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">left</span><span class="p">:</span>
-<span class="lineno" data-linenos="26 "></span>                    <span class="n">queue</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">left</span><span class="p">)</span>
-<span class="lineno" data-linenos="27 "></span>                <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">right</span><span class="p">:</span>
-<span class="lineno" data-linenos="28 "></span>                    <span class="n">queue</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
-<span class="lineno" data-linenos="29 "></span>            <span class="n">ans</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">currLevel</span><span class="p">)</span>
-<span class="lineno" data-linenos="30 "></span>
-<span class="lineno" data-linenos="31 "></span>        <span class="k">return</span> <span class="n">ans</span>
+<span class="lineno" data-linenos="10 "></span>        <span class="k">while</span> <span class="n">queue</span><span class="p">:</span>
+<span class="lineno" data-linenos="11 "></span>            <span class="n">currLevel</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="lineno" data-linenos="12 "></span>            <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">queue</span><span class="p">)):</span>
+<span class="lineno" data-linenos="13 "></span>                <span class="n">node</span> <span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="n">popleft</span><span class="p">()</span>
+<span class="lineno" data-linenos="14 "></span>                <span class="n">currLevel</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
+<span class="lineno" data-linenos="15 "></span>                <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">left</span><span class="p">:</span>
+<span class="lineno" data-linenos="16 "></span>                    <span class="n">queue</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">left</span><span class="p">)</span>
+<span class="lineno" data-linenos="17 "></span>                <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">right</span><span class="p">:</span>
+<span class="lineno" data-linenos="18 "></span>                    <span class="n">queue</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
+<span class="lineno" data-linenos="19 "></span>            <span class="n">ans</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">currLevel</span><span class="p">)</span>
+<span class="lineno" data-linenos="20 "></span>
+<span class="lineno" data-linenos="21 "></span>        <span class="k">return</span> <span class="n">ans</span>
 </code></pre></div>
 
 <h2 id="103-binary-tree-zigzag-level-order-traversal-starstar">103. Binary Tree Zigzag Level Order Traversal <a href="https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal">$\star\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>

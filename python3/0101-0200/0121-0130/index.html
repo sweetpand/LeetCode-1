@@ -5168,6 +5168,48 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#124-binary-tree-maximum-path-sum-starstarstar" class="md-nav__link">
+    124. Binary Tree Maximum Path Sum $\star\star\star$
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#125-valid-palindrome-star" class="md-nav__link">
+    125. Valid Palindrome $\star$
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#126-word-ladder-ii-starstarstar" class="md-nav__link">
+    126. Word Ladder II $\star\star\star$
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#127-word-ladder-starstar" class="md-nav__link">
+    127. Word Ladder $\star\star$
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#128-longest-consecutive-sequence-starstarstar" class="md-nav__link">
+    128. Longest Consecutive Sequence $\star\star\star$
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#129-sum-root-to-leaf-numbers-starstar" class="md-nav__link">
+    129. Sum Root to Leaf Numbers $\star\star$
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#130-surrounded-regions-starstar" class="md-nav__link">
     130. Surrounded Regions $\star\star$
   </a>
@@ -7270,6 +7312,48 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#124-binary-tree-maximum-path-sum-starstarstar" class="md-nav__link">
+    124. Binary Tree Maximum Path Sum $\star\star\star$
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#125-valid-palindrome-star" class="md-nav__link">
+    125. Valid Palindrome $\star$
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#126-word-ladder-ii-starstarstar" class="md-nav__link">
+    126. Word Ladder II $\star\star\star$
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#127-word-ladder-starstar" class="md-nav__link">
+    127. Word Ladder $\star\star$
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#128-longest-consecutive-sequence-starstarstar" class="md-nav__link">
+    128. Longest Consecutive Sequence $\star\star\star$
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#129-sum-root-to-leaf-numbers-starstar" class="md-nav__link">
+    129. Sum Root to Leaf Numbers $\star\star$
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#130-surrounded-regions-starstar" class="md-nav__link">
     130. Surrounded Regions $\star\star$
   </a>
@@ -7340,79 +7424,202 @@
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(n)$</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(1)$</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="n">Error</span><span class="err">```</span>
-<span class="lineno" data-linenos=" 2 "></span>
-<span class="lineno" data-linenos=" 3 "></span><span class="c1">## 124. Binary Tree Maximum Path Sum [$\star\star\star$](https://leetcode.com/problems/binary-tree-maximum-path-sum) :thumbsup:</span>
-<span class="lineno" data-linenos=" 4 "></span>
-<span class="lineno" data-linenos=" 5 "></span><span class="err">!</span><span class="p">[](</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">img</span><span class="o">.</span><span class="n">shields</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">badge</span><span class="o">/-</span><span class="n">Depth</span><span class="o">%</span><span class="mi">20</span><span class="n">First</span><span class="o">%</span><span class="mi">20</span><span class="n">Search</span><span class="o">-</span><span class="mi">86</span><span class="n">C166</span><span class="o">.</span><span class="n">svg</span><span class="err">?</span><span class="n">style</span><span class="o">=</span><span class="n">flat</span><span class="o">-</span><span class="n">square</span><span class="p">)</span> <span class="err">!</span><span class="p">[](</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">img</span><span class="o">.</span><span class="n">shields</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">badge</span><span class="o">/-</span><span class="n">Tree</span><span class="o">-</span><span class="mi">227</span><span class="n">D51</span><span class="o">.</span><span class="n">svg</span><span class="err">?</span><span class="n">style</span><span class="o">=</span><span class="n">flat</span><span class="o">-</span><span class="n">square</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+<span class="lineno" data-linenos=" 2 "></span>    <span class="k">def</span> <span class="nf">maxProfit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prices</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="lineno" data-linenos=" 3 "></span>        <span class="n">sellTwo</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="lineno" data-linenos=" 4 "></span>        <span class="n">holdTwo</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;-inf&#39;</span><span class="p">)</span>
+<span class="lineno" data-linenos=" 5 "></span>        <span class="n">sellOne</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="lineno" data-linenos=" 6 "></span>        <span class="n">holdOne</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;-inf&#39;</span><span class="p">)</span>
+<span class="lineno" data-linenos=" 7 "></span>
+<span class="lineno" data-linenos=" 8 "></span>        <span class="k">for</span> <span class="n">price</span> <span class="ow">in</span> <span class="n">prices</span><span class="p">:</span>
+<span class="lineno" data-linenos=" 9 "></span>            <span class="n">sellTwo</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">sellTwo</span><span class="p">,</span> <span class="n">holdTwo</span> <span class="o">+</span> <span class="n">price</span><span class="p">)</span>
+<span class="lineno" data-linenos="10 "></span>            <span class="n">holdTwo</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">holdTwo</span><span class="p">,</span> <span class="n">sellOne</span> <span class="o">-</span> <span class="n">price</span><span class="p">)</span>
+<span class="lineno" data-linenos="11 "></span>            <span class="n">sellOne</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">sellOne</span><span class="p">,</span> <span class="n">holdOne</span> <span class="o">+</span> <span class="n">price</span><span class="p">)</span>
+<span class="lineno" data-linenos="12 "></span>            <span class="n">holdOne</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">holdOne</span><span class="p">,</span> <span class="o">-</span><span class="n">price</span><span class="p">)</span>
+<span class="lineno" data-linenos="13 "></span>
+<span class="lineno" data-linenos="14 "></span>        <span class="k">return</span> <span class="n">sellTwo</span>
+</code></pre></div>
+
+<h2 id="124-binary-tree-maximum-path-sum-starstarstar">124. Binary Tree Maximum Path Sum <a href="https://leetcode.com/problems/binary-tree-maximum-path-sum">$\star\star\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>
+<p><img alt="" src="https://img.shields.io/badge/-Depth%20First%20Search-86C166.svg?style=flat-square" /> <img alt="" src="https://img.shields.io/badge/-Tree-227D51.svg?style=flat-square" /></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(n)$</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(1)$</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+<span class="lineno" data-linenos=" 2 "></span>    <span class="k">def</span> <span class="nf">maxPathSum</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">:</span> <span class="n">TreeNode</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="lineno" data-linenos=" 3 "></span>        <span class="k">def</span> <span class="nf">maxPathSumDownFrom</span><span class="p">(</span><span class="n">root</span><span class="p">:</span> <span class="n">TreeNode</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="lineno" data-linenos=" 4 "></span>            <span class="k">if</span> <span class="ow">not</span> <span class="n">root</span><span class="p">:</span>
+<span class="lineno" data-linenos=" 5 "></span>                <span class="k">return</span> <span class="mi">0</span>
 <span class="lineno" data-linenos=" 6 "></span>
-<span class="lineno" data-linenos=" 7 "></span><span class="o">-</span> <span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="n">Time</span><span class="p">:</span> <span class="err">$</span><span class="n">O</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="err">$</span>
-<span class="lineno" data-linenos=" 8 "></span><span class="o">-</span> <span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="n">Space</span><span class="p">:</span> <span class="err">$</span><span class="n">O</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="err">$</span>
-<span class="lineno" data-linenos=" 9 "></span>
-<span class="lineno" data-linenos="10 "></span><span class="err">```</span><span class="n">python</span>
-<span class="lineno" data-linenos="11 "></span><span class="n">Error</span><span class="err">```</span>
+<span class="lineno" data-linenos=" 7 "></span>            <span class="n">left</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">maxPathSumDownFrom</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">left</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
+<span class="lineno" data-linenos=" 8 "></span>            <span class="n">right</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">maxPathSumDownFrom</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">right</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
+<span class="lineno" data-linenos=" 9 "></span>            <span class="bp">self</span><span class="o">.</span><span class="n">ans</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ans</span><span class="p">,</span> <span class="n">root</span><span class="o">.</span><span class="n">val</span> <span class="o">+</span> <span class="n">left</span> <span class="o">+</span> <span class="n">right</span><span class="p">)</span>
+<span class="lineno" data-linenos="10 "></span>
+<span class="lineno" data-linenos="11 "></span>            <span class="k">return</span> <span class="n">root</span><span class="o">.</span><span class="n">val</span> <span class="o">+</span> <span class="nb">max</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span>
 <span class="lineno" data-linenos="12 "></span>
-<span class="lineno" data-linenos="13 "></span><span class="c1">## 125. Valid Palindrome [$\star$](https://leetcode.com/problems/valid-palindrome) :thumbsdown:</span>
+<span class="lineno" data-linenos="13 "></span>        <span class="bp">self</span><span class="o">.</span><span class="n">ans</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;-inf&#39;</span><span class="p">)</span>
 <span class="lineno" data-linenos="14 "></span>
-<span class="lineno" data-linenos="15 "></span><span class="err">!</span><span class="p">[](</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">img</span><span class="o">.</span><span class="n">shields</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">badge</span><span class="o">/-</span><span class="n">Two</span><span class="o">%</span><span class="mi">20</span><span class="n">Pointers</span><span class="o">-</span><span class="mi">2</span><span class="n">EA9DF</span><span class="o">.</span><span class="n">svg</span><span class="err">?</span><span class="n">style</span><span class="o">=</span><span class="n">flat</span><span class="o">-</span><span class="n">square</span><span class="p">)</span>
+<span class="lineno" data-linenos="15 "></span>        <span class="n">maxPathSumDownFrom</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
 <span class="lineno" data-linenos="16 "></span>
-<span class="lineno" data-linenos="17 "></span><span class="o">-</span> <span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="n">Time</span><span class="p">:</span> <span class="err">$</span><span class="n">O</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="err">$</span>
-<span class="lineno" data-linenos="18 "></span><span class="o">-</span> <span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="n">Space</span><span class="p">:</span> <span class="err">$</span><span class="n">O</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="err">$</span>
-<span class="lineno" data-linenos="19 "></span>
-<span class="lineno" data-linenos="20 "></span><span class="err">```</span><span class="n">python</span>
-<span class="lineno" data-linenos="21 "></span><span class="n">Error</span><span class="err">```</span>
+<span class="lineno" data-linenos="17 "></span>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">ans</span>
+</code></pre></div>
+
+<h2 id="125-valid-palindrome-star">125. Valid Palindrome <a href="https://leetcode.com/problems/valid-palindrome">$\star$</a> <img alt="👎" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44e.svg" title=":thumbsdown:" /></h2>
+<p><img alt="" src="https://img.shields.io/badge/-Two%20Pointers-2EA9DF.svg?style=flat-square" /></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(n)$</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(1)$</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+<span class="lineno" data-linenos=" 2 "></span>    <span class="k">def</span> <span class="nf">isPalindrome</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="lineno" data-linenos=" 3 "></span>        <span class="n">l</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="lineno" data-linenos=" 4 "></span>        <span class="n">r</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="lineno" data-linenos=" 5 "></span>
+<span class="lineno" data-linenos=" 6 "></span>        <span class="k">while</span> <span class="n">l</span> <span class="o">&lt;</span> <span class="n">r</span><span class="p">:</span>
+<span class="lineno" data-linenos=" 7 "></span>            <span class="k">while</span> <span class="n">l</span> <span class="o">&lt;</span> <span class="n">r</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">s</span><span class="p">[</span><span class="n">l</span><span class="p">]</span><span class="o">.</span><span class="n">isalnum</span><span class="p">():</span>
+<span class="lineno" data-linenos=" 8 "></span>                <span class="n">l</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="lineno" data-linenos=" 9 "></span>            <span class="k">while</span> <span class="n">l</span> <span class="o">&lt;</span> <span class="n">r</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">s</span><span class="p">[</span><span class="n">r</span><span class="p">]</span><span class="o">.</span><span class="n">isalnum</span><span class="p">():</span>
+<span class="lineno" data-linenos="10 "></span>                <span class="n">r</span> <span class="o">-=</span> <span class="mi">1</span>
+<span class="lineno" data-linenos="11 "></span>            <span class="k">if</span> <span class="n">s</span><span class="p">[</span><span class="n">l</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">!=</span> <span class="n">s</span><span class="p">[</span><span class="n">r</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+<span class="lineno" data-linenos="12 "></span>                <span class="k">return</span> <span class="kc">False</span>
+<span class="lineno" data-linenos="13 "></span>            <span class="n">l</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="lineno" data-linenos="14 "></span>            <span class="n">r</span> <span class="o">-=</span> <span class="mi">1</span>
+<span class="lineno" data-linenos="15 "></span>
+<span class="lineno" data-linenos="16 "></span>        <span class="k">return</span> <span class="kc">True</span>
+</code></pre></div>
+
+<h2 id="126-word-ladder-ii-starstarstar">126. Word Ladder II <a href="https://leetcode.com/problems/word-ladder-ii">$\star\star\star$</a> <img alt="💪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4aa.svg" title=":muscle:" /></h2>
+<p><img alt="" src="https://img.shields.io/badge/-Backtracking-D0104C.svg?style=flat-square" /></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(n26^l)$, where <code>n = len(wordList)</code> and <code>l = len(word)</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(n + kl)$, where <code>k = #paths</code></li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+<span class="lineno" data-linenos=" 2 "></span>    <span class="k">def</span> <span class="nf">findLadders</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">beginWord</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">endWord</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">wordList</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]:</span>
+<span class="lineno" data-linenos=" 3 "></span>        <span class="k">def</span> <span class="nf">dfs</span><span class="p">(</span><span class="n">word</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="lineno" data-linenos=" 4 "></span>            <span class="k">if</span> <span class="n">word</span> <span class="o">==</span> <span class="n">endWord</span><span class="p">:</span>
+<span class="lineno" data-linenos=" 5 "></span>                <span class="n">ans</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+<span class="lineno" data-linenos=" 6 "></span>                <span class="k">return</span>
+<span class="lineno" data-linenos=" 7 "></span>            <span class="k">if</span> <span class="n">word</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="lineno" data-linenos=" 8 "></span>                <span class="k">return</span>
+<span class="lineno" data-linenos=" 9 "></span>
+<span class="lineno" data-linenos="10 "></span>            <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="nb">dict</span><span class="p">[</span><span class="n">word</span><span class="p">]:</span>
+<span class="lineno" data-linenos="11 "></span>                <span class="n">dfs</span><span class="p">(</span><span class="n">child</span><span class="p">,</span> <span class="n">path</span> <span class="o">+</span> <span class="p">[</span><span class="n">child</span><span class="p">])</span>
+<span class="lineno" data-linenos="12 "></span>
+<span class="lineno" data-linenos="13 "></span>        <span class="n">ans</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="lineno" data-linenos="14 "></span>        <span class="n">wordList</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">wordList</span><span class="p">)</span>
+<span class="lineno" data-linenos="15 "></span>
+<span class="lineno" data-linenos="16 "></span>        <span class="k">if</span> <span class="n">endWord</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">wordList</span><span class="p">:</span>
+<span class="lineno" data-linenos="17 "></span>            <span class="k">return</span> <span class="n">ans</span>
+<span class="lineno" data-linenos="18 "></span>
+<span class="lineno" data-linenos="19 "></span>        <span class="n">set1</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="n">beginWord</span><span class="p">])</span>
+<span class="lineno" data-linenos="20 "></span>        <span class="nb">dict</span> <span class="o">=</span> <span class="n">collections</span><span class="o">.</span><span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+<span class="lineno" data-linenos="21 "></span>        <span class="n">isFound</span> <span class="o">=</span> <span class="kc">False</span>
 <span class="lineno" data-linenos="22 "></span>
-<span class="lineno" data-linenos="23 "></span><span class="c1">## 126. Word Ladder II [$\star\star\star$](https://leetcode.com/problems/word-ladder-ii) :muscle:</span>
-<span class="lineno" data-linenos="24 "></span>
-<span class="lineno" data-linenos="25 "></span><span class="err">!</span><span class="p">[](</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">img</span><span class="o">.</span><span class="n">shields</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">badge</span><span class="o">/-</span><span class="n">Backtracking</span><span class="o">-</span><span class="n">D0104C</span><span class="o">.</span><span class="n">svg</span><span class="err">?</span><span class="n">style</span><span class="o">=</span><span class="n">flat</span><span class="o">-</span><span class="n">square</span><span class="p">)</span>
-<span class="lineno" data-linenos="26 "></span>
-<span class="lineno" data-linenos="27 "></span><span class="o">-</span> <span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="n">Time</span><span class="p">:</span> <span class="err">$</span><span class="n">O</span><span class="p">(</span><span class="n">n26</span><span class="o">^</span><span class="n">l</span><span class="p">)</span><span class="err">$</span><span class="p">,</span> <span class="n">where</span> <span class="err">`</span><span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">wordList</span><span class="p">)</span><span class="err">`</span> <span class="ow">and</span> <span class="err">`</span><span class="n">l</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span><span class="err">`</span>
-<span class="lineno" data-linenos="28 "></span><span class="o">-</span> <span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="n">Space</span><span class="p">:</span> <span class="err">$</span><span class="n">O</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="n">kl</span><span class="p">)</span><span class="err">$</span><span class="p">,</span> <span class="n">where</span> <span class="err">`</span><span class="n">k</span> <span class="o">=</span> <span class="c1">#paths`</span>
+<span class="lineno" data-linenos="23 "></span>        <span class="k">while</span> <span class="n">set1</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">isFound</span><span class="p">:</span>
+<span class="lineno" data-linenos="24 "></span>            <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">set1</span><span class="p">:</span>
+<span class="lineno" data-linenos="25 "></span>                <span class="n">wordList</span><span class="o">.</span><span class="n">discard</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+<span class="lineno" data-linenos="26 "></span>            <span class="n">tempSet</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+<span class="lineno" data-linenos="27 "></span>            <span class="k">for</span> <span class="n">parent</span> <span class="ow">in</span> <span class="n">set1</span><span class="p">:</span>
+<span class="lineno" data-linenos="28 "></span>                <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">parent</span><span class="p">)):</span>
+<span class="lineno" data-linenos="29 "></span>                    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">string</span><span class="o">.</span><span class="n">ascii_lowercase</span><span class="p">:</span>
+<span class="lineno" data-linenos="30 "></span>                        <span class="n">newWord</span> <span class="o">=</span> <span class="n">parent</span><span class="p">[:</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">j</span> <span class="o">+</span> <span class="n">parent</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:]</span>
+<span class="lineno" data-linenos="31 "></span>                        <span class="k">if</span> <span class="n">newWord</span> <span class="o">==</span> <span class="n">endWord</span><span class="p">:</span>
+<span class="lineno" data-linenos="32 "></span>                            <span class="nb">dict</span><span class="p">[</span><span class="n">parent</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">newWord</span><span class="p">)</span>
+<span class="lineno" data-linenos="33 "></span>                            <span class="n">isFound</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="lineno" data-linenos="34 "></span>                        <span class="k">elif</span> <span class="n">newWord</span> <span class="ow">in</span> <span class="n">wordList</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">isFound</span><span class="p">:</span>
+<span class="lineno" data-linenos="35 "></span>                            <span class="n">tempSet</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">newWord</span><span class="p">)</span>
+<span class="lineno" data-linenos="36 "></span>                            <span class="nb">dict</span><span class="p">[</span><span class="n">parent</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">newWord</span><span class="p">)</span>
+<span class="lineno" data-linenos="37 "></span>            <span class="n">set1</span> <span class="o">=</span> <span class="n">tempSet</span>
+<span class="lineno" data-linenos="38 "></span>
+<span class="lineno" data-linenos="39 "></span>        <span class="k">if</span> <span class="n">isFound</span><span class="p">:</span>
+<span class="lineno" data-linenos="40 "></span>            <span class="n">dfs</span><span class="p">(</span><span class="n">beginWord</span><span class="p">,</span> <span class="p">[</span><span class="n">beginWord</span><span class="p">])</span>
+<span class="lineno" data-linenos="41 "></span>
+<span class="lineno" data-linenos="42 "></span>        <span class="k">return</span> <span class="n">ans</span>
+</code></pre></div>
+
+<h2 id="127-word-ladder-starstar">127. Word Ladder <a href="https://leetcode.com/problems/word-ladder">$\star\star$</a> <img alt="💪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4aa.svg" title=":muscle:" /></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(n26^l)$, where <code>n = len(wordList)</code> and <code>l = len(word)</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(n)$</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+<span class="lineno" data-linenos=" 2 "></span>    <span class="k">def</span> <span class="nf">ladderLength</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">beginWord</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">endWord</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">wordList</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="lineno" data-linenos=" 3 "></span>        <span class="n">wordList</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">wordList</span><span class="p">)</span>
+<span class="lineno" data-linenos=" 4 "></span>
+<span class="lineno" data-linenos=" 5 "></span>        <span class="k">if</span> <span class="n">endWord</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">wordList</span><span class="p">:</span>
+<span class="lineno" data-linenos=" 6 "></span>            <span class="k">return</span> <span class="mi">0</span>
+<span class="lineno" data-linenos=" 7 "></span>
+<span class="lineno" data-linenos=" 8 "></span>        <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="lineno" data-linenos=" 9 "></span>
+<span class="lineno" data-linenos="10 "></span>        <span class="n">set1</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="n">beginWord</span><span class="p">])</span>
+<span class="lineno" data-linenos="11 "></span>        <span class="n">set2</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="n">endWord</span><span class="p">])</span>
+<span class="lineno" data-linenos="12 "></span>
+<span class="lineno" data-linenos="13 "></span>        <span class="k">while</span> <span class="n">set1</span> <span class="ow">and</span> <span class="n">set2</span><span class="p">:</span>
+<span class="lineno" data-linenos="14 "></span>            <span class="n">ans</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="lineno" data-linenos="15 "></span>            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">set1</span><span class="p">)</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">set2</span><span class="p">):</span>
+<span class="lineno" data-linenos="16 "></span>                <span class="n">set1</span><span class="p">,</span> <span class="n">set2</span> <span class="o">=</span> <span class="n">set2</span><span class="p">,</span> <span class="n">set1</span>
+<span class="lineno" data-linenos="17 "></span>            <span class="n">tempSet</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+<span class="lineno" data-linenos="18 "></span>            <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">set1</span><span class="p">:</span>
+<span class="lineno" data-linenos="19 "></span>                <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)):</span>
+<span class="lineno" data-linenos="20 "></span>                    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">string</span><span class="o">.</span><span class="n">ascii_lowercase</span><span class="p">:</span>
+<span class="lineno" data-linenos="21 "></span>                        <span class="n">newWord</span> <span class="o">=</span> <span class="n">word</span><span class="p">[:</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">j</span> <span class="o">+</span> <span class="n">word</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:]</span>
+<span class="lineno" data-linenos="22 "></span>                        <span class="k">if</span> <span class="n">newWord</span> <span class="ow">in</span> <span class="n">set2</span><span class="p">:</span>
+<span class="lineno" data-linenos="23 "></span>                            <span class="k">return</span> <span class="n">ans</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="lineno" data-linenos="24 "></span>                        <span class="k">if</span> <span class="n">newWord</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">wordList</span><span class="p">:</span>
+<span class="lineno" data-linenos="25 "></span>                            <span class="k">continue</span>
+<span class="lineno" data-linenos="26 "></span>                        <span class="n">wordList</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">newWord</span><span class="p">)</span>
+<span class="lineno" data-linenos="27 "></span>                        <span class="n">tempSet</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">newWord</span><span class="p">)</span>
+<span class="lineno" data-linenos="28 "></span>            <span class="n">set1</span> <span class="o">=</span> <span class="n">tempSet</span>
 <span class="lineno" data-linenos="29 "></span>
-<span class="lineno" data-linenos="30 "></span><span class="err">```</span><span class="n">python</span>
-<span class="lineno" data-linenos="31 "></span><span class="n">Error</span><span class="err">```</span>
-<span class="lineno" data-linenos="32 "></span>
-<span class="lineno" data-linenos="33 "></span><span class="c1">## 127. Word Ladder [$\star\star$](https://leetcode.com/problems/word-ladder) :muscle:</span>
-<span class="lineno" data-linenos="34 "></span>
-<span class="lineno" data-linenos="35 "></span><span class="o">-</span> <span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="n">Time</span><span class="p">:</span> <span class="err">$</span><span class="n">O</span><span class="p">(</span><span class="n">n26</span><span class="o">^</span><span class="n">l</span><span class="p">)</span><span class="err">$</span><span class="p">,</span> <span class="n">where</span> <span class="err">`</span><span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">wordList</span><span class="p">)</span><span class="err">`</span> <span class="ow">and</span> <span class="err">`</span><span class="n">l</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span><span class="err">`</span>
-<span class="lineno" data-linenos="36 "></span><span class="o">-</span> <span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="n">Space</span><span class="p">:</span> <span class="err">$</span><span class="n">O</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="err">$</span>
-<span class="lineno" data-linenos="37 "></span>
-<span class="lineno" data-linenos="38 "></span><span class="err">```</span><span class="n">python</span>
-<span class="lineno" data-linenos="39 "></span><span class="n">Error</span><span class="err">```</span>
-<span class="lineno" data-linenos="40 "></span>
-<span class="lineno" data-linenos="41 "></span><span class="c1">## 128. Longest Consecutive Sequence [$\star\star\star$](https://leetcode.com/problems/longest-consecutive-sequence) :muscle:</span>
-<span class="lineno" data-linenos="42 "></span>
-<span class="lineno" data-linenos="43 "></span><span class="o">-</span> <span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="n">Time</span><span class="p">:</span> <span class="err">$</span><span class="n">O</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="err">$</span>
-<span class="lineno" data-linenos="44 "></span><span class="o">-</span> <span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="n">Space</span><span class="p">:</span> <span class="err">$</span><span class="n">O</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="err">$</span>
-<span class="lineno" data-linenos="45 "></span>
-<span class="lineno" data-linenos="46 "></span><span class="err">```</span><span class="n">python</span>
-<span class="lineno" data-linenos="47 "></span><span class="n">Error</span><span class="err">```</span>
-<span class="lineno" data-linenos="48 "></span>
-<span class="lineno" data-linenos="49 "></span><span class="c1">## 129. Sum Root to Leaf Numbers [$\star\star$](https://leetcode.com/problems/sum-root-to-leaf-numbers) :thumbsup:</span>
-<span class="lineno" data-linenos="50 "></span>
-<span class="lineno" data-linenos="51 "></span><span class="err">!</span><span class="p">[](</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">img</span><span class="o">.</span><span class="n">shields</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">badge</span><span class="o">/-</span><span class="n">Depth</span><span class="o">%</span><span class="mi">20</span><span class="n">First</span><span class="o">%</span><span class="mi">20</span><span class="n">Search</span><span class="o">-</span><span class="mi">86</span><span class="n">C166</span><span class="o">.</span><span class="n">svg</span><span class="err">?</span><span class="n">style</span><span class="o">=</span><span class="n">flat</span><span class="o">-</span><span class="n">square</span><span class="p">)</span> <span class="err">!</span><span class="p">[](</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">img</span><span class="o">.</span><span class="n">shields</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">badge</span><span class="o">/-</span><span class="n">Tree</span><span class="o">-</span><span class="mi">227</span><span class="n">D51</span><span class="o">.</span><span class="n">svg</span><span class="err">?</span><span class="n">style</span><span class="o">=</span><span class="n">flat</span><span class="o">-</span><span class="n">square</span><span class="p">)</span>
-<span class="lineno" data-linenos="52 "></span>
-<span class="lineno" data-linenos="53 "></span><span class="o">-</span> <span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="n">Time</span><span class="p">:</span> <span class="err">$</span><span class="n">O</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="err">$</span>
-<span class="lineno" data-linenos="54 "></span><span class="o">-</span> <span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="n">Space</span><span class="p">:</span> <span class="err">$</span><span class="n">O</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="err">$</span>
-<span class="lineno" data-linenos="55 "></span>
-<span class="lineno" data-linenos="56 "></span><span class="err">```</span><span class="n">python</span>
-<span class="lineno" data-linenos="57 "></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
-<span class="lineno" data-linenos="58 "></span>    <span class="k">def</span> <span class="nf">sumNumbers</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">:</span> <span class="n">TreeNode</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-<span class="lineno" data-linenos="59 "></span>        <span class="k">def</span> <span class="nf">dfs</span><span class="p">(</span><span class="n">root</span><span class="p">:</span> <span class="n">TreeNode</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="lineno" data-linenos="60 "></span>            <span class="k">if</span> <span class="ow">not</span> <span class="n">root</span><span class="p">:</span>
-<span class="lineno" data-linenos="61 "></span>                <span class="k">return</span>
-<span class="lineno" data-linenos="62 "></span>            <span class="k">if</span> <span class="ow">not</span> <span class="n">root</span><span class="o">.</span><span class="n">left</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">root</span><span class="o">.</span><span class="n">right</span><span class="p">:</span>
-<span class="lineno" data-linenos="63 "></span>                <span class="bp">self</span><span class="o">.</span><span class="n">ans</span> <span class="o">+=</span> <span class="n">path</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">root</span><span class="o">.</span><span class="n">val</span>
-<span class="lineno" data-linenos="64 "></span>                <span class="k">return</span>
-<span class="lineno" data-linenos="65 "></span>
-<span class="lineno" data-linenos="66 "></span>            <span class="n">dfs</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">left</span><span class="p">,</span> <span class="n">path</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">root</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
-<span class="lineno" data-linenos="67 "></span>            <span class="n">dfs</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">right</span><span class="p">,</span> <span class="n">path</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">root</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
-<span class="lineno" data-linenos="68 "></span>
-<span class="lineno" data-linenos="69 "></span>        <span class="bp">self</span><span class="o">.</span><span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="lineno" data-linenos="70 "></span>
-<span class="lineno" data-linenos="71 "></span>        <span class="n">dfs</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<span class="lineno" data-linenos="72 "></span>
-<span class="lineno" data-linenos="73 "></span>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">ans</span>
+<span class="lineno" data-linenos="30 "></span>        <span class="k">return</span> <span class="mi">0</span>
+</code></pre></div>
+
+<h2 id="128-longest-consecutive-sequence-starstarstar">128. Longest Consecutive Sequence <a href="https://leetcode.com/problems/longest-consecutive-sequence">$\star\star\star$</a> <img alt="💪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4aa.svg" title=":muscle:" /></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(n)$</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(n)$</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+<span class="lineno" data-linenos=" 2 "></span>    <span class="k">def</span> <span class="nf">longestConsecutive</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="lineno" data-linenos=" 3 "></span>        <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="lineno" data-linenos=" 4 "></span>        <span class="n">numsSet</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+<span class="lineno" data-linenos=" 5 "></span>
+<span class="lineno" data-linenos=" 6 "></span>        <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">nums</span><span class="p">:</span>
+<span class="lineno" data-linenos=" 7 "></span>            <span class="k">if</span> <span class="n">num</span> <span class="o">-</span> <span class="mi">1</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">numsSet</span><span class="p">:</span>
+<span class="lineno" data-linenos=" 8 "></span>                <span class="n">length</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="lineno" data-linenos=" 9 "></span>                <span class="k">while</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">numsSet</span><span class="p">:</span>
+<span class="lineno" data-linenos="10 "></span>                    <span class="n">num</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="lineno" data-linenos="11 "></span>                    <span class="n">length</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="lineno" data-linenos="12 "></span>                <span class="n">ans</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">ans</span><span class="p">,</span> <span class="n">length</span><span class="p">)</span>
+<span class="lineno" data-linenos="13 "></span>
+<span class="lineno" data-linenos="14 "></span>        <span class="k">return</span> <span class="n">ans</span>
+</code></pre></div>
+
+<h2 id="129-sum-root-to-leaf-numbers-starstar">129. Sum Root to Leaf Numbers <a href="https://leetcode.com/problems/sum-root-to-leaf-numbers">$\star\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>
+<p><img alt="" src="https://img.shields.io/badge/-Depth%20First%20Search-86C166.svg?style=flat-square" /> <img alt="" src="https://img.shields.io/badge/-Tree-227D51.svg?style=flat-square" /></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(n)$</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(1)$</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+<span class="lineno" data-linenos=" 2 "></span>    <span class="k">def</span> <span class="nf">sumNumbers</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">:</span> <span class="n">TreeNode</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="lineno" data-linenos=" 3 "></span>        <span class="k">def</span> <span class="nf">dfs</span><span class="p">(</span><span class="n">root</span><span class="p">:</span> <span class="n">TreeNode</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="lineno" data-linenos=" 4 "></span>            <span class="k">if</span> <span class="ow">not</span> <span class="n">root</span><span class="p">:</span>
+<span class="lineno" data-linenos=" 5 "></span>                <span class="k">return</span>
+<span class="lineno" data-linenos=" 6 "></span>            <span class="k">if</span> <span class="ow">not</span> <span class="n">root</span><span class="o">.</span><span class="n">left</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">root</span><span class="o">.</span><span class="n">right</span><span class="p">:</span>
+<span class="lineno" data-linenos=" 7 "></span>                <span class="bp">self</span><span class="o">.</span><span class="n">ans</span> <span class="o">+=</span> <span class="n">path</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">root</span><span class="o">.</span><span class="n">val</span>
+<span class="lineno" data-linenos=" 8 "></span>                <span class="k">return</span>
+<span class="lineno" data-linenos=" 9 "></span>
+<span class="lineno" data-linenos="10 "></span>            <span class="n">dfs</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">left</span><span class="p">,</span> <span class="n">path</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">root</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
+<span class="lineno" data-linenos="11 "></span>            <span class="n">dfs</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">right</span><span class="p">,</span> <span class="n">path</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">root</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
+<span class="lineno" data-linenos="12 "></span>
+<span class="lineno" data-linenos="13 "></span>        <span class="bp">self</span><span class="o">.</span><span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="lineno" data-linenos="14 "></span>
+<span class="lineno" data-linenos="15 "></span>        <span class="n">dfs</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="lineno" data-linenos="16 "></span>
+<span class="lineno" data-linenos="17 "></span>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">ans</span>
 </code></pre></div>
 
 <h2 id="130-surrounded-regions-starstar">130. Surrounded Regions <a href="https://leetcode.com/problems/surrounded-regions">$\star\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>

@@ -7432,7 +7432,44 @@
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(n)$</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(1)$</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="lineno" data-linenos="1 "></span><span class="n">Error</span>
+<div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 2 "></span>  <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isPalindrome</span><span class="p">(</span><span class="n">ListNode</span> <span class="n">head</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 3 "></span>    <span class="n">ListNode</span> <span class="n">slow</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span>
+<span class="lineno" data-linenos=" 4 "></span>    <span class="n">ListNode</span> <span class="n">fast</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span>
+<span class="lineno" data-linenos=" 5 "></span>
+<span class="lineno" data-linenos=" 6 "></span>    <span class="k">while</span> <span class="p">(</span><span class="n">fast</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">fast</span><span class="p">.</span><span class="na">next</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 7 "></span>      <span class="n">slow</span> <span class="o">=</span> <span class="n">slow</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+<span class="lineno" data-linenos=" 8 "></span>      <span class="n">fast</span> <span class="o">=</span> <span class="n">fast</span><span class="p">.</span><span class="na">next</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+<span class="lineno" data-linenos=" 9 "></span>    <span class="p">}</span>
+<span class="lineno" data-linenos="10 "></span>
+<span class="lineno" data-linenos="11 "></span>    <span class="k">if</span> <span class="p">(</span><span class="n">fast</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span>
+<span class="lineno" data-linenos="12 "></span>      <span class="n">slow</span> <span class="o">=</span> <span class="n">slow</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+<span class="lineno" data-linenos="13 "></span>    <span class="n">slow</span> <span class="o">=</span> <span class="n">reverseList</span><span class="p">(</span><span class="n">slow</span><span class="p">);</span>
+<span class="lineno" data-linenos="14 "></span>
+<span class="lineno" data-linenos="15 "></span>    <span class="k">while</span> <span class="p">(</span><span class="n">slow</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos="16 "></span>      <span class="k">if</span> <span class="p">(</span><span class="n">slow</span><span class="p">.</span><span class="na">val</span> <span class="o">!=</span> <span class="n">head</span><span class="p">.</span><span class="na">val</span><span class="p">)</span>
+<span class="lineno" data-linenos="17 "></span>        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+<span class="lineno" data-linenos="18 "></span>      <span class="n">slow</span> <span class="o">=</span> <span class="n">slow</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+<span class="lineno" data-linenos="19 "></span>      <span class="n">head</span> <span class="o">=</span> <span class="n">head</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+<span class="lineno" data-linenos="20 "></span>    <span class="p">}</span>
+<span class="lineno" data-linenos="21 "></span>
+<span class="lineno" data-linenos="22 "></span>    <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+<span class="lineno" data-linenos="23 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos="24 "></span>
+<span class="lineno" data-linenos="25 "></span>  <span class="kd">private</span> <span class="n">ListNode</span> <span class="nf">reverseList</span><span class="p">(</span><span class="n">ListNode</span> <span class="n">head</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos="26 "></span>    <span class="n">ListNode</span> <span class="n">prev</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+<span class="lineno" data-linenos="27 "></span>    <span class="n">ListNode</span> <span class="n">curr</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span>
+<span class="lineno" data-linenos="28 "></span>
+<span class="lineno" data-linenos="29 "></span>    <span class="k">while</span> <span class="p">(</span><span class="n">curr</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos="30 "></span>      <span class="n">ListNode</span> <span class="n">next</span> <span class="o">=</span> <span class="n">curr</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+<span class="lineno" data-linenos="31 "></span>      <span class="n">curr</span><span class="p">.</span><span class="na">next</span> <span class="o">=</span> <span class="n">prev</span><span class="p">;</span>
+<span class="lineno" data-linenos="32 "></span>      <span class="n">prev</span> <span class="o">=</span> <span class="n">curr</span><span class="p">;</span>
+<span class="lineno" data-linenos="33 "></span>      <span class="n">curr</span> <span class="o">=</span> <span class="n">next</span><span class="p">;</span>
+<span class="lineno" data-linenos="34 "></span>    <span class="p">}</span>
+<span class="lineno" data-linenos="35 "></span>
+<span class="lineno" data-linenos="36 "></span>    <span class="k">return</span> <span class="n">prev</span><span class="p">;</span>
+<span class="lineno" data-linenos="37 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos="38 "></span><span class="p">}</span>
 </code></pre></div>
 
 <h2 id="235-lowest-common-ancestor-of-a-binary-search-tree-star">235. Lowest Common Ancestor of a Binary Search Tree <a href="https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree">$\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>
@@ -7443,7 +7480,12 @@
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(1)$</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(1)$</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="lineno" data-linenos="1 "></span><span class="n">Error</span>
+<div class="highlight"><pre><span></span><code><span class="lineno" data-linenos="1 "></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="lineno" data-linenos="2 "></span>  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">deleteNode</span><span class="p">(</span><span class="n">ListNode</span> <span class="n">node</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos="3 "></span>    <span class="n">node</span><span class="p">.</span><span class="na">val</span> <span class="o">=</span> <span class="n">node</span><span class="p">.</span><span class="na">next</span><span class="p">.</span><span class="na">val</span><span class="p">;</span>
+<span class="lineno" data-linenos="4 "></span>    <span class="n">node</span><span class="p">.</span><span class="na">next</span> <span class="o">=</span> <span class="n">node</span><span class="p">.</span><span class="na">next</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+<span class="lineno" data-linenos="5 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos="6 "></span><span class="p">}</span>
 </code></pre></div>
 
 <h2 id="238-product-of-array-except-self-starstar">238. Product of Array Except Self <a href="https://leetcode.com/problems/product-of-array-except-self">$\star\star$</a> <img alt="💪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4aa.svg" title=":muscle:" /></h2>

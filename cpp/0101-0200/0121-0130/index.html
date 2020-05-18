@@ -7458,7 +7458,26 @@
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(n)$</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(1)$</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="lineno" data-linenos="1 "></span><span class="n">Error</span>
+<div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 2 "></span> <span class="k">public</span><span class="o">:</span>
+<span class="lineno" data-linenos=" 3 "></span>  <span class="kt">int</span> <span class="n">maxPathSum</span><span class="p">(</span><span class="n">TreeNode</span><span class="o">*</span> <span class="n">root</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 4 "></span>    <span class="kt">int</span> <span class="n">ans</span> <span class="o">=</span> <span class="n">INT_MIN</span><span class="p">;</span>
+<span class="lineno" data-linenos=" 5 "></span>
+<span class="lineno" data-linenos=" 6 "></span>    <span class="n">function</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">(</span><span class="n">TreeNode</span><span class="o">*</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">maxPathSumDownFrom</span> <span class="o">=</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="n">TreeNode</span><span class="o">*</span> <span class="n">root</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 7 "></span>      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">root</span><span class="p">)</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="lineno" data-linenos=" 8 "></span>
+<span class="lineno" data-linenos=" 9 "></span>      <span class="kt">int</span> <span class="n">left</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">maxPathSumDownFrom</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">),</span> <span class="mi">0</span><span class="p">);</span>
+<span class="lineno" data-linenos="10 "></span>      <span class="kt">int</span> <span class="n">right</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">maxPathSumDownFrom</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">),</span> <span class="mi">0</span><span class="p">);</span>
+<span class="lineno" data-linenos="11 "></span>      <span class="n">ans</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">ans</span><span class="p">,</span> <span class="n">root</span><span class="o">-&gt;</span><span class="n">val</span> <span class="o">+</span> <span class="n">left</span> <span class="o">+</span> <span class="n">right</span><span class="p">);</span>
+<span class="lineno" data-linenos="12 "></span>
+<span class="lineno" data-linenos="13 "></span>      <span class="k">return</span> <span class="n">root</span><span class="o">-&gt;</span><span class="n">val</span> <span class="o">+</span> <span class="n">max</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">);</span>
+<span class="lineno" data-linenos="14 "></span>    <span class="p">};</span>
+<span class="lineno" data-linenos="15 "></span>
+<span class="lineno" data-linenos="16 "></span>    <span class="n">maxPathSumDownFrom</span><span class="p">(</span><span class="n">root</span><span class="p">);</span>
+<span class="lineno" data-linenos="17 "></span>
+<span class="lineno" data-linenos="18 "></span>    <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
+<span class="lineno" data-linenos="19 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos="20 "></span><span class="p">};</span>
 </code></pre></div>
 
 <h2 id="125-valid-palindrome-star">125. Valid Palindrome <a href="https://leetcode.com/problems/valid-palindrome">$\star$</a> <img alt="👎" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44e.svg" title=":thumbsdown:" /></h2>
@@ -7467,7 +7486,23 @@
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(n)$</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(1)$</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="lineno" data-linenos="1 "></span><span class="n">Error</span>
+<div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 2 "></span> <span class="k">public</span><span class="o">:</span>
+<span class="lineno" data-linenos=" 3 "></span>  <span class="kt">bool</span> <span class="n">isPalindrome</span><span class="p">(</span><span class="n">string</span> <span class="n">s</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 4 "></span>    <span class="kt">int</span> <span class="n">l</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="lineno" data-linenos=" 5 "></span>    <span class="kt">int</span> <span class="n">r</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="n">length</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+<span class="lineno" data-linenos=" 6 "></span>
+<span class="lineno" data-linenos=" 7 "></span>    <span class="k">while</span> <span class="p">(</span><span class="n">l</span> <span class="o">&lt;</span> <span class="n">r</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 8 "></span>      <span class="k">while</span> <span class="p">(</span><span class="n">l</span> <span class="o">&lt;</span> <span class="n">r</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">isalnum</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">l</span><span class="p">]))</span> <span class="o">++</span><span class="n">l</span><span class="p">;</span>
+<span class="lineno" data-linenos=" 9 "></span>      <span class="k">while</span> <span class="p">(</span><span class="n">l</span> <span class="o">&lt;</span> <span class="n">r</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">isalnum</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">r</span><span class="p">]))</span> <span class="o">--</span><span class="n">r</span><span class="p">;</span>
+<span class="lineno" data-linenos="10 "></span>      <span class="k">if</span> <span class="p">(</span><span class="n">tolower</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">l</span><span class="p">])</span> <span class="o">!=</span> <span class="n">tolower</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">r</span><span class="p">]))</span> <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+<span class="lineno" data-linenos="11 "></span>      <span class="o">++</span><span class="n">l</span><span class="p">;</span>
+<span class="lineno" data-linenos="12 "></span>      <span class="o">--</span><span class="n">r</span><span class="p">;</span>
+<span class="lineno" data-linenos="13 "></span>    <span class="p">}</span>
+<span class="lineno" data-linenos="14 "></span>
+<span class="lineno" data-linenos="15 "></span>    <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+<span class="lineno" data-linenos="16 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos="17 "></span><span class="p">};</span>
 </code></pre></div>
 
 <h2 id="126-word-ladder-ii-starstarstar">126. Word Ladder II <a href="https://leetcode.com/problems/word-ladder-ii">$\star\star\star$</a> <img alt="💪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4aa.svg" title=":muscle:" /></h2>
@@ -7476,7 +7511,69 @@
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(n26^l)$, where <code>n = len(wordList)</code> and <code>l = len(word)</code></li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(n + kl)$, where <code>k = #paths</code></li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="lineno" data-linenos="1 "></span><span class="n">Error</span>
+<div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 2 "></span> <span class="k">public</span><span class="o">:</span>
+<span class="lineno" data-linenos=" 3 "></span>  <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&gt;</span> <span class="n">findLadders</span><span class="p">(</span><span class="n">string</span> <span class="n">beginWord</span><span class="p">,</span> <span class="n">string</span> <span class="n">endWord</span><span class="p">,</span>
+<span class="lineno" data-linenos=" 4 "></span>                                     <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&amp;</span> <span class="n">wordList</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 5 "></span>    <span class="n">unordered_set</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">wordListSet</span><span class="p">(</span><span class="n">begin</span><span class="p">(</span><span class="n">wordList</span><span class="p">),</span> <span class="n">end</span><span class="p">(</span><span class="n">wordList</span><span class="p">));</span>
+<span class="lineno" data-linenos=" 6 "></span>    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">wordListSet</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="n">endWord</span><span class="p">))</span> <span class="k">return</span> <span class="p">{};</span> <span class="c1">// prune (still AC if this line is removed)</span>
+<span class="lineno" data-linenos=" 7 "></span>
+<span class="lineno" data-linenos=" 8 "></span>    <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&gt;</span> <span class="n">ans</span><span class="p">;</span>
+<span class="lineno" data-linenos=" 9 "></span>    <span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&gt;</span> <span class="n">parentToWords</span><span class="p">;</span>
+<span class="lineno" data-linenos="10 "></span>    <span class="n">unordered_set</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">currentLevelWords</span><span class="p">{</span><span class="n">beginWord</span><span class="p">};</span>
+<span class="lineno" data-linenos="11 "></span>    <span class="kt">bool</span> <span class="n">isFound</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+<span class="lineno" data-linenos="12 "></span>
+<span class="lineno" data-linenos="13 "></span>    <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">currentLevelWords</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">isFound</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos="14 "></span>      <span class="c1">// remove words in current level</span>
+<span class="lineno" data-linenos="15 "></span>      <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="n">string</span><span class="o">&amp;</span> <span class="nl">word</span> <span class="p">:</span> <span class="n">currentLevelWords</span><span class="p">)</span>
+<span class="lineno" data-linenos="16 "></span>        <span class="n">wordListSet</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">word</span><span class="p">);</span>
+<span class="lineno" data-linenos="17 "></span>      <span class="n">unordered_set</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">nextLevelWords</span><span class="p">;</span>
+<span class="lineno" data-linenos="18 "></span>      <span class="c1">// `parent` will be used as a key in `parentToWords`</span>
+<span class="lineno" data-linenos="19 "></span>      <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="n">string</span><span class="o">&amp;</span> <span class="nl">parent</span> <span class="p">:</span> <span class="n">currentLevelWords</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos="20 "></span>        <span class="n">string</span> <span class="n">nextWord</span> <span class="o">=</span> <span class="n">parent</span><span class="p">;</span>
+<span class="lineno" data-linenos="21 "></span>        <span class="c1">// enumerate next level words</span>
+<span class="lineno" data-linenos="22 "></span>        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">nextWord</span><span class="p">.</span><span class="n">length</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos="23 "></span>          <span class="kt">char</span> <span class="n">cache</span> <span class="o">=</span> <span class="n">nextWord</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="lineno" data-linenos="24 "></span>          <span class="k">for</span> <span class="p">(</span><span class="kt">char</span> <span class="n">c</span> <span class="o">=</span> <span class="sc">&#39;a&#39;</span><span class="p">;</span> <span class="n">c</span> <span class="o">&lt;=</span> <span class="sc">&#39;z&#39;</span><span class="p">;</span> <span class="o">++</span><span class="n">c</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos="25 "></span>            <span class="n">nextWord</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">c</span><span class="p">;</span>
+<span class="lineno" data-linenos="26 "></span>            <span class="k">if</span> <span class="p">(</span><span class="n">wordListSet</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="n">nextWord</span><span class="p">))</span> <span class="p">{</span>
+<span class="lineno" data-linenos="27 "></span>              <span class="k">if</span> <span class="p">(</span><span class="n">nextWord</span> <span class="o">==</span> <span class="n">endWord</span><span class="p">)</span>
+<span class="lineno" data-linenos="28 "></span>                <span class="n">isFound</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+<span class="lineno" data-linenos="29 "></span>              <span class="n">nextLevelWords</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">nextWord</span><span class="p">);</span>
+<span class="lineno" data-linenos="30 "></span>              <span class="n">parentToWords</span><span class="p">[</span><span class="n">parent</span><span class="p">].</span><span class="n">push_back</span><span class="p">(</span><span class="n">nextWord</span><span class="p">);</span>
+<span class="lineno" data-linenos="31 "></span>            <span class="p">}</span>
+<span class="lineno" data-linenos="32 "></span>          <span class="p">}</span>
+<span class="lineno" data-linenos="33 "></span>          <span class="n">nextWord</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">cache</span><span class="p">;</span>
+<span class="lineno" data-linenos="34 "></span>        <span class="p">}</span>
+<span class="lineno" data-linenos="35 "></span>      <span class="p">}</span>
+<span class="lineno" data-linenos="36 "></span>      <span class="k">if</span> <span class="p">(</span><span class="n">isFound</span><span class="p">)</span> <span class="k">break</span><span class="p">;</span>
+<span class="lineno" data-linenos="37 "></span>      <span class="n">swap</span><span class="p">(</span><span class="n">currentLevelWords</span><span class="p">,</span> <span class="n">nextLevelWords</span><span class="p">);</span>
+<span class="lineno" data-linenos="38 "></span>    <span class="p">}</span>
+<span class="lineno" data-linenos="39 "></span>
+<span class="lineno" data-linenos="40 "></span>    <span class="c1">// construct the ans by `parentToWords`</span>
+<span class="lineno" data-linenos="41 "></span>    <span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span><span class="k">const</span> <span class="n">string</span><span class="o">&amp;</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&amp;</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">dfs</span> <span class="o">=</span>
+<span class="lineno" data-linenos="42 "></span>        <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="k">const</span> <span class="n">string</span><span class="o">&amp;</span> <span class="n">word</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&amp;</span> <span class="n">path</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos="43 "></span>          <span class="k">if</span> <span class="p">(</span><span class="n">word</span> <span class="o">==</span> <span class="n">endWord</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos="44 "></span>            <span class="n">ans</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">path</span><span class="p">);</span>
+<span class="lineno" data-linenos="45 "></span>            <span class="k">return</span><span class="p">;</span>
+<span class="lineno" data-linenos="46 "></span>          <span class="p">}</span>
+<span class="lineno" data-linenos="47 "></span>          <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">parentToWords</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="n">word</span><span class="p">))</span> <span class="k">return</span><span class="p">;</span>
+<span class="lineno" data-linenos="48 "></span>
+<span class="lineno" data-linenos="49 "></span>          <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="n">string</span><span class="o">&amp;</span> <span class="nl">child</span> <span class="p">:</span> <span class="n">parentToWords</span><span class="p">[</span><span class="n">word</span><span class="p">])</span> <span class="p">{</span>
+<span class="lineno" data-linenos="50 "></span>            <span class="n">path</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">child</span><span class="p">);</span>
+<span class="lineno" data-linenos="51 "></span>            <span class="n">dfs</span><span class="p">(</span><span class="n">child</span><span class="p">,</span> <span class="n">path</span><span class="p">);</span>
+<span class="lineno" data-linenos="52 "></span>            <span class="n">path</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span>
+<span class="lineno" data-linenos="53 "></span>          <span class="p">}</span>
+<span class="lineno" data-linenos="54 "></span>        <span class="p">};</span>
+<span class="lineno" data-linenos="55 "></span>
+<span class="lineno" data-linenos="56 "></span>    <span class="k">if</span> <span class="p">(</span><span class="n">isFound</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos="57 "></span>      <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">path</span><span class="p">{</span><span class="n">beginWord</span><span class="p">};</span>
+<span class="lineno" data-linenos="58 "></span>      <span class="n">dfs</span><span class="p">(</span><span class="n">beginWord</span><span class="p">,</span> <span class="n">path</span><span class="p">);</span>
+<span class="lineno" data-linenos="59 "></span>    <span class="p">}</span>
+<span class="lineno" data-linenos="60 "></span>
+<span class="lineno" data-linenos="61 "></span>    <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
+<span class="lineno" data-linenos="62 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos="63 "></span><span class="p">};</span>
 </code></pre></div>
 
 <h2 id="127-word-ladder-starstar">127. Word Ladder <a href="https://leetcode.com/problems/word-ladder">$\star\star$</a> <img alt="💪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4aa.svg" title=":muscle:" /></h2>
@@ -7484,7 +7581,38 @@
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(n26^l)$, where <code>n = len(wordList)</code> and <code>l = len(word)</code></li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(n)$</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="lineno" data-linenos="1 "></span><span class="n">Error</span>
+<div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 2 "></span> <span class="k">public</span><span class="o">:</span>
+<span class="lineno" data-linenos=" 3 "></span>  <span class="kt">int</span> <span class="n">ladderLength</span><span class="p">(</span><span class="n">string</span> <span class="n">beginWord</span><span class="p">,</span> <span class="n">string</span> <span class="n">endWord</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&amp;</span> <span class="n">wordList</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 4 "></span>    <span class="n">unordered_set</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">wordListSet</span><span class="p">(</span><span class="n">begin</span><span class="p">(</span><span class="n">wordList</span><span class="p">),</span> <span class="n">end</span><span class="p">(</span><span class="n">wordList</span><span class="p">));</span>
+<span class="lineno" data-linenos=" 5 "></span>    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">wordListSet</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="n">endWord</span><span class="p">))</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="lineno" data-linenos=" 6 "></span>
+<span class="lineno" data-linenos=" 7 "></span>    <span class="kt">int</span> <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="lineno" data-linenos=" 8 "></span>    <span class="n">queue</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">queue</span><span class="p">{{</span><span class="n">beginWord</span><span class="p">}};</span>
+<span class="lineno" data-linenos=" 9 "></span>
+<span class="lineno" data-linenos="10 "></span>    <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">queue</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="p">{</span>
+<span class="lineno" data-linenos="11 "></span>      <span class="o">++</span><span class="n">ans</span><span class="p">;</span>
+<span class="lineno" data-linenos="12 "></span>      <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">queue</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">;</span> <span class="o">--</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos="13 "></span>        <span class="n">string</span> <span class="n">word</span> <span class="o">=</span> <span class="n">queue</span><span class="p">.</span><span class="n">front</span><span class="p">();</span>
+<span class="lineno" data-linenos="14 "></span>        <span class="n">queue</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+<span class="lineno" data-linenos="15 "></span>        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">word</span><span class="p">.</span><span class="n">length</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos="16 "></span>          <span class="kt">char</span> <span class="n">cache</span> <span class="o">=</span> <span class="n">word</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="lineno" data-linenos="17 "></span>          <span class="k">for</span> <span class="p">(</span><span class="kt">char</span> <span class="n">c</span> <span class="o">=</span> <span class="sc">&#39;a&#39;</span><span class="p">;</span> <span class="n">c</span> <span class="o">&lt;=</span> <span class="sc">&#39;z&#39;</span><span class="p">;</span> <span class="o">++</span><span class="n">c</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos="18 "></span>            <span class="n">word</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">c</span><span class="p">;</span>
+<span class="lineno" data-linenos="19 "></span>            <span class="k">if</span> <span class="p">(</span><span class="n">word</span> <span class="o">==</span> <span class="n">endWord</span><span class="p">)</span> <span class="k">return</span> <span class="n">ans</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+<span class="lineno" data-linenos="20 "></span>            <span class="k">if</span> <span class="p">(</span><span class="n">wordListSet</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="n">word</span><span class="p">))</span> <span class="p">{</span>
+<span class="lineno" data-linenos="21 "></span>              <span class="n">wordListSet</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">word</span><span class="p">);</span>
+<span class="lineno" data-linenos="22 "></span>              <span class="n">queue</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">word</span><span class="p">);</span>
+<span class="lineno" data-linenos="23 "></span>            <span class="p">}</span>
+<span class="lineno" data-linenos="24 "></span>          <span class="p">}</span>
+<span class="lineno" data-linenos="25 "></span>          <span class="n">word</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">cache</span><span class="p">;</span>
+<span class="lineno" data-linenos="26 "></span>        <span class="p">}</span>
+<span class="lineno" data-linenos="27 "></span>      <span class="p">}</span>
+<span class="lineno" data-linenos="28 "></span>    <span class="p">}</span>
+<span class="lineno" data-linenos="29 "></span>
+<span class="lineno" data-linenos="30 "></span>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="lineno" data-linenos="31 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos="32 "></span><span class="p">};</span>
 </code></pre></div>
 
 <h2 id="128-longest-consecutive-sequence-starstarstar">128. Longest Consecutive Sequence <a href="https://leetcode.com/problems/longest-consecutive-sequence">$\star\star\star$</a> <img alt="💪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4aa.svg" title=":muscle:" /></h2>
@@ -7492,7 +7620,23 @@
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(n)$</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(n)$</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="lineno" data-linenos="1 "></span><span class="n">Error</span>
+<div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 2 "></span> <span class="k">public</span><span class="o">:</span>
+<span class="lineno" data-linenos=" 3 "></span>  <span class="kt">int</span> <span class="n">longestConsecutive</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">nums</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 4 "></span>    <span class="kt">int</span> <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="lineno" data-linenos=" 5 "></span>    <span class="n">unordered_set</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">set</span><span class="p">{</span><span class="n">begin</span><span class="p">(</span><span class="n">nums</span><span class="p">),</span> <span class="n">end</span><span class="p">(</span><span class="n">nums</span><span class="p">)};</span>
+<span class="lineno" data-linenos=" 6 "></span>
+<span class="lineno" data-linenos=" 7 "></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">long</span> <span class="nl">num</span> <span class="p">:</span> <span class="n">nums</span><span class="p">)</span>
+<span class="lineno" data-linenos=" 8 "></span>      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">set</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="n">num</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 9 "></span>        <span class="kt">int</span> <span class="n">length</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="lineno" data-linenos="10 "></span>        <span class="k">while</span> <span class="p">(</span><span class="n">set</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="n">num</span><span class="o">++</span><span class="p">))</span>
+<span class="lineno" data-linenos="11 "></span>          <span class="o">++</span><span class="n">length</span><span class="p">;</span>
+<span class="lineno" data-linenos="12 "></span>        <span class="n">ans</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">ans</span><span class="p">,</span> <span class="n">length</span><span class="p">);</span>
+<span class="lineno" data-linenos="13 "></span>      <span class="p">}</span>
+<span class="lineno" data-linenos="14 "></span>
+<span class="lineno" data-linenos="15 "></span>    <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
+<span class="lineno" data-linenos="16 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos="17 "></span><span class="p">};</span>
 </code></pre></div>
 
 <h2 id="129-sum-root-to-leaf-numbers-starstar">129. Sum Root to Leaf Numbers <a href="https://leetcode.com/problems/sum-root-to-leaf-numbers">$\star\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>
@@ -7501,7 +7645,27 @@
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(n)$</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(1)$</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="lineno" data-linenos="1 "></span><span class="n">Error</span>
+<div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 2 "></span> <span class="k">public</span><span class="o">:</span>
+<span class="lineno" data-linenos=" 3 "></span>  <span class="kt">int</span> <span class="n">sumNumbers</span><span class="p">(</span><span class="n">TreeNode</span><span class="o">*</span> <span class="n">root</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 4 "></span>    <span class="kt">int</span> <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="lineno" data-linenos=" 5 "></span>
+<span class="lineno" data-linenos=" 6 "></span>    <span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span><span class="n">TreeNode</span><span class="o">*</span><span class="p">,</span> <span class="kt">int</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">dfs</span> <span class="o">=</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="n">TreeNode</span><span class="o">*</span> <span class="n">root</span><span class="p">,</span> <span class="kt">int</span> <span class="n">path</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 7 "></span>      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">root</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+<span class="lineno" data-linenos=" 8 "></span>      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 9 "></span>        <span class="n">ans</span> <span class="o">+=</span> <span class="n">path</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">root</span><span class="o">-&gt;</span><span class="n">val</span><span class="p">;</span>
+<span class="lineno" data-linenos="10 "></span>        <span class="k">return</span><span class="p">;</span>
+<span class="lineno" data-linenos="11 "></span>      <span class="p">}</span>
+<span class="lineno" data-linenos="12 "></span>
+<span class="lineno" data-linenos="13 "></span>      <span class="n">dfs</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">,</span> <span class="n">path</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">root</span><span class="o">-&gt;</span><span class="n">val</span><span class="p">);</span>
+<span class="lineno" data-linenos="14 "></span>      <span class="n">dfs</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">,</span> <span class="n">path</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">root</span><span class="o">-&gt;</span><span class="n">val</span><span class="p">);</span>
+<span class="lineno" data-linenos="15 "></span>    <span class="p">};</span>
+<span class="lineno" data-linenos="16 "></span>
+<span class="lineno" data-linenos="17 "></span>    <span class="n">dfs</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="lineno" data-linenos="18 "></span>
+<span class="lineno" data-linenos="19 "></span>    <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
+<span class="lineno" data-linenos="20 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos="21 "></span><span class="p">};</span>
 </code></pre></div>
 
 <h2 id="130-surrounded-regions-starstar">130. Surrounded Regions <a href="https://leetcode.com/problems/surrounded-regions">$\star\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>

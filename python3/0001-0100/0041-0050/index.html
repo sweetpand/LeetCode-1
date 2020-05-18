@@ -5035,6 +5035,48 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#43-multiply-strings-starstar" class="md-nav__link">
+    43. Multiply Strings $\star\star$
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#44-wildcard-matching-starstarstar" class="md-nav__link">
+    44. Wildcard Matching $\star\star\star$
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#45-jump-game-ii-starstarstar" class="md-nav__link">
+    45. Jump Game II $\star\star\star$
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#46-permutations-starstar" class="md-nav__link">
+    46. Permutations $\star\star$
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#47-permutations-ii-starstar" class="md-nav__link">
+    47. Permutations II $\star\star$
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#48-rotate-image-starstar" class="md-nav__link">
+    48. Rotate Image $\star\star$
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#49-group-anagrams-starstar" class="md-nav__link">
     49. Group Anagrams $\star\star$
   </a>
@@ -7263,6 +7305,48 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#43-multiply-strings-starstar" class="md-nav__link">
+    43. Multiply Strings $\star\star$
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#44-wildcard-matching-starstarstar" class="md-nav__link">
+    44. Wildcard Matching $\star\star\star$
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#45-jump-game-ii-starstarstar" class="md-nav__link">
+    45. Jump Game II $\star\star\star$
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#46-permutations-starstar" class="md-nav__link">
+    46. Permutations $\star\star$
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#47-permutations-ii-starstar" class="md-nav__link">
+    47. Permutations II $\star\star$
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#48-rotate-image-starstar" class="md-nav__link">
+    48. Rotate Image $\star\star$
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#49-group-anagrams-starstar" class="md-nav__link">
     49. Group Anagrams $\star\star$
   </a>
@@ -7327,77 +7411,185 @@
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(n)$</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(1)$</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="n">Error</span><span class="err">```</span>
-<span class="lineno" data-linenos=" 2 "></span>
-<span class="lineno" data-linenos=" 3 "></span><span class="c1">## 43. Multiply Strings [$\star\star$](https://leetcode.com/problems/multiply-strings) :muscle:</span>
-<span class="lineno" data-linenos=" 4 "></span>
-<span class="lineno" data-linenos=" 5 "></span><span class="err">!</span><span class="p">[](</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">img</span><span class="o">.</span><span class="n">shields</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">badge</span><span class="o">/-</span><span class="n">Simulation</span><span class="o">-</span><span class="mi">6</span><span class="n">F3381</span><span class="o">.</span><span class="n">svg</span><span class="err">?</span><span class="n">style</span><span class="o">=</span><span class="n">flat</span><span class="o">-</span><span class="n">square</span><span class="p">)</span>
-<span class="lineno" data-linenos=" 6 "></span>
-<span class="lineno" data-linenos=" 7 "></span><span class="o">-</span> <span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="n">Time</span><span class="p">:</span> <span class="err">$</span><span class="n">O</span><span class="p">(</span><span class="n">mn</span><span class="p">)</span><span class="err">$</span><span class="p">,</span> <span class="n">where</span> <span class="err">`</span><span class="n">m</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">num1</span><span class="p">)</span><span class="err">`</span> <span class="ow">and</span> <span class="err">`</span><span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">num2</span><span class="p">)</span><span class="err">`</span>
-<span class="lineno" data-linenos=" 8 "></span><span class="o">-</span> <span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="n">Space</span><span class="p">:</span> <span class="err">$</span><span class="n">O</span><span class="p">(</span><span class="n">m</span> <span class="o">+</span> <span class="n">n</span><span class="p">)</span><span class="err">$</span><span class="p">,</span> <span class="n">where</span> <span class="err">`</span><span class="n">m</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">num1</span><span class="p">)</span><span class="err">`</span> <span class="ow">and</span> <span class="err">`</span><span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">num2</span><span class="p">)</span><span class="err">`</span>
-<span class="lineno" data-linenos=" 9 "></span>
-<span class="lineno" data-linenos="10 "></span><span class="err">```</span><span class="n">python</span>
-<span class="lineno" data-linenos="11 "></span><span class="n">Error</span><span class="err">```</span>
-<span class="lineno" data-linenos="12 "></span>
-<span class="lineno" data-linenos="13 "></span><span class="c1">## 44. Wildcard Matching [$\star\star\star$](https://leetcode.com/problems/wildcard-matching) :muscle:</span>
-<span class="lineno" data-linenos="14 "></span>
-<span class="lineno" data-linenos="15 "></span><span class="err">!</span><span class="p">[](</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">img</span><span class="o">.</span><span class="n">shields</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">badge</span><span class="o">/-</span><span class="n">Dynamic</span><span class="o">%</span><span class="mi">20</span><span class="n">Programming</span><span class="o">-</span><span class="mf">113285.</span><span class="n">svg</span><span class="err">?</span><span class="n">style</span><span class="o">=</span><span class="n">flat</span><span class="o">-</span><span class="n">square</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+<span class="lineno" data-linenos=" 2 "></span>    <span class="k">def</span> <span class="nf">trap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">height</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="lineno" data-linenos=" 3 "></span>        <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="lineno" data-linenos=" 4 "></span>        <span class="n">l</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="lineno" data-linenos=" 5 "></span>        <span class="n">r</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">height</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="lineno" data-linenos=" 6 "></span>        <span class="n">maxLeft</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="lineno" data-linenos=" 7 "></span>        <span class="n">maxRight</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="lineno" data-linenos=" 8 "></span>
+<span class="lineno" data-linenos=" 9 "></span>        <span class="k">while</span> <span class="n">l</span> <span class="o">&lt;</span> <span class="n">r</span><span class="p">:</span>
+<span class="lineno" data-linenos="10 "></span>            <span class="k">if</span> <span class="n">height</span><span class="p">[</span><span class="n">l</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">height</span><span class="p">[</span><span class="n">r</span><span class="p">]:</span>
+<span class="lineno" data-linenos="11 "></span>                <span class="n">maxLeft</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">maxLeft</span><span class="p">,</span> <span class="n">height</span><span class="p">[</span><span class="n">l</span><span class="p">])</span>
+<span class="lineno" data-linenos="12 "></span>                <span class="n">ans</span> <span class="o">+=</span> <span class="n">maxLeft</span> <span class="o">-</span> <span class="n">height</span><span class="p">[</span><span class="n">l</span><span class="p">]</span>
+<span class="lineno" data-linenos="13 "></span>                <span class="n">l</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="lineno" data-linenos="14 "></span>            <span class="k">else</span><span class="p">:</span>
+<span class="lineno" data-linenos="15 "></span>                <span class="n">maxRight</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">maxRight</span><span class="p">,</span> <span class="n">height</span><span class="p">[</span><span class="n">r</span><span class="p">])</span>
+<span class="lineno" data-linenos="16 "></span>                <span class="n">ans</span> <span class="o">+=</span> <span class="n">maxRight</span> <span class="o">-</span> <span class="n">height</span><span class="p">[</span><span class="n">r</span><span class="p">]</span>
+<span class="lineno" data-linenos="17 "></span>                <span class="n">r</span> <span class="o">-=</span> <span class="mi">1</span>
+<span class="lineno" data-linenos="18 "></span>
+<span class="lineno" data-linenos="19 "></span>        <span class="k">return</span> <span class="n">ans</span>
+</code></pre></div>
+
+<h2 id="43-multiply-strings-starstar">43. Multiply Strings <a href="https://leetcode.com/problems/multiply-strings">$\star\star$</a> <img alt="💪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4aa.svg" title=":muscle:" /></h2>
+<p><img alt="" src="https://img.shields.io/badge/-Simulation-6F3381.svg?style=flat-square" /></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(mn)$, where <code>m = len(num1)</code> and <code>n = len(num2)</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(m + n)$, where <code>m = len(num1)</code> and <code>n = len(num2)</code></li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+<span class="lineno" data-linenos=" 2 "></span>    <span class="k">def</span> <span class="nf">multiply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num1</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">num2</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="lineno" data-linenos=" 3 "></span>        <span class="n">m</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">num1</span><span class="p">)</span>
+<span class="lineno" data-linenos=" 4 "></span>        <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">num2</span><span class="p">)</span>
+<span class="lineno" data-linenos=" 5 "></span>
+<span class="lineno" data-linenos=" 6 "></span>        <span class="n">ans</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="lineno" data-linenos=" 7 "></span>        <span class="n">pos</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">m</span> <span class="o">+</span> <span class="n">n</span><span class="p">)</span>
+<span class="lineno" data-linenos=" 8 "></span>
+<span class="lineno" data-linenos=" 9 "></span>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">)[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+<span class="lineno" data-linenos="10 "></span>            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+<span class="lineno" data-linenos="11 "></span>                <span class="n">multiply</span> <span class="o">=</span> <span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">num1</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">-</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;0&#39;</span><span class="p">))</span> <span class="o">*</span> \
+<span class="lineno" data-linenos="12 "></span>                    <span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">num2</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="o">-</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;0&#39;</span><span class="p">))</span>
+<span class="lineno" data-linenos="13 "></span>                <span class="nb">sum</span> <span class="o">=</span> <span class="n">multiply</span> <span class="o">+</span> <span class="n">pos</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+<span class="lineno" data-linenos="14 "></span>                <span class="n">pos</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="n">j</span><span class="p">]</span> <span class="o">+=</span> <span class="nb">sum</span> <span class="o">//</span> <span class="mi">10</span>
+<span class="lineno" data-linenos="15 "></span>                <span class="n">pos</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="nb">sum</span><span class="p">)</span> <span class="o">%</span> <span class="mi">10</span>
 <span class="lineno" data-linenos="16 "></span>
-<span class="lineno" data-linenos="17 "></span><span class="o">-</span> <span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="n">Time</span><span class="p">:</span> <span class="err">$</span><span class="n">O</span><span class="p">(</span><span class="n">mn</span><span class="p">)</span><span class="err">$</span><span class="p">,</span> <span class="n">where</span> <span class="err">`</span><span class="n">m</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="err">`</span> <span class="ow">and</span> <span class="err">`</span><span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="err">`</span>
-<span class="lineno" data-linenos="18 "></span><span class="o">-</span> <span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="n">Space</span><span class="p">:</span> <span class="err">$</span><span class="n">O</span><span class="p">(</span><span class="n">mn</span><span class="p">)</span><span class="err">$</span><span class="p">,</span> <span class="n">where</span> <span class="err">`</span><span class="n">m</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="err">`</span> <span class="ow">and</span> <span class="err">`</span><span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="err">`</span>
+<span class="lineno" data-linenos="17 "></span>        <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pos</span><span class="p">:</span>
+<span class="lineno" data-linenos="18 "></span>            <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="ow">not</span> <span class="n">ans</span> <span class="ow">and</span> <span class="n">p</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
+<span class="lineno" data-linenos="19 "></span>                <span class="n">ans</span> <span class="o">+=</span> <span class="nb">str</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+<span class="lineno" data-linenos="20 "></span>
+<span class="lineno" data-linenos="21 "></span>        <span class="k">return</span> <span class="s1">&#39;0&#39;</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">ans</span> <span class="k">else</span> <span class="n">ans</span>
+</code></pre></div>
+
+<h2 id="44-wildcard-matching-starstarstar">44. Wildcard Matching <a href="https://leetcode.com/problems/wildcard-matching">$\star\star\star$</a> <img alt="💪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4aa.svg" title=":muscle:" /></h2>
+<p><img alt="" src="https://img.shields.io/badge/-Dynamic%20Programming-113285.svg?style=flat-square" /></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(mn)$, where <code>m = len(s)</code> and <code>n = len(p)</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(mn)$, where <code>m = len(s)</code> and <code>n = len(p)</code></li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+<span class="lineno" data-linenos=" 2 "></span>    <span class="k">def</span> <span class="nf">isMatch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">p</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="lineno" data-linenos=" 3 "></span>        <span class="n">m</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="lineno" data-linenos=" 4 "></span>        <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+<span class="lineno" data-linenos=" 5 "></span>
+<span class="lineno" data-linenos=" 6 "></span>        <span class="n">dp</span> <span class="o">=</span> <span class="p">[[</span><span class="kc">False</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span>
+<span class="lineno" data-linenos=" 7 "></span>
+<span class="lineno" data-linenos=" 8 "></span>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+<span class="lineno" data-linenos=" 9 "></span>            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+<span class="lineno" data-linenos="10 "></span>                <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="lineno" data-linenos="11 "></span>                    <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="lineno" data-linenos="12 "></span>                <span class="k">elif</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="lineno" data-linenos="13 "></span>                    <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="ow">and</span> <span class="n">p</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;*&#39;</span>
+<span class="lineno" data-linenos="14 "></span>                <span class="k">elif</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="lineno" data-linenos="15 "></span>                    <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="ow">and</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;*&#39;</span>
+<span class="lineno" data-linenos="16 "></span>                <span class="k">else</span><span class="p">:</span>
+<span class="lineno" data-linenos="17 "></span>                    <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> \
+<span class="lineno" data-linenos="18 "></span>                        <span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="ow">or</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="ow">or</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span> <span class="ow">and</span> \
+<span class="lineno" data-linenos="19 "></span>                        <span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;*&#39;</span> <span class="ow">or</span> <span class="n">p</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;*&#39;</span><span class="p">)</span> <span class="ow">or</span> \
+<span class="lineno" data-linenos="20 "></span>                        <span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span> <span class="ow">and</span> \
+<span class="lineno" data-linenos="21 "></span>                        <span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;?&#39;</span> <span class="ow">or</span> <span class="n">p</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;?&#39;</span> <span class="ow">or</span>
+<span class="lineno" data-linenos="22 "></span>                         <span class="n">s</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">p</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span>
+<span class="lineno" data-linenos="23 "></span>
+<span class="lineno" data-linenos="24 "></span>        <span class="k">return</span> <span class="n">dp</span><span class="p">[</span><span class="n">m</span><span class="p">][</span><span class="n">n</span><span class="p">]</span>
+</code></pre></div>
+
+<h2 id="45-jump-game-ii-starstarstar">45. Jump Game II <a href="https://leetcode.com/problems/jump-game-ii">$\star\star\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>
+<p><img alt="" src="https://img.shields.io/badge/-Greedy-0B346E.svg?style=flat-square" /></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(n)$</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(1)$</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+<span class="lineno" data-linenos=" 2 "></span>    <span class="k">def</span> <span class="nf">jump</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="lineno" data-linenos=" 3 "></span>        <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="lineno" data-linenos=" 4 "></span>        <span class="n">end</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="lineno" data-linenos=" 5 "></span>        <span class="n">farthest</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="lineno" data-linenos=" 6 "></span>
+<span class="lineno" data-linenos=" 7 "></span>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+<span class="lineno" data-linenos=" 8 "></span>            <span class="n">farthest</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">farthest</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+<span class="lineno" data-linenos=" 9 "></span>            <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="n">end</span><span class="p">:</span>
+<span class="lineno" data-linenos="10 "></span>                <span class="n">ans</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="lineno" data-linenos="11 "></span>                <span class="n">end</span> <span class="o">=</span> <span class="n">farthest</span>
+<span class="lineno" data-linenos="12 "></span>
+<span class="lineno" data-linenos="13 "></span>        <span class="k">return</span> <span class="n">ans</span>
+</code></pre></div>
+
+<h2 id="46-permutations-starstar">46. Permutations <a href="https://leetcode.com/problems/permutations">$\star\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>
+<p><img alt="" src="https://img.shields.io/badge/-Backtracking-D0104C.svg?style=flat-square" /></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(n!)$</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(n)$</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+<span class="lineno" data-linenos=" 2 "></span>    <span class="k">def</span> <span class="nf">permute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]:</span>
+<span class="lineno" data-linenos=" 3 "></span>        <span class="k">def</span> <span class="nf">dfs</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="lineno" data-linenos=" 4 "></span>            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
+<span class="lineno" data-linenos=" 5 "></span>                <span class="n">ans</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+<span class="lineno" data-linenos=" 6 "></span>                <span class="k">return</span>
+<span class="lineno" data-linenos=" 7 "></span>
+<span class="lineno" data-linenos=" 8 "></span>            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)):</span>
+<span class="lineno" data-linenos=" 9 "></span>                <span class="k">if</span> <span class="n">used</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+<span class="lineno" data-linenos="10 "></span>                    <span class="k">continue</span>
+<span class="lineno" data-linenos="11 "></span>                <span class="n">used</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="lineno" data-linenos="12 "></span>                <span class="n">dfs</span><span class="p">(</span><span class="n">path</span> <span class="o">+</span> <span class="p">[</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]])</span>
+<span class="lineno" data-linenos="13 "></span>                <span class="n">used</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="lineno" data-linenos="14 "></span>
+<span class="lineno" data-linenos="15 "></span>        <span class="n">ans</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="lineno" data-linenos="16 "></span>        <span class="n">used</span> <span class="o">=</span> <span class="p">[</span><span class="kc">False</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+<span class="lineno" data-linenos="17 "></span>
+<span class="lineno" data-linenos="18 "></span>        <span class="n">dfs</span><span class="p">([])</span>
 <span class="lineno" data-linenos="19 "></span>
-<span class="lineno" data-linenos="20 "></span><span class="err">```</span><span class="n">python</span>
-<span class="lineno" data-linenos="21 "></span><span class="n">Error</span><span class="err">```</span>
+<span class="lineno" data-linenos="20 "></span>        <span class="k">return</span> <span class="n">ans</span>
+</code></pre></div>
+
+<h2 id="47-permutations-ii-starstar">47. Permutations II <a href="https://leetcode.com/problems/permutations-ii">$\star\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>
+<p><img alt="" src="https://img.shields.io/badge/-Backtracking-D0104C.svg?style=flat-square" /></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(n!)$</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(n)$</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+<span class="lineno" data-linenos=" 2 "></span>    <span class="k">def</span> <span class="nf">permuteUnique</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]:</span>
+<span class="lineno" data-linenos=" 3 "></span>        <span class="k">def</span> <span class="nf">dfs</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="lineno" data-linenos=" 4 "></span>            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
+<span class="lineno" data-linenos=" 5 "></span>                <span class="n">ans</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+<span class="lineno" data-linenos=" 6 "></span>                <span class="k">return</span>
+<span class="lineno" data-linenos=" 7 "></span>
+<span class="lineno" data-linenos=" 8 "></span>            <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
+<span class="lineno" data-linenos=" 9 "></span>                <span class="k">if</span> <span class="n">used</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+<span class="lineno" data-linenos="10 "></span>                    <span class="k">continue</span>
+<span class="lineno" data-linenos="11 "></span>                <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">used</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]:</span>
+<span class="lineno" data-linenos="12 "></span>                    <span class="k">continue</span>
+<span class="lineno" data-linenos="13 "></span>                <span class="n">used</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="lineno" data-linenos="14 "></span>                <span class="n">dfs</span><span class="p">(</span><span class="n">path</span> <span class="o">+</span> <span class="p">[</span><span class="n">num</span><span class="p">])</span>
+<span class="lineno" data-linenos="15 "></span>                <span class="n">used</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="lineno" data-linenos="16 "></span>
+<span class="lineno" data-linenos="17 "></span>        <span class="n">ans</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="lineno" data-linenos="18 "></span>        <span class="n">used</span> <span class="o">=</span> <span class="p">[</span><span class="kc">False</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+<span class="lineno" data-linenos="19 "></span>
+<span class="lineno" data-linenos="20 "></span>        <span class="n">nums</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="lineno" data-linenos="21 "></span>        <span class="n">dfs</span><span class="p">([])</span>
 <span class="lineno" data-linenos="22 "></span>
-<span class="lineno" data-linenos="23 "></span><span class="c1">## 45. Jump Game II [$\star\star\star$](https://leetcode.com/problems/jump-game-ii) :thumbsup:</span>
-<span class="lineno" data-linenos="24 "></span>
-<span class="lineno" data-linenos="25 "></span><span class="err">!</span><span class="p">[](</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">img</span><span class="o">.</span><span class="n">shields</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">badge</span><span class="o">/-</span><span class="n">Greedy</span><span class="o">-</span><span class="mi">0</span><span class="n">B346E</span><span class="o">.</span><span class="n">svg</span><span class="err">?</span><span class="n">style</span><span class="o">=</span><span class="n">flat</span><span class="o">-</span><span class="n">square</span><span class="p">)</span>
-<span class="lineno" data-linenos="26 "></span>
-<span class="lineno" data-linenos="27 "></span><span class="o">-</span> <span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="n">Time</span><span class="p">:</span> <span class="err">$</span><span class="n">O</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="err">$</span>
-<span class="lineno" data-linenos="28 "></span><span class="o">-</span> <span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="n">Space</span><span class="p">:</span> <span class="err">$</span><span class="n">O</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="err">$</span>
-<span class="lineno" data-linenos="29 "></span>
-<span class="lineno" data-linenos="30 "></span><span class="err">```</span><span class="n">python</span>
-<span class="lineno" data-linenos="31 "></span><span class="n">Error</span><span class="err">```</span>
-<span class="lineno" data-linenos="32 "></span>
-<span class="lineno" data-linenos="33 "></span><span class="c1">## 46. Permutations [$\star\star$](https://leetcode.com/problems/permutations) :thumbsup:</span>
-<span class="lineno" data-linenos="34 "></span>
-<span class="lineno" data-linenos="35 "></span><span class="err">!</span><span class="p">[](</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">img</span><span class="o">.</span><span class="n">shields</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">badge</span><span class="o">/-</span><span class="n">Backtracking</span><span class="o">-</span><span class="n">D0104C</span><span class="o">.</span><span class="n">svg</span><span class="err">?</span><span class="n">style</span><span class="o">=</span><span class="n">flat</span><span class="o">-</span><span class="n">square</span><span class="p">)</span>
-<span class="lineno" data-linenos="36 "></span>
-<span class="lineno" data-linenos="37 "></span><span class="o">-</span> <span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="n">Time</span><span class="p">:</span> <span class="err">$</span><span class="n">O</span><span class="p">(</span><span class="n">n</span><span class="err">!</span><span class="p">)</span><span class="err">$</span>
-<span class="lineno" data-linenos="38 "></span><span class="o">-</span> <span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="n">Space</span><span class="p">:</span> <span class="err">$</span><span class="n">O</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="err">$</span>
-<span class="lineno" data-linenos="39 "></span>
-<span class="lineno" data-linenos="40 "></span><span class="err">```</span><span class="n">python</span>
-<span class="lineno" data-linenos="41 "></span><span class="n">Error</span><span class="err">```</span>
-<span class="lineno" data-linenos="42 "></span>
-<span class="lineno" data-linenos="43 "></span><span class="c1">## 47. Permutations II [$\star\star$](https://leetcode.com/problems/permutations-ii) :thumbsup:</span>
-<span class="lineno" data-linenos="44 "></span>
-<span class="lineno" data-linenos="45 "></span><span class="err">!</span><span class="p">[](</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">img</span><span class="o">.</span><span class="n">shields</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">badge</span><span class="o">/-</span><span class="n">Backtracking</span><span class="o">-</span><span class="n">D0104C</span><span class="o">.</span><span class="n">svg</span><span class="err">?</span><span class="n">style</span><span class="o">=</span><span class="n">flat</span><span class="o">-</span><span class="n">square</span><span class="p">)</span>
-<span class="lineno" data-linenos="46 "></span>
-<span class="lineno" data-linenos="47 "></span><span class="o">-</span> <span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="n">Time</span><span class="p">:</span> <span class="err">$</span><span class="n">O</span><span class="p">(</span><span class="n">n</span><span class="err">!</span><span class="p">)</span><span class="err">$</span>
-<span class="lineno" data-linenos="48 "></span><span class="o">-</span> <span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="n">Space</span><span class="p">:</span> <span class="err">$</span><span class="n">O</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="err">$</span>
-<span class="lineno" data-linenos="49 "></span>
-<span class="lineno" data-linenos="50 "></span><span class="err">```</span><span class="n">python</span>
-<span class="lineno" data-linenos="51 "></span><span class="n">Error</span><span class="err">```</span>
-<span class="lineno" data-linenos="52 "></span>
-<span class="lineno" data-linenos="53 "></span><span class="c1">## 48. Rotate Image [$\star\star$](https://leetcode.com/problems/rotate-image) :thumbsup:</span>
-<span class="lineno" data-linenos="54 "></span>
-<span class="lineno" data-linenos="55 "></span><span class="err">!</span><span class="p">[](</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">img</span><span class="o">.</span><span class="n">shields</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">badge</span><span class="o">/-</span><span class="n">Simulation</span><span class="o">-</span><span class="mi">6</span><span class="n">F3381</span><span class="o">.</span><span class="n">svg</span><span class="err">?</span><span class="n">style</span><span class="o">=</span><span class="n">flat</span><span class="o">-</span><span class="n">square</span><span class="p">)</span>
-<span class="lineno" data-linenos="56 "></span>
-<span class="lineno" data-linenos="57 "></span><span class="o">-</span> <span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="n">Time</span><span class="p">:</span> <span class="err">$</span><span class="n">O</span><span class="p">(</span><span class="n">n</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span><span class="err">$</span>
-<span class="lineno" data-linenos="58 "></span><span class="o">-</span> <span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="n">Space</span><span class="p">:</span> <span class="err">$</span><span class="n">O</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="err">$</span>
-<span class="lineno" data-linenos="59 "></span>
-<span class="lineno" data-linenos="60 "></span><span class="err">```</span><span class="n">python</span>
-<span class="lineno" data-linenos="61 "></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
-<span class="lineno" data-linenos="62 "></span>    <span class="k">def</span> <span class="nf">rotate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">matrix</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="lineno" data-linenos="63 "></span>        <span class="k">for</span> <span class="nb">min</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span><span class="p">):</span>
-<span class="lineno" data-linenos="64 "></span>            <span class="nb">max</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span> <span class="o">-</span> <span class="nb">min</span> <span class="o">-</span> <span class="mi">1</span>
-<span class="lineno" data-linenos="65 "></span>            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">min</span><span class="p">,</span> <span class="nb">max</span><span class="p">):</span>
-<span class="lineno" data-linenos="66 "></span>                <span class="n">offset</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="nb">min</span>
-<span class="lineno" data-linenos="67 "></span>                <span class="n">top</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">[</span><span class="nb">min</span><span class="p">][</span><span class="n">i</span><span class="p">]</span>
-<span class="lineno" data-linenos="68 "></span>                <span class="n">matrix</span><span class="p">[</span><span class="nb">min</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">[</span><span class="nb">max</span> <span class="o">-</span> <span class="n">offset</span><span class="p">][</span><span class="nb">min</span><span class="p">]</span>
-<span class="lineno" data-linenos="69 "></span>                <span class="n">matrix</span><span class="p">[</span><span class="nb">max</span> <span class="o">-</span> <span class="n">offset</span><span class="p">][</span><span class="nb">min</span><span class="p">]</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">[</span><span class="nb">max</span><span class="p">][</span><span class="nb">max</span> <span class="o">-</span> <span class="n">offset</span><span class="p">]</span>
-<span class="lineno" data-linenos="70 "></span>                <span class="n">matrix</span><span class="p">[</span><span class="nb">max</span><span class="p">][</span><span class="nb">max</span> <span class="o">-</span> <span class="n">offset</span><span class="p">]</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="nb">max</span><span class="p">]</span>
-<span class="lineno" data-linenos="71 "></span>                <span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="nb">max</span><span class="p">]</span> <span class="o">=</span> <span class="n">top</span>
+<span class="lineno" data-linenos="23 "></span>        <span class="k">return</span> <span class="n">ans</span>
+</code></pre></div>
+
+<h2 id="48-rotate-image-starstar">48. Rotate Image <a href="https://leetcode.com/problems/rotate-image">$\star\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>
+<p><img alt="" src="https://img.shields.io/badge/-Simulation-6F3381.svg?style=flat-square" /></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(n^2)$</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(1)$</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+<span class="lineno" data-linenos=" 2 "></span>    <span class="k">def</span> <span class="nf">rotate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">matrix</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="lineno" data-linenos=" 3 "></span>        <span class="k">for</span> <span class="nb">min</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span><span class="p">):</span>
+<span class="lineno" data-linenos=" 4 "></span>            <span class="nb">max</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span> <span class="o">-</span> <span class="nb">min</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="lineno" data-linenos=" 5 "></span>            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">min</span><span class="p">,</span> <span class="nb">max</span><span class="p">):</span>
+<span class="lineno" data-linenos=" 6 "></span>                <span class="n">offset</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="nb">min</span>
+<span class="lineno" data-linenos=" 7 "></span>                <span class="n">top</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">[</span><span class="nb">min</span><span class="p">][</span><span class="n">i</span><span class="p">]</span>
+<span class="lineno" data-linenos=" 8 "></span>                <span class="n">matrix</span><span class="p">[</span><span class="nb">min</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">[</span><span class="nb">max</span> <span class="o">-</span> <span class="n">offset</span><span class="p">][</span><span class="nb">min</span><span class="p">]</span>
+<span class="lineno" data-linenos=" 9 "></span>                <span class="n">matrix</span><span class="p">[</span><span class="nb">max</span> <span class="o">-</span> <span class="n">offset</span><span class="p">][</span><span class="nb">min</span><span class="p">]</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">[</span><span class="nb">max</span><span class="p">][</span><span class="nb">max</span> <span class="o">-</span> <span class="n">offset</span><span class="p">]</span>
+<span class="lineno" data-linenos="10 "></span>                <span class="n">matrix</span><span class="p">[</span><span class="nb">max</span><span class="p">][</span><span class="nb">max</span> <span class="o">-</span> <span class="n">offset</span><span class="p">]</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="nb">max</span><span class="p">]</span>
+<span class="lineno" data-linenos="11 "></span>                <span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="nb">max</span><span class="p">]</span> <span class="o">=</span> <span class="n">top</span>
 </code></pre></div>
 
 <h2 id="49-group-anagrams-starstar">49. Group Anagrams <a href="https://leetcode.com/problems/group-anagrams">$\star\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>
