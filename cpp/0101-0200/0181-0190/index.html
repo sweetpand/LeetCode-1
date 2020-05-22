@@ -7399,7 +7399,7 @@
 <span class="lineno" data-linenos=" 3 "></span>  <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">findRepeatedDnaSequences</span><span class="p">(</span><span class="n">string</span> <span class="n">s</span><span class="p">)</span> <span class="p">{</span>
 <span class="lineno" data-linenos=" 4 "></span>    <span class="n">unordered_set</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">ans</span><span class="p">;</span>
 <span class="lineno" data-linenos=" 5 "></span>    <span class="n">unordered_set</span><span class="o">&lt;</span><span class="n">string_view</span><span class="o">&gt;</span> <span class="n">seen</span><span class="p">;</span>
-<span class="lineno" data-linenos=" 6 "></span>    <span class="n">string_view</span> <span class="nf">sv</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
+<span class="lineno" data-linenos=" 6 "></span>    <span class="k">const</span> <span class="n">string_view</span> <span class="nf">sv</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
 <span class="lineno" data-linenos=" 7 "></span>
 <span class="lineno" data-linenos=" 8 "></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">10</span> <span class="o">&lt;=</span> <span class="n">s</span><span class="p">.</span><span class="n">length</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
 <span class="lineno" data-linenos=" 9 "></span>      <span class="k">if</span> <span class="p">(</span><span class="n">seen</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="n">sv</span><span class="p">.</span><span class="n">substr</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mi">10</span><span class="p">)))</span>
@@ -7463,10 +7463,9 @@
 <span class="lineno" data-linenos=" 9 "></span>
 <span class="lineno" data-linenos="10 "></span> <span class="k">private</span><span class="o">:</span>
 <span class="lineno" data-linenos="11 "></span>  <span class="kt">void</span> <span class="n">reverse</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">nums</span><span class="p">,</span> <span class="kt">int</span> <span class="n">l</span><span class="p">,</span> <span class="kt">int</span> <span class="n">r</span><span class="p">)</span> <span class="p">{</span>
-<span class="lineno" data-linenos="12 "></span>    <span class="k">while</span> <span class="p">(</span><span class="n">l</span> <span class="o">&lt;</span> <span class="n">r</span><span class="p">)</span>
-<span class="lineno" data-linenos="13 "></span>      <span class="n">swap</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">l</span><span class="o">++</span><span class="p">],</span> <span class="n">nums</span><span class="p">[</span><span class="n">r</span><span class="o">--</span><span class="p">]);</span>
-<span class="lineno" data-linenos="14 "></span>  <span class="p">}</span>
-<span class="lineno" data-linenos="15 "></span><span class="p">};</span>
+<span class="lineno" data-linenos="12 "></span>    <span class="k">while</span> <span class="p">(</span><span class="n">l</span> <span class="o">&lt;</span> <span class="n">r</span><span class="p">)</span> <span class="n">swap</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">l</span><span class="o">++</span><span class="p">],</span> <span class="n">nums</span><span class="p">[</span><span class="n">r</span><span class="o">--</span><span class="p">]);</span>
+<span class="lineno" data-linenos="13 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos="14 "></span><span class="p">};</span>
 </code></pre></div>
 
 <h2 id="190-reverse-bits-star">190. Reverse Bits <a href="https://leetcode.com/problems/reverse-bits">$\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>

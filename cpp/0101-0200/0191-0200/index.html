@@ -7421,7 +7421,7 @@
 <span class="lineno" data-linenos=" 5 "></span>    <span class="kt">int</span> <span class="n">prev2</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 <span class="lineno" data-linenos=" 6 "></span>
 <span class="lineno" data-linenos=" 7 "></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="nl">num</span> <span class="p">:</span> <span class="n">nums</span><span class="p">)</span> <span class="p">{</span>
-<span class="lineno" data-linenos=" 8 "></span>      <span class="kt">int</span> <span class="n">cache</span> <span class="o">=</span> <span class="n">prev1</span><span class="p">;</span>
+<span class="lineno" data-linenos=" 8 "></span>      <span class="k">const</span> <span class="kt">int</span> <span class="n">cache</span> <span class="o">=</span> <span class="n">prev1</span><span class="p">;</span>
 <span class="lineno" data-linenos=" 9 "></span>      <span class="n">prev1</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">prev1</span><span class="p">,</span> <span class="n">prev2</span> <span class="o">+</span> <span class="n">num</span><span class="p">);</span>
 <span class="lineno" data-linenos="10 "></span>      <span class="n">prev2</span> <span class="o">=</span> <span class="n">cache</span><span class="p">;</span>
 <span class="lineno" data-linenos="11 "></span>    <span class="p">}</span>

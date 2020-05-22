@@ -7383,7 +7383,54 @@
                   <h1>0341-0350</h1>
                 
                 <h2 id="341-flatten-nested-list-iterator-starstar">341. Flatten Nested List Iterator <a href="https://leetcode.com/problems/flatten-nested-list-iterator">$\star\star$</a></h2>
+<p><img alt="" src="https://img.shields.io/badge/-Stack-E2943B.svg?style=flat-square" /></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(n)$</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(n)$</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">NestedIterator</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 2 "></span> <span class="k">public</span><span class="o">:</span>
+<span class="lineno" data-linenos=" 3 "></span>  <span class="n">NestedIterator</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">NestedInteger</span><span class="o">&gt;&amp;</span> <span class="n">nestedList</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 4 "></span>    <span class="n">addInteger</span><span class="p">(</span><span class="n">nestedList</span><span class="p">);</span>
+<span class="lineno" data-linenos=" 5 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos=" 6 "></span>
+<span class="lineno" data-linenos=" 7 "></span>  <span class="kt">int</span> <span class="n">next</span><span class="p">()</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 8 "></span>    <span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="n">queue</span><span class="p">.</span><span class="n">front</span><span class="p">();</span>
+<span class="lineno" data-linenos=" 9 "></span>    <span class="n">queue</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+<span class="lineno" data-linenos="10 "></span>    <span class="k">return</span> <span class="n">num</span><span class="p">;</span>
+<span class="lineno" data-linenos="11 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos="12 "></span>
+<span class="lineno" data-linenos="13 "></span>  <span class="kt">bool</span> <span class="n">hasNext</span><span class="p">()</span> <span class="p">{</span>
+<span class="lineno" data-linenos="14 "></span>    <span class="k">return</span> <span class="o">!</span><span class="n">queue</span><span class="p">.</span><span class="n">empty</span><span class="p">();</span>
+<span class="lineno" data-linenos="15 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos="16 "></span>
+<span class="lineno" data-linenos="17 "></span> <span class="k">private</span><span class="o">:</span>
+<span class="lineno" data-linenos="18 "></span>  <span class="n">queue</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">queue</span><span class="p">;</span>
+<span class="lineno" data-linenos="19 "></span>
+<span class="lineno" data-linenos="20 "></span>  <span class="kt">void</span> <span class="nf">addInteger</span><span class="p">(</span><span class="k">const</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">NestedInteger</span><span class="o">&gt;&amp;</span> <span class="n">nestedList</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos="21 "></span>    <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="n">NestedInteger</span> <span class="nl">ni</span> <span class="p">:</span> <span class="n">nestedList</span><span class="p">)</span>
+<span class="lineno" data-linenos="22 "></span>      <span class="k">if</span> <span class="p">(</span><span class="n">ni</span><span class="p">.</span><span class="n">isInteger</span><span class="p">())</span>
+<span class="lineno" data-linenos="23 "></span>        <span class="n">queue</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">ni</span><span class="p">.</span><span class="n">getInteger</span><span class="p">());</span>
+<span class="lineno" data-linenos="24 "></span>      <span class="k">else</span>
+<span class="lineno" data-linenos="25 "></span>        <span class="n">addInteger</span><span class="p">(</span><span class="n">ni</span><span class="p">.</span><span class="n">getList</span><span class="p">());</span>
+<span class="lineno" data-linenos="26 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos="27 "></span><span class="p">};</span>
+</code></pre></div>
+
 <h2 id="342-power-of-four-star">342. Power of Four <a href="https://leetcode.com/problems/power-of-four">$\star$</a></h2>
+<p><img alt="" src="https://img.shields.io/badge/-Bit%20Manipulation-A36336.svg?style=flat-square" /></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(1)$</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(1)$</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="lineno" data-linenos="1 "></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="lineno" data-linenos="2 "></span> <span class="k">public</span><span class="o">:</span>
+<span class="lineno" data-linenos="3 "></span>  <span class="kt">bool</span> <span class="n">isPowerOfFour</span><span class="p">(</span><span class="kt">int</span> <span class="n">num</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos="4 "></span>    <span class="k">return</span> <span class="n">num</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">__builtin_popcountll</span><span class="p">(</span><span class="n">num</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">num</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">;</span>
+<span class="lineno" data-linenos="5 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos="6 "></span><span class="p">};</span>
+</code></pre></div>
+
 <h2 id="343-integer-break-starstar">343. Integer Break <a href="https://leetcode.com/problems/integer-break">$\star\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>
 <p><img alt="" src="https://img.shields.io/badge/-Dynamic%20Programming-113285.svg?style=flat-square" /> <img alt="" src="https://img.shields.io/badge/-Math-434343.svg?style=flat-square" /></p>
 <ul class="task-list">
@@ -7410,6 +7457,23 @@
 </code></pre></div>
 
 <h2 id="344-reverse-string-star">344. Reverse String <a href="https://leetcode.com/problems/reverse-string">$\star$</a></h2>
+<p><img alt="" src="https://img.shields.io/badge/-String-60373E.svg?style=flat-square" /> <img alt="" src="https://img.shields.io/badge/-Two%20Pointers-2EA9DF.svg?style=flat-square" /></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(n)$</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(1)$</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 2 "></span> <span class="k">public</span><span class="o">:</span>
+<span class="lineno" data-linenos=" 3 "></span>  <span class="kt">void</span> <span class="n">reverseString</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;&amp;</span> <span class="n">s</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 4 "></span>    <span class="kt">int</span> <span class="n">l</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="lineno" data-linenos=" 5 "></span>    <span class="kt">int</span> <span class="n">r</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+<span class="lineno" data-linenos=" 6 "></span>
+<span class="lineno" data-linenos=" 7 "></span>    <span class="k">while</span> <span class="p">(</span><span class="n">l</span> <span class="o">&lt;</span> <span class="n">r</span><span class="p">)</span>
+<span class="lineno" data-linenos=" 8 "></span>      <span class="n">swap</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">l</span><span class="o">++</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="n">r</span><span class="o">--</span><span class="p">]);</span>
+<span class="lineno" data-linenos=" 9 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos="10 "></span><span class="p">};</span>
+</code></pre></div>
+
 <h2 id="345-reverse-vowels-of-a-string-star">345. Reverse Vowels of a String <a href="https://leetcode.com/problems/reverse-vowels-of-a-string">$\star$</a> <img alt="👎" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44e.svg" title=":thumbsdown:" /></h2>
 <p><img alt="" src="https://img.shields.io/badge/-String-60373E.svg?style=flat-square" /> <img alt="" src="https://img.shields.io/badge/-Two%20Pointers-2EA9DF.svg?style=flat-square" /></p>
 <ul class="task-list">
@@ -7419,8 +7483,8 @@
 <div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
 <span class="lineno" data-linenos=" 2 "></span> <span class="k">public</span><span class="o">:</span>
 <span class="lineno" data-linenos=" 3 "></span>  <span class="n">string</span> <span class="n">reverseVowels</span><span class="p">(</span><span class="n">string</span> <span class="n">s</span><span class="p">)</span> <span class="p">{</span>
-<span class="lineno" data-linenos=" 4 "></span>    <span class="n">unordered_set</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;</span> <span class="n">vowels</span><span class="p">{</span><span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="sc">&#39;e&#39;</span><span class="p">,</span> <span class="sc">&#39;i&#39;</span><span class="p">,</span> <span class="sc">&#39;o&#39;</span><span class="p">,</span> <span class="sc">&#39;u&#39;</span><span class="p">,</span>
-<span class="lineno" data-linenos=" 5 "></span>                               <span class="sc">&#39;A&#39;</span><span class="p">,</span> <span class="sc">&#39;E&#39;</span><span class="p">,</span> <span class="sc">&#39;I&#39;</span><span class="p">,</span> <span class="sc">&#39;O&#39;</span><span class="p">,</span> <span class="sc">&#39;U&#39;</span><span class="p">};</span>
+<span class="lineno" data-linenos=" 4 "></span>    <span class="k">const</span> <span class="n">unordered_set</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;</span> <span class="n">vowels</span><span class="p">{</span><span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="sc">&#39;e&#39;</span><span class="p">,</span> <span class="sc">&#39;i&#39;</span><span class="p">,</span> <span class="sc">&#39;o&#39;</span><span class="p">,</span> <span class="sc">&#39;u&#39;</span><span class="p">,</span>
+<span class="lineno" data-linenos=" 5 "></span>                                     <span class="sc">&#39;A&#39;</span><span class="p">,</span> <span class="sc">&#39;E&#39;</span><span class="p">,</span> <span class="sc">&#39;I&#39;</span><span class="p">,</span> <span class="sc">&#39;O&#39;</span><span class="p">,</span> <span class="sc">&#39;U&#39;</span><span class="p">};</span>
 <span class="lineno" data-linenos=" 6 "></span>    <span class="kt">int</span> <span class="n">l</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 <span class="lineno" data-linenos=" 7 "></span>    <span class="kt">int</span> <span class="n">r</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="n">length</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
 <span class="lineno" data-linenos=" 8 "></span>
@@ -7445,22 +7509,27 @@
 <div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
 <span class="lineno" data-linenos=" 2 "></span> <span class="k">public</span><span class="o">:</span>
 <span class="lineno" data-linenos=" 3 "></span>  <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">topKFrequent</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">nums</span><span class="p">,</span> <span class="kt">int</span> <span class="n">k</span><span class="p">)</span> <span class="p">{</span>
-<span class="lineno" data-linenos=" 4 "></span>    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">ans</span><span class="p">;</span>
-<span class="lineno" data-linenos=" 5 "></span>    <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">bucket</span><span class="p">(</span><span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
-<span class="lineno" data-linenos=" 6 "></span>    <span class="n">unordered_map</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">count</span><span class="p">;</span>
-<span class="lineno" data-linenos=" 7 "></span>
-<span class="lineno" data-linenos=" 8 "></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="nl">num</span> <span class="p">:</span> <span class="n">nums</span><span class="p">)</span> <span class="o">++</span><span class="n">count</span><span class="p">[</span><span class="n">num</span><span class="p">];</span>
+<span class="lineno" data-linenos=" 4 "></span>    <span class="k">const</span> <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+<span class="lineno" data-linenos=" 5 "></span>
+<span class="lineno" data-linenos=" 6 "></span>    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">ans</span><span class="p">;</span>
+<span class="lineno" data-linenos=" 7 "></span>    <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">bucket</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+<span class="lineno" data-linenos=" 8 "></span>    <span class="n">unordered_map</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">count</span><span class="p">;</span>
 <span class="lineno" data-linenos=" 9 "></span>
-<span class="lineno" data-linenos="10 "></span>    <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="p">[</span><span class="n">num</span><span class="p">,</span> <span class="n">freq</span><span class="p">]</span> <span class="o">:</span> <span class="n">count</span><span class="p">)</span> <span class="n">bucket</span><span class="p">[</span><span class="n">freq</span><span class="p">].</span><span class="n">push_back</span><span class="p">(</span><span class="n">num</span><span class="p">);</span>
-<span class="lineno" data-linenos="11 "></span>
-<span class="lineno" data-linenos="12 "></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">freq</span> <span class="o">=</span> <span class="n">bucket</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">freq</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="o">--</span><span class="n">freq</span><span class="p">)</span> <span class="p">{</span>
-<span class="lineno" data-linenos="13 "></span>      <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="nl">num</span> <span class="p">:</span> <span class="n">bucket</span><span class="p">[</span><span class="n">freq</span><span class="p">])</span> <span class="n">ans</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">num</span><span class="p">);</span>
-<span class="lineno" data-linenos="14 "></span>      <span class="k">if</span> <span class="p">(</span><span class="n">ans</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">==</span> <span class="n">k</span><span class="p">)</span> <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
-<span class="lineno" data-linenos="15 "></span>    <span class="p">}</span>
-<span class="lineno" data-linenos="16 "></span>
-<span class="lineno" data-linenos="17 "></span>    <span class="k">throw</span><span class="p">;</span>
-<span class="lineno" data-linenos="18 "></span>  <span class="p">}</span>
-<span class="lineno" data-linenos="19 "></span><span class="p">};</span>
+<span class="lineno" data-linenos="10 "></span>    <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="kt">int</span> <span class="nl">num</span> <span class="p">:</span> <span class="n">nums</span><span class="p">)</span>
+<span class="lineno" data-linenos="11 "></span>      <span class="o">++</span><span class="n">count</span><span class="p">[</span><span class="n">num</span><span class="p">];</span>
+<span class="lineno" data-linenos="12 "></span>
+<span class="lineno" data-linenos="13 "></span>    <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="p">[</span><span class="n">num</span><span class="p">,</span> <span class="n">freq</span><span class="p">]</span> <span class="o">:</span> <span class="n">count</span><span class="p">)</span>
+<span class="lineno" data-linenos="14 "></span>      <span class="n">bucket</span><span class="p">[</span><span class="n">freq</span><span class="p">].</span><span class="n">push_back</span><span class="p">(</span><span class="n">num</span><span class="p">);</span>
+<span class="lineno" data-linenos="15 "></span>
+<span class="lineno" data-linenos="16 "></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">freq</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span> <span class="n">freq</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">;</span> <span class="o">--</span><span class="n">freq</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos="17 "></span>      <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="kt">int</span> <span class="nl">num</span> <span class="p">:</span> <span class="n">bucket</span><span class="p">[</span><span class="n">freq</span><span class="p">])</span>
+<span class="lineno" data-linenos="18 "></span>        <span class="n">ans</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">num</span><span class="p">);</span>
+<span class="lineno" data-linenos="19 "></span>      <span class="k">if</span> <span class="p">(</span><span class="n">ans</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">==</span> <span class="n">k</span><span class="p">)</span> <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
+<span class="lineno" data-linenos="20 "></span>    <span class="p">}</span>
+<span class="lineno" data-linenos="21 "></span>
+<span class="lineno" data-linenos="22 "></span>    <span class="k">throw</span><span class="p">;</span>
+<span class="lineno" data-linenos="23 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos="24 "></span><span class="p">};</span>
 </code></pre></div>
 
 <h2 id="348-design-tic-tac-toe-starstar">348. Design Tic-Tac-Toe <a href="https://leetcode.com/problems/design-tic-tac-toe">$\star\star$</a> 🔒</h2>
@@ -7470,14 +7539,15 @@
 <span class="lineno" data-linenos=" 2 "></span> <span class="k">public</span><span class="o">:</span>
 <span class="lineno" data-linenos=" 3 "></span>  <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">intersection</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">nums1</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">nums2</span><span class="p">)</span> <span class="p">{</span>
 <span class="lineno" data-linenos=" 4 "></span>    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">ans</span><span class="p">;</span>
-<span class="lineno" data-linenos=" 5 "></span>    <span class="n">unordered_set</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">set</span><span class="p">{</span><span class="n">begin</span><span class="p">(</span><span class="n">nums1</span><span class="p">),</span> <span class="n">end</span><span class="p">(</span><span class="n">nums1</span><span class="p">)};</span>
+<span class="lineno" data-linenos=" 5 "></span>    <span class="n">unordered_set</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">nums1Set</span><span class="p">{</span><span class="n">begin</span><span class="p">(</span><span class="n">nums1</span><span class="p">),</span> <span class="n">end</span><span class="p">(</span><span class="n">nums1</span><span class="p">)};</span>
 <span class="lineno" data-linenos=" 6 "></span>
-<span class="lineno" data-linenos=" 7 "></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="nl">num</span> <span class="p">:</span> <span class="n">nums2</span><span class="p">)</span>
-<span class="lineno" data-linenos=" 8 "></span>      <span class="k">if</span> <span class="p">(</span><span class="n">set</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">num</span><span class="p">))</span> <span class="n">ans</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">num</span><span class="p">);</span>
-<span class="lineno" data-linenos=" 9 "></span>
-<span class="lineno" data-linenos="10 "></span>    <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
-<span class="lineno" data-linenos="11 "></span>  <span class="p">}</span>
-<span class="lineno" data-linenos="12 "></span><span class="p">};</span>
+<span class="lineno" data-linenos=" 7 "></span>    <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="kt">int</span> <span class="nl">num</span> <span class="p">:</span> <span class="n">nums2</span><span class="p">)</span>
+<span class="lineno" data-linenos=" 8 "></span>      <span class="k">if</span> <span class="p">(</span><span class="n">nums1Set</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">num</span><span class="p">))</span>
+<span class="lineno" data-linenos=" 9 "></span>        <span class="n">ans</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">num</span><span class="p">);</span>
+<span class="lineno" data-linenos="10 "></span>
+<span class="lineno" data-linenos="11 "></span>    <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
+<span class="lineno" data-linenos="12 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos="13 "></span><span class="p">};</span>
 </code></pre></div>
 
 <h2 id="350-intersection-of-two-arrays-ii-star">350. Intersection of Two Arrays II <a href="https://leetcode.com/problems/intersection-of-two-arrays-ii">$\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>
@@ -7488,14 +7558,16 @@
 <span class="lineno" data-linenos=" 4 "></span>    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">ans</span><span class="p">;</span>
 <span class="lineno" data-linenos=" 5 "></span>    <span class="n">unordered_map</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">count</span><span class="p">;</span>
 <span class="lineno" data-linenos=" 6 "></span>
-<span class="lineno" data-linenos=" 7 "></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="nl">num</span> <span class="p">:</span> <span class="n">nums1</span><span class="p">)</span> <span class="o">++</span><span class="n">count</span><span class="p">[</span><span class="n">num</span><span class="p">];</span>
-<span class="lineno" data-linenos=" 8 "></span>
-<span class="lineno" data-linenos=" 9 "></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="nl">num</span> <span class="p">:</span> <span class="n">nums2</span><span class="p">)</span>
-<span class="lineno" data-linenos="10 "></span>      <span class="k">if</span> <span class="p">(</span><span class="n">count</span><span class="p">[</span><span class="n">num</span><span class="p">]</span><span class="o">--</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="n">ans</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">num</span><span class="p">);</span>
-<span class="lineno" data-linenos="11 "></span>
-<span class="lineno" data-linenos="12 "></span>    <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
-<span class="lineno" data-linenos="13 "></span>  <span class="p">}</span>
-<span class="lineno" data-linenos="14 "></span><span class="p">};</span>
+<span class="lineno" data-linenos=" 7 "></span>    <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="kt">int</span> <span class="nl">num</span> <span class="p">:</span> <span class="n">nums1</span><span class="p">)</span>
+<span class="lineno" data-linenos=" 8 "></span>      <span class="o">++</span><span class="n">count</span><span class="p">[</span><span class="n">num</span><span class="p">];</span>
+<span class="lineno" data-linenos=" 9 "></span>
+<span class="lineno" data-linenos="10 "></span>    <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="kt">int</span> <span class="nl">num</span> <span class="p">:</span> <span class="n">nums2</span><span class="p">)</span>
+<span class="lineno" data-linenos="11 "></span>      <span class="k">if</span> <span class="p">(</span><span class="n">count</span><span class="p">[</span><span class="n">num</span><span class="p">]</span><span class="o">--</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+<span class="lineno" data-linenos="12 "></span>        <span class="n">ans</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">num</span><span class="p">);</span>
+<span class="lineno" data-linenos="13 "></span>
+<span class="lineno" data-linenos="14 "></span>    <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
+<span class="lineno" data-linenos="15 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos="16 "></span><span class="p">};</span>
 </code></pre></div>
                 
               

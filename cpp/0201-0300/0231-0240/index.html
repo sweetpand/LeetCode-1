@@ -7404,28 +7404,31 @@
 </ul>
 <div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">MyQueue</span> <span class="p">{</span>
 <span class="lineno" data-linenos=" 2 "></span> <span class="k">public</span><span class="o">:</span>
-<span class="lineno" data-linenos=" 3 "></span>  <span class="kt">void</span> <span class="n">push</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span> <span class="n">input</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">x</span><span class="p">);</span> <span class="p">}</span>
-<span class="lineno" data-linenos=" 4 "></span>
-<span class="lineno" data-linenos=" 5 "></span>  <span class="kt">int</span> <span class="n">pop</span><span class="p">()</span> <span class="p">{</span>
-<span class="lineno" data-linenos=" 6 "></span>    <span class="n">peek</span><span class="p">();</span>
-<span class="lineno" data-linenos=" 7 "></span>    <span class="kt">int</span> <span class="n">val</span> <span class="o">=</span> <span class="n">output</span><span class="p">.</span><span class="n">top</span><span class="p">();</span>
-<span class="lineno" data-linenos=" 8 "></span>    <span class="n">output</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
-<span class="lineno" data-linenos=" 9 "></span>    <span class="k">return</span> <span class="n">val</span><span class="p">;</span>
-<span class="lineno" data-linenos="10 "></span>  <span class="p">}</span>
-<span class="lineno" data-linenos="11 "></span>
-<span class="lineno" data-linenos="12 "></span>  <span class="kt">int</span> <span class="n">peek</span><span class="p">()</span> <span class="p">{</span>
-<span class="lineno" data-linenos="13 "></span>    <span class="k">if</span> <span class="p">(</span><span class="n">output</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span>
-<span class="lineno" data-linenos="14 "></span>      <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">input</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span>
-<span class="lineno" data-linenos="15 "></span>        <span class="n">output</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">input</span><span class="p">.</span><span class="n">top</span><span class="p">()),</span> <span class="n">input</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
-<span class="lineno" data-linenos="16 "></span>    <span class="k">return</span> <span class="n">output</span><span class="p">.</span><span class="n">top</span><span class="p">();</span>
-<span class="lineno" data-linenos="17 "></span>  <span class="p">}</span>
-<span class="lineno" data-linenos="18 "></span>
-<span class="lineno" data-linenos="19 "></span>  <span class="kt">bool</span> <span class="n">empty</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">input</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">output</span><span class="p">.</span><span class="n">empty</span><span class="p">();</span> <span class="p">}</span>
-<span class="lineno" data-linenos="20 "></span>
-<span class="lineno" data-linenos="21 "></span> <span class="k">private</span><span class="o">:</span>
-<span class="lineno" data-linenos="22 "></span>  <span class="n">stack</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">input</span><span class="p">;</span>
-<span class="lineno" data-linenos="23 "></span>  <span class="n">stack</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">output</span><span class="p">;</span>
-<span class="lineno" data-linenos="24 "></span><span class="p">};</span>
+<span class="lineno" data-linenos=" 3 "></span>  <span class="kt">void</span> <span class="n">push</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 4 "></span>    <span class="n">input</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="lineno" data-linenos=" 5 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos=" 6 "></span>
+<span class="lineno" data-linenos=" 7 "></span>  <span class="kt">int</span> <span class="n">pop</span><span class="p">()</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 8 "></span>    <span class="n">peek</span><span class="p">();</span>
+<span class="lineno" data-linenos=" 9 "></span>    <span class="kt">int</span> <span class="n">val</span> <span class="o">=</span> <span class="n">output</span><span class="p">.</span><span class="n">top</span><span class="p">();</span> <span class="n">output</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+<span class="lineno" data-linenos="10 "></span>    <span class="k">return</span> <span class="n">val</span><span class="p">;</span>
+<span class="lineno" data-linenos="11 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos="12 "></span>
+<span class="lineno" data-linenos="13 "></span>  <span class="kt">int</span> <span class="n">peek</span><span class="p">()</span> <span class="p">{</span>
+<span class="lineno" data-linenos="14 "></span>    <span class="k">if</span> <span class="p">(</span><span class="n">output</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span>
+<span class="lineno" data-linenos="15 "></span>      <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">input</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span>
+<span class="lineno" data-linenos="16 "></span>        <span class="n">output</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">input</span><span class="p">.</span><span class="n">top</span><span class="p">()),</span> <span class="n">input</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+<span class="lineno" data-linenos="17 "></span>    <span class="k">return</span> <span class="n">output</span><span class="p">.</span><span class="n">top</span><span class="p">();</span>
+<span class="lineno" data-linenos="18 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos="19 "></span>
+<span class="lineno" data-linenos="20 "></span>  <span class="kt">bool</span> <span class="n">empty</span><span class="p">()</span> <span class="p">{</span>
+<span class="lineno" data-linenos="21 "></span>    <span class="k">return</span> <span class="n">input</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">output</span><span class="p">.</span><span class="n">empty</span><span class="p">();</span>
+<span class="lineno" data-linenos="22 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos="23 "></span>
+<span class="lineno" data-linenos="24 "></span> <span class="k">private</span><span class="o">:</span>
+<span class="lineno" data-linenos="25 "></span>  <span class="n">stack</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">input</span><span class="p">;</span>
+<span class="lineno" data-linenos="26 "></span>  <span class="n">stack</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">output</span><span class="p">;</span>
+<span class="lineno" data-linenos="27 "></span><span class="p">};</span>
 </code></pre></div>
 
 <h2 id="233-number-of-digit-one-starstarstar">233. Number of Digit One <a href="https://leetcode.com/problems/number-of-digit-one">$\star\star\star$</a> <img alt="👎" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44e.svg" title=":thumbsdown:" /></h2>
@@ -7443,9 +7446,9 @@
 <span class="lineno" data-linenos=" 7 "></span>    <span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span>
 <span class="lineno" data-linenos=" 8 "></span>
 <span class="lineno" data-linenos=" 9 "></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">long</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span> <span class="o">*=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">num</span> <span class="o">/=</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
-<span class="lineno" data-linenos="10 "></span>      <span class="kt">int</span> <span class="n">prefix</span> <span class="o">=</span> <span class="n">n</span> <span class="o">/</span> <span class="p">(</span><span class="n">i</span> <span class="o">*</span> <span class="mi">10</span><span class="p">);</span>
-<span class="lineno" data-linenos="11 "></span>      <span class="kt">int</span> <span class="n">suffix</span> <span class="o">=</span> <span class="n">n</span> <span class="o">%</span> <span class="n">i</span><span class="p">;</span>
-<span class="lineno" data-linenos="12 "></span>      <span class="kt">int</span> <span class="n">currentDigit</span> <span class="o">=</span> <span class="n">num</span> <span class="o">%</span> <span class="mi">10</span><span class="p">;</span>
+<span class="lineno" data-linenos="10 "></span>      <span class="k">const</span> <span class="kt">int</span> <span class="n">prefix</span> <span class="o">=</span> <span class="n">n</span> <span class="o">/</span> <span class="p">(</span><span class="n">i</span> <span class="o">*</span> <span class="mi">10</span><span class="p">);</span>
+<span class="lineno" data-linenos="11 "></span>      <span class="k">const</span> <span class="kt">int</span> <span class="n">suffix</span> <span class="o">=</span> <span class="n">n</span> <span class="o">%</span> <span class="n">i</span><span class="p">;</span>
+<span class="lineno" data-linenos="12 "></span>      <span class="k">const</span> <span class="kt">int</span> <span class="n">currentDigit</span> <span class="o">=</span> <span class="n">num</span> <span class="o">%</span> <span class="mi">10</span><span class="p">;</span>
 <span class="lineno" data-linenos="13 "></span>      <span class="n">ans</span> <span class="o">+=</span> <span class="n">prefix</span> <span class="o">*</span> <span class="n">i</span><span class="p">;</span>
 <span class="lineno" data-linenos="14 "></span>      <span class="k">if</span> <span class="p">(</span><span class="n">currentDigit</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span>
 <span class="lineno" data-linenos="15 "></span>        <span class="n">ans</span> <span class="o">+=</span> <span class="n">i</span><span class="p">;</span>

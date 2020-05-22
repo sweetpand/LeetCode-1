@@ -7391,8 +7391,10 @@
 </ul>
 <div class="highlight"><pre><span></span><code><span class="lineno" data-linenos="1 "></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
 <span class="lineno" data-linenos="2 "></span> <span class="k">public</span><span class="o">:</span>
-<span class="lineno" data-linenos="3 "></span>  <span class="kt">bool</span> <span class="n">canWinNim</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">4</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">;</span> <span class="p">}</span>
-<span class="lineno" data-linenos="4 "></span><span class="p">};</span>
+<span class="lineno" data-linenos="3 "></span>  <span class="kt">bool</span> <span class="n">canWinNim</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos="4 "></span>    <span class="k">return</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">4</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="lineno" data-linenos="5 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos="6 "></span><span class="p">};</span>
 </code></pre></div>
 
 <h2 id="293-flip-game-star">293. Flip Game <a href="https://leetcode.com/problems/flip-game">$\star$</a> 🔒</h2>
@@ -7470,26 +7472,25 @@
 <span class="lineno" data-linenos="31 "></span>    <span class="n">queue</span><span class="o">&lt;</span><span class="n">TreeNode</span><span class="o">*&gt;</span> <span class="n">queue</span><span class="p">{{</span><span class="n">root</span><span class="p">}};</span>
 <span class="lineno" data-linenos="32 "></span>
 <span class="lineno" data-linenos="33 "></span>    <span class="k">while</span> <span class="p">(</span><span class="n">iss</span> <span class="o">&gt;&gt;</span> <span class="n">val</span><span class="p">)</span> <span class="p">{</span>
-<span class="lineno" data-linenos="34 "></span>      <span class="n">TreeNode</span><span class="o">*</span> <span class="n">parent</span> <span class="o">=</span> <span class="n">queue</span><span class="p">.</span><span class="n">front</span><span class="p">();</span>
-<span class="lineno" data-linenos="35 "></span>      <span class="n">queue</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
-<span class="lineno" data-linenos="36 "></span>
-<span class="lineno" data-linenos="37 "></span>      <span class="c1">// left node</span>
-<span class="lineno" data-linenos="38 "></span>      <span class="k">if</span> <span class="p">(</span><span class="n">val</span> <span class="o">!=</span> <span class="s">&quot;n&quot;</span><span class="p">)</span> <span class="p">{</span>
-<span class="lineno" data-linenos="39 "></span>        <span class="n">parent</span><span class="o">-&gt;</span><span class="n">left</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TreeNode</span><span class="p">(</span><span class="n">stoi</span><span class="p">(</span><span class="n">val</span><span class="p">));</span>
-<span class="lineno" data-linenos="40 "></span>        <span class="n">queue</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">parent</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">);</span>
-<span class="lineno" data-linenos="41 "></span>      <span class="p">}</span>
-<span class="lineno" data-linenos="42 "></span>
-<span class="lineno" data-linenos="43 "></span>      <span class="c1">// right node</span>
-<span class="lineno" data-linenos="44 "></span>      <span class="n">iss</span> <span class="o">&gt;&gt;</span> <span class="n">val</span><span class="p">;</span>
-<span class="lineno" data-linenos="45 "></span>      <span class="k">if</span> <span class="p">(</span><span class="n">val</span> <span class="o">!=</span> <span class="s">&quot;n&quot;</span><span class="p">)</span> <span class="p">{</span>
-<span class="lineno" data-linenos="46 "></span>        <span class="n">parent</span><span class="o">-&gt;</span><span class="n">right</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TreeNode</span><span class="p">(</span><span class="n">stoi</span><span class="p">(</span><span class="n">val</span><span class="p">));</span>
-<span class="lineno" data-linenos="47 "></span>        <span class="n">queue</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">parent</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">);</span>
-<span class="lineno" data-linenos="48 "></span>      <span class="p">}</span>
-<span class="lineno" data-linenos="49 "></span>    <span class="p">}</span>
-<span class="lineno" data-linenos="50 "></span>
-<span class="lineno" data-linenos="51 "></span>    <span class="k">return</span> <span class="n">root</span><span class="p">;</span>
-<span class="lineno" data-linenos="52 "></span>  <span class="p">}</span>
-<span class="lineno" data-linenos="53 "></span><span class="p">};</span>
+<span class="lineno" data-linenos="34 "></span>      <span class="n">TreeNode</span><span class="o">*</span> <span class="n">parent</span> <span class="o">=</span> <span class="n">queue</span><span class="p">.</span><span class="n">front</span><span class="p">();</span> <span class="n">queue</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+<span class="lineno" data-linenos="35 "></span>
+<span class="lineno" data-linenos="36 "></span>      <span class="c1">// left node</span>
+<span class="lineno" data-linenos="37 "></span>      <span class="k">if</span> <span class="p">(</span><span class="n">val</span> <span class="o">!=</span> <span class="s">&quot;n&quot;</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos="38 "></span>        <span class="n">parent</span><span class="o">-&gt;</span><span class="n">left</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TreeNode</span><span class="p">(</span><span class="n">stoi</span><span class="p">(</span><span class="n">val</span><span class="p">));</span>
+<span class="lineno" data-linenos="39 "></span>        <span class="n">queue</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">parent</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">);</span>
+<span class="lineno" data-linenos="40 "></span>      <span class="p">}</span>
+<span class="lineno" data-linenos="41 "></span>
+<span class="lineno" data-linenos="42 "></span>      <span class="c1">// right node</span>
+<span class="lineno" data-linenos="43 "></span>      <span class="n">iss</span> <span class="o">&gt;&gt;</span> <span class="n">val</span><span class="p">;</span>
+<span class="lineno" data-linenos="44 "></span>      <span class="k">if</span> <span class="p">(</span><span class="n">val</span> <span class="o">!=</span> <span class="s">&quot;n&quot;</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos="45 "></span>        <span class="n">parent</span><span class="o">-&gt;</span><span class="n">right</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TreeNode</span><span class="p">(</span><span class="n">stoi</span><span class="p">(</span><span class="n">val</span><span class="p">));</span>
+<span class="lineno" data-linenos="46 "></span>        <span class="n">queue</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">parent</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">);</span>
+<span class="lineno" data-linenos="47 "></span>      <span class="p">}</span>
+<span class="lineno" data-linenos="48 "></span>    <span class="p">}</span>
+<span class="lineno" data-linenos="49 "></span>
+<span class="lineno" data-linenos="50 "></span>    <span class="k">return</span> <span class="n">root</span><span class="p">;</span>
+<span class="lineno" data-linenos="51 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos="52 "></span><span class="p">};</span>
 </code></pre></div>
 
 <h2 id="298-binary-tree-longest-consecutive-sequence-starstar">298. Binary Tree Longest Consecutive Sequence <a href="https://leetcode.com/problems/binary-tree-longest-consecutive-sequence">$\star\star$</a> 🔒</h2>

@@ -7411,6 +7411,25 @@
 </code></pre></div>
 
 <h2 id="344-reverse-string-star">344. Reverse String <a href="https://leetcode.com/problems/reverse-string">$\star$</a></h2>
+<p><img alt="" src="https://img.shields.io/badge/-String-60373E.svg?style=flat-square" /> <img alt="" src="https://img.shields.io/badge/-Two%20Pointers-2EA9DF.svg?style=flat-square" /></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(n)$</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(1)$</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 2 "></span>  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">reverseString</span><span class="p">(</span><span class="kt">char</span><span class="o">[]</span> <span class="n">s</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 3 "></span>    <span class="kt">int</span> <span class="n">l</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="lineno" data-linenos=" 4 "></span>    <span class="kt">int</span> <span class="n">r</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+<span class="lineno" data-linenos=" 5 "></span>
+<span class="lineno" data-linenos=" 6 "></span>    <span class="k">while</span> <span class="p">(</span><span class="n">l</span> <span class="o">&lt;</span> <span class="n">r</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 7 "></span>      <span class="kt">char</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">s</span><span class="o">[</span><span class="n">l</span><span class="o">]</span><span class="p">;</span>
+<span class="lineno" data-linenos=" 8 "></span>      <span class="n">s</span><span class="o">[</span><span class="n">l</span><span class="o">++]</span> <span class="o">=</span> <span class="n">s</span><span class="o">[</span><span class="n">r</span><span class="o">]</span><span class="p">;</span>
+<span class="lineno" data-linenos=" 9 "></span>      <span class="n">s</span><span class="o">[</span><span class="n">r</span><span class="o">--]</span> <span class="o">=</span> <span class="n">temp</span><span class="p">;</span>
+<span class="lineno" data-linenos="10 "></span>    <span class="p">}</span>
+<span class="lineno" data-linenos="11 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos="12 "></span><span class="p">}</span>
+</code></pre></div>
+
 <h2 id="345-reverse-vowels-of-a-string-star">345. Reverse Vowels of a String <a href="https://leetcode.com/problems/reverse-vowels-of-a-string">$\star$</a> <img alt="👎" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44e.svg" title=":thumbsdown:" /></h2>
 <p><img alt="" src="https://img.shields.io/badge/-String-60373E.svg?style=flat-square" /> <img alt="" src="https://img.shields.io/badge/-Two%20Pointers-2EA9DF.svg?style=flat-square" /></p>
 <ul class="task-list">
