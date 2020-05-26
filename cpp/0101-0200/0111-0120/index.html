@@ -7464,7 +7464,7 @@
 </code></pre></div>
 
 <h2 id="114-flatten-binary-tree-to-linked-list-starstar">114. Flatten Binary Tree to Linked List <a href="https://leetcode.com/problems/flatten-binary-tree-to-linked-list">$\star\star$</a> <img alt="💪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4aa.svg" title=":muscle:" /></h2>
-<p><img alt="" src="https://img.shields.io/badge/-Depth%20First%20Search-86C166.svg?style=flat-square" /> <img alt="" src="https://img.shields.io/badge/-Tree-227D51.svg?style=flat-square" /></p>
+<p><img alt="" src="https://img.shields.io/badge/-Depth%20First%20Search-86C166.svg?style=flat-square" /> <img alt="" src="https://img.shields.io/badge/-Stack-E2943B.svg?style=flat-square" /> <img alt="" src="https://img.shields.io/badge/-Tree-227D51.svg?style=flat-square" /></p>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(n)$</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(1)$</li>
@@ -7474,16 +7474,17 @@
 <span class="lineno" data-linenos=" 3 "></span>  <span class="kt">void</span> <span class="n">flatten</span><span class="p">(</span><span class="n">TreeNode</span><span class="o">*</span> <span class="n">root</span><span class="p">)</span> <span class="p">{</span>
 <span class="lineno" data-linenos=" 4 "></span>    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">root</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
 <span class="lineno" data-linenos=" 5 "></span>
-<span class="lineno" data-linenos=" 6 "></span>    <span class="n">flatten</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">);</span>
-<span class="lineno" data-linenos=" 7 "></span>    <span class="n">flatten</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">);</span>
-<span class="lineno" data-linenos=" 8 "></span>    <span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span> <span class="o">=</span> <span class="n">prev</span><span class="p">;</span>
-<span class="lineno" data-linenos=" 9 "></span>    <span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
-<span class="lineno" data-linenos="10 "></span>    <span class="n">prev</span> <span class="o">=</span> <span class="n">root</span><span class="p">;</span>
-<span class="lineno" data-linenos="11 "></span>  <span class="p">}</span>
-<span class="lineno" data-linenos="12 "></span>
-<span class="lineno" data-linenos="13 "></span> <span class="k">private</span><span class="o">:</span>
-<span class="lineno" data-linenos="14 "></span>  <span class="n">TreeNode</span><span class="o">*</span> <span class="n">prev</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
-<span class="lineno" data-linenos="15 "></span><span class="p">};</span>
+<span class="lineno" data-linenos=" 6 "></span>    <span class="n">stack</span><span class="o">&lt;</span><span class="n">TreeNode</span><span class="o">*&gt;</span> <span class="n">stack</span><span class="p">{{</span><span class="n">root</span><span class="p">}};</span>
+<span class="lineno" data-linenos=" 7 "></span>
+<span class="lineno" data-linenos=" 8 "></span>    <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">stack</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 9 "></span>      <span class="n">root</span> <span class="o">=</span> <span class="n">stack</span><span class="p">.</span><span class="n">top</span><span class="p">(),</span> <span class="n">stack</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+<span class="lineno" data-linenos="10 "></span>      <span class="k">if</span> <span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">)</span> <span class="n">stack</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">);</span>
+<span class="lineno" data-linenos="11 "></span>      <span class="k">if</span> <span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">)</span> <span class="n">stack</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">);</span>
+<span class="lineno" data-linenos="12 "></span>      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">stack</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span> <span class="o">=</span> <span class="n">stack</span><span class="p">.</span><span class="n">top</span><span class="p">();</span>
+<span class="lineno" data-linenos="13 "></span>      <span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+<span class="lineno" data-linenos="14 "></span>    <span class="p">}</span>
+<span class="lineno" data-linenos="15 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos="16 "></span><span class="p">};</span>
 </code></pre></div>
 
 <h2 id="115-distinct-subsequences-starstarstar">115. Distinct Subsequences <a href="https://leetcode.com/problems/distinct-subsequences">$\star\star\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>

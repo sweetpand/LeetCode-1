@@ -7387,9 +7387,26 @@
 <h2 id="363-max-sum-of-rectangle-no-larger-than-k-starstarstar">363. Max Sum of Rectangle No Larger Than K <a href="https://leetcode.com/problems/max-sum-of-rectangle-no-larger-than-k">$\star\star\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>
 <h2 id="364-nested-list-weight-sum-ii-starstar">364. Nested List Weight Sum II <a href="https://leetcode.com/problems/nested-list-weight-sum-ii">$\star\star$</a> 🔒</h2>
 <h2 id="365-water-and-jug-problem-starstar">365. Water and Jug Problem <a href="https://leetcode.com/problems/water-and-jug-problem">$\star\star$</a> <img alt="👎" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44e.svg" title=":thumbsdown:" /></h2>
+<p><img alt="" src="https://img.shields.io/badge/-Math-434343.svg?style=flat-square" /></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(1)$</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(1)$</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="lineno" data-linenos="1 "></span><span class="kn">from</span> <span class="nn">fractions</span> <span class="kn">import</span> <span class="n">gcd</span>
+<span class="lineno" data-linenos="2 "></span>
+<span class="lineno" data-linenos="3 "></span>
+<span class="lineno" data-linenos="4 "></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+<span class="lineno" data-linenos="5 "></span>    <span class="k">def</span> <span class="nf">canMeasureWater</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">z</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="lineno" data-linenos="6 "></span>        <span class="k">return</span> <span class="n">z</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">&gt;=</span> <span class="n">z</span> <span class="ow">and</span> <span class="n">z</span> <span class="o">%</span> <span class="n">gcd</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
+</code></pre></div>
+
 <h2 id="366-find-leaves-of-binary-tree-starstar">366. Find Leaves of Binary Tree <a href="https://leetcode.com/problems/find-leaves-of-binary-tree">$\star\star$</a> 🔒</h2>
 <h2 id="367-valid-perfect-square-star">367. Valid Perfect Square <a href="https://leetcode.com/problems/valid-perfect-square">$\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>
 <p><img alt="" src="https://img.shields.io/badge/-Binary%20Search-1B813E.svg?style=flat-square" /> <img alt="" src="https://img.shields.io/badge/-Math-434343.svg?style=flat-square" /></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(\log num)$</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(1)$</li>
+</ul>
 <div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
 <span class="lineno" data-linenos=" 2 "></span>    <span class="k">def</span> <span class="nf">isPerfectSquare</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
 <span class="lineno" data-linenos=" 3 "></span>        <span class="n">l</span> <span class="o">=</span> <span class="mi">1</span>
@@ -7407,6 +7424,10 @@
 
 <h2 id="368-largest-divisible-subset-starstar">368. Largest Divisible Subset <a href="https://leetcode.com/problems/largest-divisible-subset">$\star\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>
 <p><img alt="" src="https://img.shields.io/badge/-Dynamic%20Programming-113285.svg?style=flat-square" /> <img alt="" src="https://img.shields.io/badge/-Math-434343.svg?style=flat-square" /></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(n^2)$</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(n)$</li>
+</ul>
 <div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
 <span class="lineno" data-linenos=" 2 "></span>    <span class="k">def</span> <span class="nf">largestDivisibleSubset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
 <span class="lineno" data-linenos=" 3 "></span>        <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>

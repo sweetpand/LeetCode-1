@@ -7388,6 +7388,10 @@
 <h2 id="354-russian-doll-envelopes-starstarstar">354. Russian Doll Envelopes <a href="https://leetcode.com/problems/russian-doll-envelopes">$\star\star\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>
 <h2 id="355-design-twitter-starstar">355. Design Twitter <a href="https://leetcode.com/problems/design-twitter">$\star\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>
 <p><img alt="" src="https://img.shields.io/badge/-Hash%20Table-7BA23F.svg?style=flat-square" /> <img alt="" src="https://img.shields.io/badge/-Heap-0F4C3A.svg?style=flat-square" /></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(n + k\log n)$, where <code>n = len(tweets)</code> and <code>k = min(10, len(tweets))</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(n)$</li>
+</ul>
 <div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="kd">class</span> <span class="nc">Twitter</span> <span class="p">{</span>
 <span class="lineno" data-linenos=" 2 "></span>  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">postTweet</span><span class="p">(</span><span class="kt">int</span> <span class="n">userId</span><span class="p">,</span> <span class="kt">int</span> <span class="n">tweetId</span><span class="p">)</span> <span class="p">{</span>
 <span class="lineno" data-linenos=" 3 "></span>    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">tweets</span><span class="p">.</span><span class="na">containsKey</span><span class="p">(</span><span class="n">userId</span><span class="p">))</span>
@@ -7435,6 +7439,10 @@
 <h2 id="356-line-reflection-starstar">356. Line Reflection <a href="https://leetcode.com/problems/line-reflection">$\star\star$</a> 🔒</h2>
 <h2 id="357-count-numbers-with-unique-digits-starstar">357. Count Numbers with Unique Digits <a href="https://leetcode.com/problems/count-numbers-with-unique-digits">$\star\star$</a> <img alt="👎" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44e.svg" title=":thumbsdown:" /></h2>
 <p><img alt="" src="https://img.shields.io/badge/-Backtracking-D0104C.svg?style=flat-square" /> <img alt="" src="https://img.shields.io/badge/-Dynamic%20Programming-113285.svg?style=flat-square" /> <img alt="" src="https://img.shields.io/badge/-Math-434343.svg?style=flat-square" /></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(9)$</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(1)$</li>
+</ul>
 <div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="p">{</span>
 <span class="lineno" data-linenos=" 2 "></span>  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">countNumbersWithUniqueDigits</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
 <span class="lineno" data-linenos=" 3 "></span>    <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>

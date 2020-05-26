@@ -7420,31 +7420,31 @@
 <div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">BSTIterator</span> <span class="p">{</span>
 <span class="lineno" data-linenos=" 2 "></span> <span class="k">public</span><span class="o">:</span>
 <span class="lineno" data-linenos=" 3 "></span>  <span class="n">BSTIterator</span><span class="p">(</span><span class="n">TreeNode</span><span class="o">*</span> <span class="n">root</span><span class="p">)</span> <span class="p">{</span>
-<span class="lineno" data-linenos=" 4 "></span>    <span class="n">helper</span><span class="p">(</span><span class="n">root</span><span class="p">);</span>
-<span class="lineno" data-linenos=" 5 "></span>  <span class="p">}</span>
-<span class="lineno" data-linenos=" 6 "></span>
-<span class="lineno" data-linenos=" 7 "></span>  <span class="kt">int</span> <span class="n">next</span><span class="p">()</span> <span class="p">{</span>
-<span class="lineno" data-linenos=" 8 "></span>    <span class="n">TreeNode</span><span class="o">*</span> <span class="n">node</span> <span class="o">=</span> <span class="n">stack</span><span class="p">.</span><span class="n">top</span><span class="p">();</span> <span class="n">stack</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+<span class="lineno" data-linenos=" 4 "></span>    <span class="k">while</span> <span class="p">(</span><span class="n">root</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 5 "></span>      <span class="n">stack</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">root</span><span class="p">);</span>
+<span class="lineno" data-linenos=" 6 "></span>      <span class="n">root</span> <span class="o">=</span> <span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">;</span>
+<span class="lineno" data-linenos=" 7 "></span>    <span class="p">}</span>
+<span class="lineno" data-linenos=" 8 "></span>  <span class="p">}</span>
 <span class="lineno" data-linenos=" 9 "></span>
-<span class="lineno" data-linenos="10 "></span>    <span class="k">if</span> <span class="p">(</span><span class="n">node</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">)</span>
-<span class="lineno" data-linenos="11 "></span>      <span class="n">helper</span><span class="p">(</span><span class="n">node</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">);</span>
+<span class="lineno" data-linenos="10 "></span>  <span class="kt">int</span> <span class="n">next</span><span class="p">()</span> <span class="p">{</span>
+<span class="lineno" data-linenos="11 "></span>    <span class="n">TreeNode</span><span class="o">*</span> <span class="n">node</span> <span class="o">=</span> <span class="n">stack</span><span class="p">.</span><span class="n">top</span><span class="p">();</span> <span class="n">stack</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
 <span class="lineno" data-linenos="12 "></span>
-<span class="lineno" data-linenos="13 "></span>    <span class="k">return</span> <span class="n">node</span><span class="o">-&gt;</span><span class="n">val</span><span class="p">;</span>
-<span class="lineno" data-linenos="14 "></span>  <span class="p">}</span>
-<span class="lineno" data-linenos="15 "></span>
-<span class="lineno" data-linenos="16 "></span>  <span class="kt">bool</span> <span class="n">hasNext</span><span class="p">()</span> <span class="p">{</span>
-<span class="lineno" data-linenos="17 "></span>    <span class="k">return</span> <span class="o">!</span><span class="n">stack</span><span class="p">.</span><span class="n">empty</span><span class="p">();</span>
-<span class="lineno" data-linenos="18 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos="13 "></span>    <span class="kt">int</span> <span class="n">res</span> <span class="o">=</span> <span class="n">node</span><span class="o">-&gt;</span><span class="n">val</span><span class="p">;</span>
+<span class="lineno" data-linenos="14 "></span>    <span class="n">node</span> <span class="o">=</span> <span class="n">node</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">;</span>
+<span class="lineno" data-linenos="15 "></span>    <span class="k">while</span> <span class="p">(</span><span class="n">node</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos="16 "></span>      <span class="n">stack</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">node</span><span class="p">);</span>
+<span class="lineno" data-linenos="17 "></span>      <span class="n">node</span> <span class="o">=</span> <span class="n">node</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">;</span>
+<span class="lineno" data-linenos="18 "></span>    <span class="p">}</span>
 <span class="lineno" data-linenos="19 "></span>
-<span class="lineno" data-linenos="20 "></span> <span class="k">private</span><span class="o">:</span>
-<span class="lineno" data-linenos="21 "></span>  <span class="n">stack</span><span class="o">&lt;</span><span class="n">TreeNode</span><span class="o">*&gt;</span> <span class="n">stack</span><span class="p">;</span>
+<span class="lineno" data-linenos="20 "></span>    <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
+<span class="lineno" data-linenos="21 "></span>  <span class="p">}</span>
 <span class="lineno" data-linenos="22 "></span>
-<span class="lineno" data-linenos="23 "></span>  <span class="kt">void</span> <span class="nf">helper</span><span class="p">(</span><span class="n">TreeNode</span><span class="o">*</span> <span class="n">root</span><span class="p">)</span> <span class="p">{</span>
-<span class="lineno" data-linenos="24 "></span>    <span class="k">while</span> <span class="p">(</span><span class="n">root</span><span class="p">)</span> <span class="p">{</span>
-<span class="lineno" data-linenos="25 "></span>      <span class="n">stack</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">root</span><span class="p">);</span>
-<span class="lineno" data-linenos="26 "></span>      <span class="n">root</span> <span class="o">=</span> <span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">;</span>
-<span class="lineno" data-linenos="27 "></span>    <span class="p">}</span>
-<span class="lineno" data-linenos="28 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos="23 "></span>  <span class="kt">bool</span> <span class="n">hasNext</span><span class="p">()</span> <span class="p">{</span>
+<span class="lineno" data-linenos="24 "></span>    <span class="k">return</span> <span class="o">!</span><span class="n">stack</span><span class="p">.</span><span class="n">empty</span><span class="p">();</span>
+<span class="lineno" data-linenos="25 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos="26 "></span>
+<span class="lineno" data-linenos="27 "></span> <span class="k">private</span><span class="o">:</span>
+<span class="lineno" data-linenos="28 "></span>  <span class="n">stack</span><span class="o">&lt;</span><span class="n">TreeNode</span><span class="o">*&gt;</span> <span class="n">stack</span><span class="p">;</span>
 <span class="lineno" data-linenos="29 "></span><span class="p">};</span>
 </code></pre></div>
 

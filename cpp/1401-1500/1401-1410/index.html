@@ -2532,7 +2532,7 @@
       
         <li class="md-nav__item">
   <a href="#1407-top-travellers-star" class="md-nav__link">
-    1407. Top Travellers $\star$
+    1407. Top Travellers $\star$ 🔒
   </a>
   
 </li>
@@ -7334,7 +7334,7 @@
       
         <li class="md-nav__item">
   <a href="#1407-top-travellers-star" class="md-nav__link">
-    1407. Top Travellers $\star$
+    1407. Top Travellers $\star$ 🔒
   </a>
   
 </li>
@@ -7383,11 +7383,39 @@
                   <h1>1401-1410</h1>
                 
                 <h2 id="1401-circle-and-rectangle-overlapping-starstar">1401. Circle and Rectangle Overlapping <a href="https://leetcode.com/problems/circle-and-rectangle-overlapping">$\star\star$</a></h2>
-<h2 id="1402-reducing-dishes-starstarstar">1402. Reducing Dishes <a href="https://leetcode.com/problems/reducing-dishes">$\star\star\star$</a></h2>
-<h2 id="1403-minimum-subsequence-in-non-increasing-order-star">1403. Minimum Subsequence in Non-Increasing Order <a href="https://leetcode.com/problems/minimum-subsequence-in-non-increasing-order">$\star$</a></h2>
-<h2 id="1404-number-of-steps-to-reduce-a-number-in-binary-representation-to-one-starstar">1404. Number of Steps to Reduce a Number in Binary Representation to One <a href="https://leetcode.com/problems/number-of-steps-to-reduce-a-number-in-binary-representation-to-one">$\star\star$</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(1)$</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(1)$</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 2 "></span> <span class="k">public</span><span class="o">:</span>
+<span class="lineno" data-linenos=" 3 "></span>  <span class="kt">bool</span> <span class="n">checkOverlap</span><span class="p">(</span><span class="kt">int</span> <span class="n">radius</span><span class="p">,</span> <span class="kt">int</span> <span class="n">x_center</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y_center</span><span class="p">,</span> <span class="kt">int</span> <span class="n">x1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y1</span><span class="p">,</span>
+<span class="lineno" data-linenos=" 4 "></span>                    <span class="kt">int</span> <span class="n">x2</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y2</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 5 "></span>    <span class="k">auto</span> <span class="n">clamp</span> <span class="o">=</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="kt">int</span> <span class="n">center</span><span class="p">,</span> <span class="kt">int</span> <span class="n">mini</span><span class="p">,</span> <span class="kt">int</span> <span class="n">maxi</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 6 "></span>      <span class="k">return</span> <span class="n">max</span><span class="p">(</span><span class="n">mini</span><span class="p">,</span> <span class="n">min</span><span class="p">(</span><span class="n">maxi</span><span class="p">,</span> <span class="n">center</span><span class="p">));</span>
+<span class="lineno" data-linenos=" 7 "></span>    <span class="p">};</span>
+<span class="lineno" data-linenos=" 8 "></span>
+<span class="lineno" data-linenos=" 9 "></span>    <span class="c1">// the closest point to the circle within the rectangle</span>
+<span class="lineno" data-linenos="10 "></span>    <span class="kt">int</span> <span class="n">closestX</span> <span class="o">=</span> <span class="n">clamp</span><span class="p">(</span><span class="n">x_center</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">);</span>
+<span class="lineno" data-linenos="11 "></span>    <span class="kt">int</span> <span class="n">closestY</span> <span class="o">=</span> <span class="n">clamp</span><span class="p">(</span><span class="n">y_center</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">y2</span><span class="p">);</span>
+<span class="lineno" data-linenos="12 "></span>
+<span class="lineno" data-linenos="13 "></span>    <span class="c1">// the distance between the circle&#39;s center and this closest point</span>
+<span class="lineno" data-linenos="14 "></span>    <span class="kt">int</span> <span class="n">distanceX</span> <span class="o">=</span> <span class="n">x_center</span> <span class="o">-</span> <span class="n">closestX</span><span class="p">;</span>
+<span class="lineno" data-linenos="15 "></span>    <span class="kt">int</span> <span class="n">distanceY</span> <span class="o">=</span> <span class="n">y_center</span> <span class="o">-</span> <span class="n">closestY</span><span class="p">;</span>
+<span class="lineno" data-linenos="16 "></span>
+<span class="lineno" data-linenos="17 "></span>    <span class="c1">// if the distance is less than the circle&#39;s radius, an intersection occurs</span>
+<span class="lineno" data-linenos="18 "></span>    <span class="k">return</span> <span class="p">(</span><span class="n">distanceX</span> <span class="o">*</span> <span class="n">distanceX</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">distanceY</span> <span class="o">*</span> <span class="n">distanceY</span><span class="p">)</span> <span class="o">&lt;=</span>
+<span class="lineno" data-linenos="19 "></span>           <span class="p">(</span><span class="n">radius</span> <span class="o">*</span> <span class="n">radius</span><span class="p">);</span>
+<span class="lineno" data-linenos="20 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos="21 "></span><span class="p">};</span>
+</code></pre></div>
+
+<h2 id="1402-reducing-dishes-starstarstar">1402. Reducing Dishes <a href="https://leetcode.com/problems/reducing-dishes">$\star\star\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>
+<h2 id="1403-minimum-subsequence-in-non-increasing-order-star">1403. Minimum Subsequence in Non-Increasing Order <a href="https://leetcode.com/problems/minimum-subsequence-in-non-increasing-order">$\star$</a> <img alt="👎" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44e.svg" title=":thumbsdown:" /></h2>
+<h2 id="1404-number-of-steps-to-reduce-a-number-in-binary-representation-to-one-starstar">1404. Number of Steps to Reduce a Number in Binary Representation to One <a href="https://leetcode.com/problems/number-of-steps-to-reduce-a-number-in-binary-representation-to-one">$\star\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>
 <h2 id="1405-longest-happy-string-starstar">1405. Longest Happy String <a href="https://leetcode.com/problems/longest-happy-string">$\star\star$</a></h2>
-<h2 id="1406-stone-game-iii-starstarstar">1406. Stone Game III <a href="https://leetcode.com/problems/stone-game-iii">$\star\star\star$</a></h2>
+<h2 id="1406-stone-game-iii-starstarstar">1406. Stone Game III <a href="https://leetcode.com/problems/stone-game-iii">$\star\star\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>
+<p><img alt="" src="https://img.shields.io/badge/-Dynamic%20Programming-113285.svg?style=flat-square" /></p>
 <div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
 <span class="lineno" data-linenos=" 2 "></span> <span class="k">public</span><span class="o">:</span>
 <span class="lineno" data-linenos=" 3 "></span>  <span class="n">string</span> <span class="n">stoneGameIII</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">stoneValue</span><span class="p">)</span> <span class="p">{</span>
@@ -7409,10 +7437,10 @@
 <span class="lineno" data-linenos="19 "></span><span class="p">};</span>
 </code></pre></div>
 
-<h2 id="1407-top-travellers-star">1407. Top Travellers <a href="https://leetcode.com/problems/top-travellers">$\star$</a></h2>
+<h2 id="1407-top-travellers-star">1407. Top Travellers <a href="https://leetcode.com/problems/top-travellers">$\star$</a> 🔒</h2>
 <h2 id="1408-string-matching-in-an-array-star">1408. String Matching in an Array <a href="https://leetcode.com/problems/string-matching-in-an-array">$\star$</a></h2>
-<h2 id="1409-queries-on-a-permutation-with-key-starstar">1409. Queries on a Permutation With Key <a href="https://leetcode.com/problems/queries-on-a-permutation-with-key">$\star\star$</a></h2>
-<h2 id="1410-html-entity-parser-starstar">1410. HTML Entity Parser <a href="https://leetcode.com/problems/html-entity-parser">$\star\star$</a></h2>
+<h2 id="1409-queries-on-a-permutation-with-key-starstar">1409. Queries on a Permutation With Key <a href="https://leetcode.com/problems/queries-on-a-permutation-with-key">$\star\star$</a> <img alt="👎" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44e.svg" title=":thumbsdown:" /></h2>
+<h2 id="1410-html-entity-parser-starstar">1410. HTML Entity Parser <a href="https://leetcode.com/problems/html-entity-parser">$\star\star$</a> <img alt="👎" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44e.svg" title=":thumbsdown:" /></h2>
                 
               
               
