@@ -2631,7 +2631,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../1401-1500/1461-1470.md" title="1461-1470" class="md-nav__link">
+    <a href="../../1401-1500/1461-1470/" title="1461-1470" class="md-nav__link">
       1461-1470
     </a>
   </li>
@@ -4923,7 +4923,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../java/1401-1500/1461-1470.md" title="1461-1470" class="md-nav__link">
+    <a href="../../../java/1401-1500/1461-1470/" title="1461-1470" class="md-nav__link">
       1461-1470
     </a>
   </li>
@@ -7215,7 +7215,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../python3/1401-1500/1461-1470.md" title="1461-1470" class="md-nav__link">
+    <a href="../../../python3/1401-1500/1461-1470/" title="1461-1470" class="md-nav__link">
       1461-1470
     </a>
   </li>
@@ -7555,29 +7555,29 @@
 <span class="lineno" data-linenos=" 3 "></span>  <span class="n">LRUCache</span><span class="p">(</span><span class="kt">int</span> <span class="n">capacity</span><span class="p">)</span> <span class="o">:</span> <span class="n">capacity</span><span class="p">(</span><span class="n">capacity</span><span class="p">)</span> <span class="p">{}</span>
 <span class="lineno" data-linenos=" 4 "></span>
 <span class="lineno" data-linenos=" 5 "></span>  <span class="kt">int</span> <span class="n">get</span><span class="p">(</span><span class="kt">int</span> <span class="n">key</span><span class="p">)</span> <span class="p">{</span>
-<span class="lineno" data-linenos=" 6 "></span>    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">map</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="n">key</span><span class="p">))</span> <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+<span class="lineno" data-linenos=" 6 "></span>    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">keyToIterator</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="n">key</span><span class="p">))</span> <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
 <span class="lineno" data-linenos=" 7 "></span>
-<span class="lineno" data-linenos=" 8 "></span>    <span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="n">node</span> <span class="o">=</span> <span class="n">map</span><span class="p">[</span><span class="n">key</span><span class="p">];</span>
-<span class="lineno" data-linenos=" 9 "></span>    <span class="n">cache</span><span class="p">.</span><span class="n">splice</span><span class="p">(</span><span class="n">begin</span><span class="p">(</span><span class="n">cache</span><span class="p">),</span> <span class="n">cache</span><span class="p">,</span> <span class="n">node</span><span class="p">);</span>
-<span class="lineno" data-linenos="10 "></span>    <span class="k">return</span> <span class="n">node</span><span class="o">-&gt;</span><span class="n">value</span><span class="p">;</span>
+<span class="lineno" data-linenos=" 8 "></span>    <span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="n">it</span> <span class="o">=</span> <span class="n">keyToIterator</span><span class="p">[</span><span class="n">key</span><span class="p">];</span>
+<span class="lineno" data-linenos=" 9 "></span>    <span class="n">cache</span><span class="p">.</span><span class="n">splice</span><span class="p">(</span><span class="n">begin</span><span class="p">(</span><span class="n">cache</span><span class="p">),</span> <span class="n">cache</span><span class="p">,</span> <span class="n">it</span><span class="p">);</span>
+<span class="lineno" data-linenos="10 "></span>    <span class="k">return</span> <span class="n">it</span><span class="o">-&gt;</span><span class="n">value</span><span class="p">;</span>
 <span class="lineno" data-linenos="11 "></span>  <span class="p">}</span>
 <span class="lineno" data-linenos="12 "></span>
 <span class="lineno" data-linenos="13 "></span>  <span class="kt">void</span> <span class="n">put</span><span class="p">(</span><span class="kt">int</span> <span class="n">key</span><span class="p">,</span> <span class="kt">int</span> <span class="n">value</span><span class="p">)</span> <span class="p">{</span>
-<span class="lineno" data-linenos="14 "></span>    <span class="k">if</span> <span class="p">(</span><span class="n">map</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="n">key</span><span class="p">))</span> <span class="p">{</span>
-<span class="lineno" data-linenos="15 "></span>      <span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="n">node</span> <span class="o">=</span> <span class="n">map</span><span class="p">[</span><span class="n">key</span><span class="p">];</span>
-<span class="lineno" data-linenos="16 "></span>      <span class="n">node</span><span class="o">-&gt;</span><span class="n">value</span> <span class="o">=</span> <span class="n">value</span><span class="p">;</span>
-<span class="lineno" data-linenos="17 "></span>      <span class="n">cache</span><span class="p">.</span><span class="n">splice</span><span class="p">(</span><span class="n">begin</span><span class="p">(</span><span class="n">cache</span><span class="p">),</span> <span class="n">cache</span><span class="p">,</span> <span class="n">node</span><span class="p">);</span>
+<span class="lineno" data-linenos="14 "></span>    <span class="k">if</span> <span class="p">(</span><span class="n">keyToIterator</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="n">key</span><span class="p">))</span> <span class="p">{</span>
+<span class="lineno" data-linenos="15 "></span>      <span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="n">it</span> <span class="o">=</span> <span class="n">keyToIterator</span><span class="p">[</span><span class="n">key</span><span class="p">];</span>
+<span class="lineno" data-linenos="16 "></span>      <span class="n">cache</span><span class="p">.</span><span class="n">splice</span><span class="p">(</span><span class="n">begin</span><span class="p">(</span><span class="n">cache</span><span class="p">),</span> <span class="n">cache</span><span class="p">,</span> <span class="n">it</span><span class="p">);</span>
+<span class="lineno" data-linenos="17 "></span>      <span class="n">it</span><span class="o">-&gt;</span><span class="n">value</span> <span class="o">=</span> <span class="n">value</span><span class="p">;</span>
 <span class="lineno" data-linenos="18 "></span>      <span class="k">return</span><span class="p">;</span>
 <span class="lineno" data-linenos="19 "></span>    <span class="p">}</span>
 <span class="lineno" data-linenos="20 "></span>
 <span class="lineno" data-linenos="21 "></span>    <span class="k">if</span> <span class="p">(</span><span class="n">cache</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">==</span> <span class="n">capacity</span><span class="p">)</span> <span class="p">{</span>
 <span class="lineno" data-linenos="22 "></span>      <span class="k">const</span> <span class="n">Node</span><span class="o">&amp;</span> <span class="n">lastNode</span> <span class="o">=</span> <span class="n">cache</span><span class="p">.</span><span class="n">back</span><span class="p">();</span>
-<span class="lineno" data-linenos="23 "></span>      <span class="n">map</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">lastNode</span><span class="p">.</span><span class="n">key</span><span class="p">);</span>
+<span class="lineno" data-linenos="23 "></span>      <span class="n">keyToIterator</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">lastNode</span><span class="p">.</span><span class="n">key</span><span class="p">);</span>
 <span class="lineno" data-linenos="24 "></span>      <span class="n">cache</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span>
 <span class="lineno" data-linenos="25 "></span>    <span class="p">}</span>
 <span class="lineno" data-linenos="26 "></span>
 <span class="lineno" data-linenos="27 "></span>    <span class="n">cache</span><span class="p">.</span><span class="n">push_front</span><span class="p">(</span><span class="n">Node</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">));</span>
-<span class="lineno" data-linenos="28 "></span>    <span class="n">map</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">begin</span><span class="p">(</span><span class="n">cache</span><span class="p">);</span>
+<span class="lineno" data-linenos="28 "></span>    <span class="n">keyToIterator</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">begin</span><span class="p">(</span><span class="n">cache</span><span class="p">);</span>
 <span class="lineno" data-linenos="29 "></span>  <span class="p">}</span>
 <span class="lineno" data-linenos="30 "></span>
 <span class="lineno" data-linenos="31 "></span> <span class="k">private</span><span class="o">:</span>
@@ -7587,9 +7587,9 @@
 <span class="lineno" data-linenos="35 "></span>    <span class="n">Node</span><span class="p">(</span><span class="kt">int</span> <span class="n">key</span><span class="p">,</span> <span class="kt">int</span> <span class="n">value</span><span class="p">)</span> <span class="o">:</span> <span class="n">key</span><span class="p">(</span><span class="n">key</span><span class="p">),</span> <span class="n">value</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="p">{}</span>
 <span class="lineno" data-linenos="36 "></span>  <span class="p">};</span>
 <span class="lineno" data-linenos="37 "></span>
-<span class="lineno" data-linenos="38 "></span>  <span class="kt">int</span> <span class="n">capacity</span><span class="p">;</span>
+<span class="lineno" data-linenos="38 "></span>  <span class="n">unordered_map</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="n">list</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&gt;::</span><span class="n">iterator</span><span class="o">&gt;</span> <span class="n">keyToIterator</span><span class="p">;</span>
 <span class="lineno" data-linenos="39 "></span>  <span class="n">list</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&gt;</span> <span class="n">cache</span><span class="p">;</span>
-<span class="lineno" data-linenos="40 "></span>  <span class="n">unordered_map</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="n">list</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&gt;::</span><span class="n">iterator</span><span class="o">&gt;</span> <span class="n">map</span><span class="p">;</span>
+<span class="lineno" data-linenos="40 "></span>  <span class="kt">int</span> <span class="n">capacity</span><span class="p">;</span>
 <span class="lineno" data-linenos="41 "></span><span class="p">};</span>
 </code></pre></div>
 
