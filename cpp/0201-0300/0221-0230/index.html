@@ -7503,27 +7503,27 @@
 <div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">MyStack</span> <span class="p">{</span>
 <span class="lineno" data-linenos=" 2 "></span> <span class="k">public</span><span class="o">:</span>
 <span class="lineno" data-linenos=" 3 "></span>  <span class="kt">void</span> <span class="n">push</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
-<span class="lineno" data-linenos=" 4 "></span>    <span class="n">queue</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
-<span class="lineno" data-linenos=" 5 "></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">queue</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
-<span class="lineno" data-linenos=" 6 "></span>      <span class="n">queue</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">queue</span><span class="p">.</span><span class="n">front</span><span class="p">());</span> <span class="n">queue</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+<span class="lineno" data-linenos=" 4 "></span>    <span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="lineno" data-linenos=" 5 "></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">q</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 6 "></span>      <span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">q</span><span class="p">.</span><span class="n">front</span><span class="p">());</span> <span class="n">q</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
 <span class="lineno" data-linenos=" 7 "></span>    <span class="p">}</span>
 <span class="lineno" data-linenos=" 8 "></span>  <span class="p">}</span>
 <span class="lineno" data-linenos=" 9 "></span>
 <span class="lineno" data-linenos="10 "></span>  <span class="kt">int</span> <span class="n">pop</span><span class="p">()</span> <span class="p">{</span>
-<span class="lineno" data-linenos="11 "></span>    <span class="kt">int</span> <span class="n">val</span> <span class="o">=</span> <span class="n">queue</span><span class="p">.</span><span class="n">front</span><span class="p">();</span> <span class="n">queue</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+<span class="lineno" data-linenos="11 "></span>    <span class="kt">int</span> <span class="n">val</span> <span class="o">=</span> <span class="n">q</span><span class="p">.</span><span class="n">front</span><span class="p">();</span> <span class="n">q</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
 <span class="lineno" data-linenos="12 "></span>    <span class="k">return</span> <span class="n">val</span><span class="p">;</span>
 <span class="lineno" data-linenos="13 "></span>  <span class="p">}</span>
 <span class="lineno" data-linenos="14 "></span>
 <span class="lineno" data-linenos="15 "></span>  <span class="kt">int</span> <span class="n">top</span><span class="p">()</span> <span class="p">{</span>
-<span class="lineno" data-linenos="16 "></span>    <span class="k">return</span> <span class="n">queue</span><span class="p">.</span><span class="n">front</span><span class="p">();</span>
+<span class="lineno" data-linenos="16 "></span>    <span class="k">return</span> <span class="n">q</span><span class="p">.</span><span class="n">front</span><span class="p">();</span>
 <span class="lineno" data-linenos="17 "></span>  <span class="p">}</span>
 <span class="lineno" data-linenos="18 "></span>
 <span class="lineno" data-linenos="19 "></span>  <span class="kt">bool</span> <span class="n">empty</span><span class="p">()</span> <span class="p">{</span>
-<span class="lineno" data-linenos="20 "></span>    <span class="k">return</span> <span class="n">queue</span><span class="p">.</span><span class="n">empty</span><span class="p">();</span>
+<span class="lineno" data-linenos="20 "></span>    <span class="k">return</span> <span class="n">q</span><span class="p">.</span><span class="n">empty</span><span class="p">();</span>
 <span class="lineno" data-linenos="21 "></span>  <span class="p">}</span>
 <span class="lineno" data-linenos="22 "></span>
 <span class="lineno" data-linenos="23 "></span> <span class="k">private</span><span class="o">:</span>
-<span class="lineno" data-linenos="24 "></span>  <span class="n">queue</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">queue</span><span class="p">;</span>
+<span class="lineno" data-linenos="24 "></span>  <span class="n">queue</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">q</span><span class="p">;</span>
 <span class="lineno" data-linenos="25 "></span><span class="p">};</span>
 </code></pre></div>
 
