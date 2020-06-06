@@ -7383,7 +7383,11 @@
                   <h1>0491-0500</h1>
                 
                 <h2 id="491-increasing-subsequences-starstar">491. Increasing Subsequences <a href="https://leetcode.com/problems/increasing-subsequences">$\star\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>
-<p><img alt="" src="https://img.shields.io/badge/-Depth%20First%20Search-86C166.svg?style=flat-square" /></p>
+<p><img alt="" src="https://img.shields.io/badge/-Backtracking-D0104C.svg?style=flat-square" /> <img alt="" src="https://img.shields.io/badge/-Depth%20First%20Search-86C166.svg?style=flat-square" /></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(n2^n)$</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(n^2)$</li>
+</ul>
 <div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
 <span class="lineno" data-linenos=" 2 "></span>    <span class="k">def</span> <span class="nf">findSubsequences</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]:</span>
 <span class="lineno" data-linenos=" 3 "></span>        <span class="k">def</span> <span class="nf">dfs</span><span class="p">(</span><span class="n">s</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -7444,6 +7448,20 @@
 </code></pre></div>
 
 <h2 id="496-next-greater-element-i-star">496. Next Greater Element I <a href="https://leetcode.com/problems/next-greater-element-i">$\star$</a> <img alt="👎" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44e.svg" title=":thumbsdown:" /></h2>
+<p><img alt="" src="https://img.shields.io/badge/-Stack-E2943B.svg?style=flat-square" /></p>
+<div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+<span class="lineno" data-linenos=" 2 "></span>    <span class="k">def</span> <span class="nf">nextGreaterElement</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums1</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">nums2</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+<span class="lineno" data-linenos=" 3 "></span>        <span class="n">numToNextGreater</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="lineno" data-linenos=" 4 "></span>        <span class="n">stack</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="lineno" data-linenos=" 5 "></span>
+<span class="lineno" data-linenos=" 6 "></span>        <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">nums2</span><span class="p">:</span>
+<span class="lineno" data-linenos=" 7 "></span>            <span class="k">while</span> <span class="n">stack</span> <span class="ow">and</span> <span class="n">stack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">num</span><span class="p">:</span>
+<span class="lineno" data-linenos=" 8 "></span>                <span class="n">numToNextGreater</span><span class="p">[</span><span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()]</span> <span class="o">=</span> <span class="n">num</span>
+<span class="lineno" data-linenos=" 9 "></span>            <span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+<span class="lineno" data-linenos="10 "></span>
+<span class="lineno" data-linenos="11 "></span>        <span class="k">return</span> <span class="p">[</span><span class="n">numToNextGreater</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">nums1</span><span class="p">]</span>
+</code></pre></div>
+
 <h2 id="497-random-point-in-non-overlapping-rectangles-starstar">497. Random Point in Non-overlapping Rectangles <a href="https://leetcode.com/problems/random-point-in-non-overlapping-rectangles">$\star\star$</a> <img alt="👎" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44e.svg" title=":thumbsdown:" /></h2>
 <h2 id="498-diagonal-traverse-starstar">498. Diagonal Traverse <a href="https://leetcode.com/problems/diagonal-traverse">$\star\star$</a></h2>
 <h2 id="499-the-maze-iii-starstarstar">499. The Maze III <a href="https://leetcode.com/problems/the-maze-iii">$\star\star\star$</a> 🔒</h2>

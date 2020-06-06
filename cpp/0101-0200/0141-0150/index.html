@@ -7576,7 +7576,7 @@
 <span class="lineno" data-linenos="24 "></span>      <span class="n">cache</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span>
 <span class="lineno" data-linenos="25 "></span>    <span class="p">}</span>
 <span class="lineno" data-linenos="26 "></span>
-<span class="lineno" data-linenos="27 "></span>    <span class="n">cache</span><span class="p">.</span><span class="n">push_front</span><span class="p">(</span><span class="n">Node</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">));</span>
+<span class="lineno" data-linenos="27 "></span>    <span class="n">cache</span><span class="p">.</span><span class="n">push_front</span><span class="p">({</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">});</span>
 <span class="lineno" data-linenos="28 "></span>    <span class="n">keyToIterator</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">begin</span><span class="p">(</span><span class="n">cache</span><span class="p">);</span>
 <span class="lineno" data-linenos="29 "></span>  <span class="p">}</span>
 <span class="lineno" data-linenos="30 "></span>
@@ -7584,13 +7584,12 @@
 <span class="lineno" data-linenos="32 "></span>  <span class="k">struct</span> <span class="n">Node</span> <span class="p">{</span>
 <span class="lineno" data-linenos="33 "></span>    <span class="kt">int</span> <span class="n">key</span><span class="p">;</span>
 <span class="lineno" data-linenos="34 "></span>    <span class="kt">int</span> <span class="n">value</span><span class="p">;</span>
-<span class="lineno" data-linenos="35 "></span>    <span class="n">Node</span><span class="p">(</span><span class="kt">int</span> <span class="n">key</span><span class="p">,</span> <span class="kt">int</span> <span class="n">value</span><span class="p">)</span> <span class="o">:</span> <span class="n">key</span><span class="p">(</span><span class="n">key</span><span class="p">),</span> <span class="n">value</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="p">{}</span>
-<span class="lineno" data-linenos="36 "></span>  <span class="p">};</span>
-<span class="lineno" data-linenos="37 "></span>
-<span class="lineno" data-linenos="38 "></span>  <span class="n">unordered_map</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="n">list</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&gt;::</span><span class="n">iterator</span><span class="o">&gt;</span> <span class="n">keyToIterator</span><span class="p">;</span>
-<span class="lineno" data-linenos="39 "></span>  <span class="n">list</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&gt;</span> <span class="n">cache</span><span class="p">;</span>
-<span class="lineno" data-linenos="40 "></span>  <span class="kt">int</span> <span class="n">capacity</span><span class="p">;</span>
-<span class="lineno" data-linenos="41 "></span><span class="p">};</span>
+<span class="lineno" data-linenos="35 "></span>  <span class="p">};</span>
+<span class="lineno" data-linenos="36 "></span>
+<span class="lineno" data-linenos="37 "></span>  <span class="n">unordered_map</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="n">list</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&gt;::</span><span class="n">iterator</span><span class="o">&gt;</span> <span class="n">keyToIterator</span><span class="p">;</span>
+<span class="lineno" data-linenos="38 "></span>  <span class="n">list</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&gt;</span> <span class="n">cache</span><span class="p">;</span>
+<span class="lineno" data-linenos="39 "></span>  <span class="kt">int</span> <span class="n">capacity</span><span class="p">;</span>
+<span class="lineno" data-linenos="40 "></span><span class="p">};</span>
 </code></pre></div>
 
 <h2 id="147-insertion-sort-list-starstar">147. Insertion Sort List <a href="https://leetcode.com/problems/insertion-sort-list">$\star\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>

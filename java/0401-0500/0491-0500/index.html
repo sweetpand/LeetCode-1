@@ -7383,7 +7383,11 @@
                   <h1>0491-0500</h1>
                 
                 <h2 id="491-increasing-subsequences-starstar">491. Increasing Subsequences <a href="https://leetcode.com/problems/increasing-subsequences">$\star\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>
-<p><img alt="" src="https://img.shields.io/badge/-Depth%20First%20Search-86C166.svg?style=flat-square" /></p>
+<p><img alt="" src="https://img.shields.io/badge/-Backtracking-D0104C.svg?style=flat-square" /> <img alt="" src="https://img.shields.io/badge/-Depth%20First%20Search-86C166.svg?style=flat-square" /></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(n2^n)$</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(n^2)$</li>
+</ul>
 <div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="p">{</span>
 <span class="lineno" data-linenos=" 2 "></span>  <span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;&gt;</span> <span class="nf">findSubsequences</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">nums</span><span class="p">)</span> <span class="p">{</span>
 <span class="lineno" data-linenos=" 3 "></span>    <span class="n">List</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;&gt;</span> <span class="n">ans</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedList</span><span class="o">&lt;&gt;</span><span class="p">();</span>

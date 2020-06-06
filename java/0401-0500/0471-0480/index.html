@@ -7384,7 +7384,11 @@
                 
                 <h2 id="471-encode-string-with-shortest-length-starstarstar">471. Encode String with Shortest Length <a href="https://leetcode.com/problems/encode-string-with-shortest-length">$\star\star\star$</a> 🔒</h2>
 <h2 id="472-concatenated-words-starstarstar">472. Concatenated Words <a href="https://leetcode.com/problems/concatenated-words">$\star\star\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>
-<p><img alt="" src="https://img.shields.io/badge/-Depth%20First%20Search-86C166.svg?style=flat-square" /></p>
+<p><img alt="" src="https://img.shields.io/badge/-Depth%20First%20Search-86C166.svg?style=flat-square" /> <img alt="" src="https://img.shields.io/badge/-Dynamic%20Programming-113285.svg?style=flat-square" /> <img alt="" src="https://img.shields.io/badge/-Trie-A5A051.svg?style=flat-square" /></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(nl^3)$, where <code>n = len(words)</code> and <code>l = max length of a word</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(nl)$</li>
+</ul>
 <div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="p">{</span>
 <span class="lineno" data-linenos=" 2 "></span>  <span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="nf">findAllConcatenatedWordsInADict</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">words</span><span class="p">)</span> <span class="p">{</span>
 <span class="lineno" data-linenos=" 3 "></span>    <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">ans</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
@@ -7423,6 +7427,10 @@
 
 <h2 id="473-matchsticks-to-square-starstar">473. Matchsticks to Square <a href="https://leetcode.com/problems/matchsticks-to-square">$\star\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>
 <p><img alt="" src="https://img.shields.io/badge/-Depth%20First%20Search-86C166.svg?style=flat-square" /></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(2^n)$</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(2^n)$</li>
+</ul>
 <div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="p">{</span>
 <span class="lineno" data-linenos=" 2 "></span>  <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">makesquare</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">nums</span><span class="p">)</span> <span class="p">{</span>
 <span class="lineno" data-linenos=" 3 "></span>    <span class="k">if</span> <span class="p">(</span><span class="n">nums</span><span class="p">.</span><span class="na">length</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">)</span>
@@ -7459,6 +7467,10 @@
 
 <h2 id="474-ones-and-zeroes-starstar">474. Ones and Zeroes <a href="https://leetcode.com/problems/ones-and-zeroes">$\star\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>
 <p><img alt="" src="https://img.shields.io/badge/-Dynamic%20Programming-113285.svg?style=flat-square" /></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(kl \cdot mn)$, where <code>k = len(strs)</code> and <code>l = max length of a word</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(mn)$</li>
+</ul>
 <div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="p">{</span>
 <span class="lineno" data-linenos=" 2 "></span>  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">findMaxForm</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">strs</span><span class="p">,</span> <span class="kt">int</span> <span class="n">m</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
 <span class="lineno" data-linenos=" 3 "></span>    <span class="kt">int</span><span class="o">[][]</span> <span class="n">dp</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">m</span> <span class="o">+</span> <span class="mi">1</span><span class="o">][</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="o">]</span><span class="p">;</span>
@@ -7485,7 +7497,7 @@
 <h2 id="476-number-complement-star">476. Number Complement <a href="https://leetcode.com/problems/number-complement">$\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>
 <h2 id="477-total-hamming-distance-starstar">477. Total Hamming Distance <a href="https://leetcode.com/problems/total-hamming-distance">$\star\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>
 <h2 id="478-generate-random-point-in-a-circle-starstar">478. Generate Random Point in a Circle <a href="https://leetcode.com/problems/generate-random-point-in-a-circle">$\star\star$</a> <img alt="👎" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44e.svg" title=":thumbsdown:" /></h2>
-<p><img alt="" src="https://img.shields.io/badge/-Math-434343.svg?style=flat-square" /></p>
+<p><img alt="" src="https://img.shields.io/badge/-Random-A5A051.svg?style=flat-square" /> <img alt="" src="https://img.shields.io/badge/-Math-434343.svg?style=flat-square" /></p>
 <div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="p">{</span>
 <span class="lineno" data-linenos=" 2 "></span>  <span class="kd">public</span> <span class="nf">Solution</span><span class="p">(</span><span class="kt">double</span> <span class="n">radius</span><span class="p">,</span> <span class="kt">double</span> <span class="n">x_center</span><span class="p">,</span> <span class="kt">double</span> <span class="n">y_center</span><span class="p">)</span> <span class="p">{</span>
 <span class="lineno" data-linenos=" 3 "></span>    <span class="k">this</span><span class="p">.</span><span class="na">radius</span> <span class="o">=</span> <span class="n">radius</span><span class="p">;</span>
@@ -7508,7 +7520,7 @@
 </code></pre></div>
 
 <h2 id="479-largest-palindrome-product-starstarstar">479. Largest Palindrome Product <a href="https://leetcode.com/problems/largest-palindrome-product">$\star\star\star$</a> <img alt="👎" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44e.svg" title=":thumbsdown:" /></h2>
-<h2 id="480-sliding-window-median-starstarstar">480. Sliding Window Median <a href="https://leetcode.com/problems/sliding-window-median">$\star\star\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>
+<h2 id="480-sliding-window-median-starstarstar">480. Sliding Window Median <a href="https://leetcode.com/problems/sliding-window-median">$\star\star\star$</a> <img alt="💪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4aa.svg" title=":muscle:" /></h2>
                 
               
               

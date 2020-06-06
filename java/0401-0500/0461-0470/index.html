@@ -7383,8 +7383,12 @@
                   <h1>0461-0470</h1>
                 
                 <h2 id="461-hamming-distance-star">461. Hamming Distance <a href="https://leetcode.com/problems/hamming-distance">$\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>
-<h2 id="462-minimum-moves-to-equal-array-elements-ii-starstar">462. Minimum Moves to Equal Array Elements II <a href="https://leetcode.com/problems/minimum-moves-to-equal-array-elements-ii">$\star\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>
+<h2 id="462-minimum-moves-to-equal-array-elements-ii-starstar">462. Minimum Moves to Equal Array Elements II <a href="https://leetcode.com/problems/minimum-moves-to-equal-array-elements-ii">$\star\star$</a> <img alt="💪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4aa.svg" title=":muscle:" /></h2>
 <p><img alt="" src="https://img.shields.io/badge/-Math-434343.svg?style=flat-square" /></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(n)$</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(1)$</li>
+</ul>
 <div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="p">{</span>
 <span class="lineno" data-linenos=" 2 "></span>  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">minMoves2</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">nums</span><span class="p">)</span> <span class="p">{</span>
 <span class="lineno" data-linenos=" 3 "></span>    <span class="n">Arrays</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">nums</span><span class="p">);</span>
@@ -7401,6 +7405,10 @@
 
 <h2 id="463-island-perimeter-star">463. Island Perimeter <a href="https://leetcode.com/problems/island-perimeter">$\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>
 <p><img alt="" src="https://img.shields.io/badge/-Hash%20Table-7BA23F.svg?style=flat-square" /></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(mn)$</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(1)$</li>
+</ul>
 <div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="p">{</span>
 <span class="lineno" data-linenos=" 2 "></span>  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">islandPerimeter</span><span class="p">(</span><span class="kt">int</span><span class="o">[][]</span> <span class="n">grid</span><span class="p">)</span> <span class="p">{</span>
 <span class="lineno" data-linenos=" 3 "></span>    <span class="kd">final</span> <span class="kt">int</span> <span class="n">m</span> <span class="o">=</span> <span class="n">grid</span><span class="p">.</span><span class="na">length</span><span class="p">;</span>
@@ -7429,6 +7437,60 @@
 <h2 id="466-count-the-repetitions-starstarstar">466. Count The Repetitions <a href="https://leetcode.com/problems/count-the-repetitions">$\star\star\star$</a> <img alt="👎" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44e.svg" title=":thumbsdown:" /></h2>
 <h2 id="467-unique-substrings-in-wraparound-string-starstar">467. Unique Substrings in Wraparound String <a href="https://leetcode.com/problems/unique-substrings-in-wraparound-string">$\star\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>
 <h2 id="468-validate-ip-address-starstar">468. Validate IP Address <a href="https://leetcode.com/problems/validate-ip-address">$\star\star$</a> <img alt="👎" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44e.svg" title=":thumbsdown:" /></h2>
+<p><img alt="" src="https://img.shields.io/badge/-String-60373E.svg?style=flat-square" /></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(n)$</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(1)$</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 2 "></span>  <span class="kd">public</span> <span class="n">String</span> <span class="nf">validIPAddress</span><span class="p">(</span><span class="n">String</span> <span class="n">IP</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 3 "></span>    <span class="k">if</span> <span class="p">(</span><span class="n">IP</span><span class="p">.</span><span class="na">chars</span><span class="p">().</span><span class="na">filter</span><span class="p">(</span><span class="n">c</span> <span class="o">-&gt;</span> <span class="n">c</span> <span class="o">==</span> <span class="sc">&#39;.&#39;</span><span class="p">).</span><span class="na">count</span><span class="p">()</span> <span class="o">==</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 4 "></span>      <span class="k">for</span> <span class="p">(</span><span class="kd">final</span> <span class="n">String</span> <span class="n">digit</span> <span class="p">:</span> <span class="n">IP</span><span class="p">.</span><span class="na">split</span><span class="p">(</span><span class="s">&quot;\\.&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+<span class="lineno" data-linenos=" 5 "></span>        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">isIPv4</span><span class="p">(</span><span class="n">digit</span><span class="p">))</span>
+<span class="lineno" data-linenos=" 6 "></span>          <span class="k">return</span> <span class="s">&quot;Neither&quot;</span><span class="p">;</span>
+<span class="lineno" data-linenos=" 7 "></span>      <span class="k">return</span> <span class="s">&quot;IPv4&quot;</span><span class="p">;</span>
+<span class="lineno" data-linenos=" 8 "></span>    <span class="p">}</span>
+<span class="lineno" data-linenos=" 9 "></span>
+<span class="lineno" data-linenos="10 "></span>    <span class="k">if</span> <span class="p">(</span><span class="n">IP</span><span class="p">.</span><span class="na">chars</span><span class="p">().</span><span class="na">filter</span><span class="p">(</span><span class="n">c</span> <span class="o">-&gt;</span> <span class="n">c</span> <span class="o">==</span> <span class="sc">&#39;:&#39;</span><span class="p">).</span><span class="na">count</span><span class="p">()</span> <span class="o">==</span> <span class="mi">7</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos="11 "></span>      <span class="k">for</span> <span class="p">(</span><span class="kd">final</span> <span class="n">String</span> <span class="n">digit</span> <span class="p">:</span> <span class="n">IP</span><span class="p">.</span><span class="na">split</span><span class="p">(</span><span class="s">&quot;\\:&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+<span class="lineno" data-linenos="12 "></span>        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">isIPv6</span><span class="p">(</span><span class="n">digit</span><span class="p">))</span>
+<span class="lineno" data-linenos="13 "></span>          <span class="k">return</span> <span class="s">&quot;Neither&quot;</span><span class="p">;</span>
+<span class="lineno" data-linenos="14 "></span>      <span class="k">return</span> <span class="s">&quot;IPv6&quot;</span><span class="p">;</span>
+<span class="lineno" data-linenos="15 "></span>    <span class="p">}</span>
+<span class="lineno" data-linenos="16 "></span>
+<span class="lineno" data-linenos="17 "></span>    <span class="k">return</span> <span class="s">&quot;Neither&quot;</span><span class="p">;</span>
+<span class="lineno" data-linenos="18 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos="19 "></span>
+<span class="lineno" data-linenos="20 "></span>  <span class="kd">static</span> <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">validIPv6Chars</span> <span class="o">=</span> <span class="s">&quot;0123456789abcdefABCDEF&quot;</span><span class="p">;</span>
+<span class="lineno" data-linenos="21 "></span>
+<span class="lineno" data-linenos="22 "></span>  <span class="kd">private</span> <span class="kt">boolean</span> <span class="nf">isIPv4</span><span class="p">(</span><span class="kd">final</span> <span class="n">String</span> <span class="n">digit</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos="23 "></span>    <span class="k">if</span> <span class="p">(</span><span class="n">digit</span><span class="p">.</span><span class="na">length</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">digit</span><span class="p">.</span><span class="na">length</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">)</span>
+<span class="lineno" data-linenos="24 "></span>      <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+<span class="lineno" data-linenos="25 "></span>
+<span class="lineno" data-linenos="26 "></span>    <span class="k">if</span> <span class="p">(</span><span class="n">digit</span><span class="p">.</span><span class="na">length</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">digit</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">==</span> <span class="sc">&#39;0&#39;</span><span class="p">)</span>
+<span class="lineno" data-linenos="27 "></span>      <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+<span class="lineno" data-linenos="28 "></span>
+<span class="lineno" data-linenos="29 "></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">char</span> <span class="n">c</span> <span class="p">:</span> <span class="n">digit</span><span class="p">.</span><span class="na">toCharArray</span><span class="p">())</span>
+<span class="lineno" data-linenos="30 "></span>      <span class="k">if</span> <span class="p">(</span><span class="n">c</span> <span class="o">&lt;</span> <span class="sc">&#39;0&#39;</span> <span class="o">||</span> <span class="n">c</span> <span class="o">&gt;</span> <span class="sc">&#39;9&#39;</span><span class="p">)</span>
+<span class="lineno" data-linenos="31 "></span>        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+<span class="lineno" data-linenos="32 "></span>
+<span class="lineno" data-linenos="33 "></span>    <span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="n">digit</span><span class="p">);</span>
+<span class="lineno" data-linenos="34 "></span>    <span class="k">return</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">num</span> <span class="o">&amp;&amp;</span> <span class="n">num</span> <span class="o">&lt;=</span> <span class="mi">255</span><span class="p">;</span>
+<span class="lineno" data-linenos="35 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos="36 "></span>
+<span class="lineno" data-linenos="37 "></span>  <span class="kd">private</span> <span class="kt">boolean</span> <span class="nf">isIPv6</span><span class="p">(</span><span class="kd">final</span> <span class="n">String</span> <span class="n">digit</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos="38 "></span>    <span class="k">if</span> <span class="p">(</span><span class="n">digit</span><span class="p">.</span><span class="na">length</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">digit</span><span class="p">.</span><span class="na">length</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">4</span><span class="p">)</span>
+<span class="lineno" data-linenos="39 "></span>      <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+<span class="lineno" data-linenos="40 "></span>
+<span class="lineno" data-linenos="41 "></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">char</span> <span class="n">c</span> <span class="p">:</span> <span class="n">digit</span><span class="p">.</span><span class="na">toCharArray</span><span class="p">())</span>
+<span class="lineno" data-linenos="42 "></span>      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">validIPv6Chars</span><span class="p">.</span><span class="na">contains</span><span class="p">(</span><span class="s">&quot;&quot;</span> <span class="o">+</span> <span class="n">c</span><span class="p">))</span>
+<span class="lineno" data-linenos="43 "></span>        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+<span class="lineno" data-linenos="44 "></span>
+<span class="lineno" data-linenos="45 "></span>    <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+<span class="lineno" data-linenos="46 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos="47 "></span><span class="p">}</span>
+</code></pre></div>
+
 <h2 id="469-convex-polygon-starstar">469. Convex Polygon <a href="https://leetcode.com/problems/convex-polygon">$\star\star$</a> 🔒</h2>
 <h2 id="470-implement-rand10-using-rand7-starstar">470. Implement Rand10() Using Rand7() <a href="https://leetcode.com/problems/implement-rand10-using-rand7">$\star\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>
                 
