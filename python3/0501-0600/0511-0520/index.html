@@ -2538,7 +2538,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../cpp/1401-1500/1471-1480.md" title="1471-1480" class="md-nav__link">
+    <a href="../../../cpp/1401-1500/1471-1480/" title="1471-1480" class="md-nav__link">
       1471-1480
     </a>
   </li>
@@ -4830,7 +4830,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../java/1401-1500/1471-1480.md" title="1471-1480" class="md-nav__link">
+    <a href="../../../java/1401-1500/1471-1480/" title="1471-1480" class="md-nav__link">
       1471-1480
     </a>
   </li>
@@ -7227,7 +7227,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../1401-1500/1471-1480.md" title="1471-1480" class="md-nav__link">
+    <a href="../../1401-1500/1471-1480/" title="1471-1480" class="md-nav__link">
       1471-1480
     </a>
   </li>
@@ -7386,6 +7386,10 @@
 <h2 id="512-game-play-analysis-ii-star">512. Game Play Analysis II <a href="https://leetcode.com/problems/game-play-analysis-ii">$\star$</a> 🔒</h2>
 <h2 id="513-find-bottom-left-tree-value-starstar">513. Find Bottom Left Tree Value <a href="https://leetcode.com/problems/find-bottom-left-tree-value">$\star\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>
 <p><img alt="" src="https://img.shields.io/badge/-Depth%20First%20Search-86C166.svg?style=flat-square" /> <img alt="" src="https://img.shields.io/badge/-Tree-227D51.svg?style=flat-square" /></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(n)$</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(n)$</li>
+</ul>
 <div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
 <span class="lineno" data-linenos=" 2 "></span>    <span class="k">def</span> <span class="nf">findBottomLeftValue</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">:</span> <span class="n">TreeNode</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
 <span class="lineno" data-linenos=" 3 "></span>        <span class="n">queue</span> <span class="o">=</span> <span class="n">collections</span><span class="o">.</span><span class="n">deque</span><span class="p">([</span><span class="n">root</span><span class="p">])</span>
@@ -7400,8 +7404,12 @@
 <span class="lineno" data-linenos="12 "></span>        <span class="k">return</span> <span class="n">root</span><span class="o">.</span><span class="n">val</span>
 </code></pre></div>
 
-<h2 id="514-freedom-trail-starstarstar">514. Freedom Trail <a href="https://leetcode.com/problems/freedom-trail">$\star\star\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>
+<h2 id="514-freedom-trail-starstarstar">514. Freedom Trail <a href="https://leetcode.com/problems/freedom-trail">$\star\star\star$</a> <img alt="💪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4aa.svg" title=":muscle:" /></h2>
 <p><img alt="" src="https://img.shields.io/badge/-Divide%20and%20Conquer-005CAF.svg?style=flat-square" /> <img alt="" src="https://img.shields.io/badge/-Depth%20First%20Search-86C166.svg?style=flat-square" /> <img alt="" src="https://img.shields.io/badge/-Dynamic%20Programming-113285.svg?style=flat-square" /></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(kr^2)$, where <code>k = len(key)</code> and <code>r = len(ring)</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(k)$</li>
+</ul>
 <div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
 <span class="lineno" data-linenos=" 2 "></span>    <span class="k">def</span> <span class="nf">findRotateSteps</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ring</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
 <span class="lineno" data-linenos=" 3 "></span>        <span class="k">def</span> <span class="nf">dfs</span><span class="p">(</span><span class="n">ring</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">index</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
@@ -7428,6 +7436,9 @@
 
 <h2 id="515-find-largest-value-in-each-tree-row-starstar">515. Find Largest Value in Each Tree Row <a href="https://leetcode.com/problems/find-largest-value-in-each-tree-row">$\star\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>
 <p><img alt="" src="https://img.shields.io/badge/-Depth%20First%20Search-86C166.svg?style=flat-square" /> <img alt="" src="https://img.shields.io/badge/-Tree-227D51.svg?style=flat-square" /></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(n)$</li>
+</ul>
 <div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
 <span class="lineno" data-linenos=" 2 "></span>    <span class="k">def</span> <span class="nf">largestValues</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">:</span> <span class="n">TreeNode</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
 <span class="lineno" data-linenos=" 3 "></span>        <span class="k">if</span> <span class="ow">not</span> <span class="n">root</span><span class="p">:</span>

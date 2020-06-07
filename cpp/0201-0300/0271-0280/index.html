@@ -798,6 +798,26 @@
     274. H-Index $\star\star$
   </a>
   
+    <nav class="md-nav" aria-label="274. H-Index $\star\star$">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bucket" class="md-nav__link">
+    Bucket
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sort" class="md-nav__link">
+    Sort
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2643,7 +2663,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../1401-1500/1471-1480.md" title="1471-1480" class="md-nav__link">
+    <a href="../../1401-1500/1471-1480/" title="1471-1480" class="md-nav__link">
       1471-1480
     </a>
   </li>
@@ -4935,7 +4955,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../java/1401-1500/1471-1480.md" title="1471-1480" class="md-nav__link">
+    <a href="../../../java/1401-1500/1471-1480/" title="1471-1480" class="md-nav__link">
       1471-1480
     </a>
   </li>
@@ -7227,7 +7247,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../python3/1401-1500/1471-1480.md" title="1471-1480" class="md-nav__link">
+    <a href="../../../python3/1401-1500/1471-1480/" title="1471-1480" class="md-nav__link">
       1471-1480
     </a>
   </li>
@@ -7315,6 +7335,26 @@
   <a href="#274-h-index-starstar" class="md-nav__link">
     274. H-Index $\star\star$
   </a>
+  
+    <nav class="md-nav" aria-label="274. H-Index $\star\star$">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bucket" class="md-nav__link">
+    Bucket
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sort" class="md-nav__link">
+    Sort
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -7437,6 +7477,7 @@
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(n\log n)$</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(n)$</li>
 </ul>
+<h3 id="bucket">Bucket</h3>
 <div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
 <span class="lineno" data-linenos=" 2 "></span> <span class="k">public</span><span class="o">:</span>
 <span class="lineno" data-linenos=" 3 "></span>  <span class="kt">int</span> <span class="n">hIndex</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">citations</span><span class="p">)</span> <span class="p">{</span>
@@ -7457,6 +7498,23 @@
 <span class="lineno" data-linenos="18 "></span>    <span class="k">throw</span><span class="p">;</span>
 <span class="lineno" data-linenos="19 "></span>  <span class="p">}</span>
 <span class="lineno" data-linenos="20 "></span><span class="p">};</span>
+</code></pre></div>
+
+<h3 id="sort">Sort</h3>
+<div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 2 "></span> <span class="k">public</span><span class="o">:</span>
+<span class="lineno" data-linenos=" 3 "></span>  <span class="kt">int</span> <span class="n">hIndex</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">citations</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 4 "></span>    <span class="k">const</span> <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">citations</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+<span class="lineno" data-linenos=" 5 "></span>
+<span class="lineno" data-linenos=" 6 "></span>    <span class="n">sort</span><span class="p">(</span><span class="n">begin</span><span class="p">(</span><span class="n">citations</span><span class="p">),</span> <span class="n">end</span><span class="p">(</span><span class="n">citations</span><span class="p">));</span>
+<span class="lineno" data-linenos=" 7 "></span>
+<span class="lineno" data-linenos=" 8 "></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+<span class="lineno" data-linenos=" 9 "></span>      <span class="k">if</span> <span class="p">(</span><span class="n">citations</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">n</span> <span class="o">-</span> <span class="n">i</span><span class="p">)</span>
+<span class="lineno" data-linenos="10 "></span>        <span class="k">return</span> <span class="n">n</span> <span class="o">-</span> <span class="n">i</span><span class="p">;</span>
+<span class="lineno" data-linenos="11 "></span>
+<span class="lineno" data-linenos="12 "></span>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="lineno" data-linenos="13 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos="14 "></span><span class="p">};</span>
 </code></pre></div>
 
 <h2 id="275-h-index-ii-starstar">275. H-Index II <a href="https://leetcode.com/problems/h-index-ii">$\star\star$</a> <img alt="👎" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44e.svg" title=":thumbsdown:" /></h2>

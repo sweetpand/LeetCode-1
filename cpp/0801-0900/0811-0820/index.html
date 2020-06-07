@@ -1619,6 +1619,26 @@
     813. Largest Sum of Averages $\star\star$
   </a>
   
+    <nav class="md-nav" aria-label="813. Largest Sum of Averages $\star\star$">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bottom-up" class="md-nav__link">
+    Bottom-up
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#top-down" class="md-nav__link">
+    Top-down
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2643,7 +2663,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../1401-1500/1471-1480.md" title="1471-1480" class="md-nav__link">
+    <a href="../../1401-1500/1471-1480/" title="1471-1480" class="md-nav__link">
       1471-1480
     </a>
   </li>
@@ -4935,7 +4955,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../java/1401-1500/1471-1480.md" title="1471-1480" class="md-nav__link">
+    <a href="../../../java/1401-1500/1471-1480/" title="1471-1480" class="md-nav__link">
       1471-1480
     </a>
   </li>
@@ -7227,7 +7247,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../python3/1401-1500/1471-1480.md" title="1471-1480" class="md-nav__link">
+    <a href="../../../python3/1401-1500/1471-1480/" title="1471-1480" class="md-nav__link">
       1471-1480
     </a>
   </li>
@@ -7308,6 +7328,26 @@
   <a href="#813-largest-sum-of-averages-starstar" class="md-nav__link">
     813. Largest Sum of Averages $\star\star$
   </a>
+  
+    <nav class="md-nav" aria-label="813. Largest Sum of Averages $\star\star$">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bottom-up" class="md-nav__link">
+    Bottom-up
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#top-down" class="md-nav__link">
+    Top-down
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -7431,6 +7471,7 @@
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(kn^3) \to O(kn^2)$</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(kn) \to O(n)$</li>
 </ul>
+<h3 id="bottom-up">Bottom-up</h3>
 <div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
 <span class="lineno" data-linenos=" 2 "></span> <span class="k">public</span><span class="o">:</span>
 <span class="lineno" data-linenos=" 3 "></span>  <span class="kt">double</span> <span class="n">largestSumOfAverages</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">A</span><span class="p">,</span> <span class="kt">int</span> <span class="n">K</span><span class="p">)</span> <span class="p">{</span>
@@ -7453,6 +7494,34 @@
 <span class="lineno" data-linenos="20 "></span>    <span class="k">return</span> <span class="n">dp</span><span class="p">[</span><span class="n">K</span><span class="p">][</span><span class="n">n</span><span class="p">];</span>
 <span class="lineno" data-linenos="21 "></span>  <span class="p">}</span>
 <span class="lineno" data-linenos="22 "></span><span class="p">};</span>
+</code></pre></div>
+
+<h3 id="top-down">Top-down</h3>
+<div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 2 "></span> <span class="k">public</span><span class="o">:</span>
+<span class="lineno" data-linenos=" 3 "></span>  <span class="kt">double</span> <span class="n">largestSumOfAverages</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">A</span><span class="p">,</span> <span class="kt">int</span> <span class="n">K</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 4 "></span>    <span class="k">const</span> <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">A</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+<span class="lineno" data-linenos=" 5 "></span>
+<span class="lineno" data-linenos=" 6 "></span>    <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;&gt;</span> <span class="n">memo</span><span class="p">(</span><span class="n">K</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">));</span>
+<span class="lineno" data-linenos=" 7 "></span>    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">prefixSum</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">);</span>
+<span class="lineno" data-linenos=" 8 "></span>
+<span class="lineno" data-linenos=" 9 "></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+<span class="lineno" data-linenos="10 "></span>      <span class="n">prefixSum</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">prefixSum</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span>
+<span class="lineno" data-linenos="11 "></span>
+<span class="lineno" data-linenos="12 "></span>    <span class="n">function</span><span class="o">&lt;</span><span class="kt">double</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">dp</span> <span class="o">=</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="kt">int</span> <span class="n">k</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos="13 "></span>      <span class="k">if</span> <span class="p">(</span><span class="n">memo</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">n</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">0.0</span><span class="p">)</span> <span class="k">return</span> <span class="n">memo</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">n</span><span class="p">];</span>
+<span class="lineno" data-linenos="14 "></span>      <span class="k">if</span> <span class="p">(</span><span class="n">k</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="k">return</span> <span class="n">prefixSum</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">/</span> <span class="n">n</span><span class="p">;</span>
+<span class="lineno" data-linenos="15 "></span>
+<span class="lineno" data-linenos="16 "></span>      <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+<span class="lineno" data-linenos="17 "></span>        <span class="n">memo</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span>
+<span class="lineno" data-linenos="18 "></span>            <span class="n">memo</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">n</span><span class="p">],</span> <span class="n">dp</span><span class="p">(</span><span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">prefixSum</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">-</span> <span class="n">prefixSum</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="n">i</span><span class="p">));</span>
+<span class="lineno" data-linenos="19 "></span>
+<span class="lineno" data-linenos="20 "></span>      <span class="k">return</span> <span class="n">memo</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">n</span><span class="p">];</span>
+<span class="lineno" data-linenos="21 "></span>    <span class="p">};</span>
+<span class="lineno" data-linenos="22 "></span>
+<span class="lineno" data-linenos="23 "></span>    <span class="k">return</span> <span class="nf">dp</span><span class="p">(</span><span class="n">K</span><span class="p">,</span> <span class="n">n</span><span class="p">);</span>
+<span class="lineno" data-linenos="24 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos="25 "></span><span class="p">};</span>
 </code></pre></div>
 
 <h2 id="814-binary-tree-pruning-starstar">814. Binary Tree Pruning <a href="https://leetcode.com/problems/binary-tree-pruning">$\star\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>
