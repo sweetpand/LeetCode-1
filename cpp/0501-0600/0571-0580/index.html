@@ -7384,20 +7384,49 @@
                 
                 <h2 id="571-find-median-given-frequency-of-numbers-starstarstar">571. Find Median Given Frequency of Numbers <a href="https://leetcode.com/problems/find-median-given-frequency-of-numbers">$\star\star\star$</a> 🔒</h2>
 <h2 id="572-subtree-of-another-tree-star">572. Subtree of Another Tree <a href="https://leetcode.com/problems/subtree-of-another-tree">$\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>
+<p><img alt="" src="https://img.shields.io/badge/-Tree-227D51.svg?style=flat-square" /></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(mn)$, where <code>m = # of nodes in s</code> and <code>n = # of nodes in t</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(h)$, where <code>h = height of s</code></li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 2 "></span> <span class="k">public</span><span class="o">:</span>
+<span class="lineno" data-linenos=" 3 "></span>  <span class="kt">bool</span> <span class="n">isSubtree</span><span class="p">(</span><span class="n">TreeNode</span><span class="o">*</span> <span class="n">s</span><span class="p">,</span> <span class="n">TreeNode</span><span class="o">*</span> <span class="n">t</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 4 "></span>    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">s</span><span class="p">)</span> <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+<span class="lineno" data-linenos=" 5 "></span>    <span class="k">if</span> <span class="p">(</span><span class="n">isSameTree</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">t</span><span class="p">))</span> <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+<span class="lineno" data-linenos=" 6 "></span>    <span class="k">return</span> <span class="nf">isSubtree</span><span class="p">(</span><span class="n">s</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span> <span class="o">||</span> <span class="n">isSubtree</span><span class="p">(</span><span class="n">s</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">,</span> <span class="n">t</span><span class="p">);</span>
+<span class="lineno" data-linenos=" 7 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos=" 8 "></span>
+<span class="lineno" data-linenos=" 9 "></span> <span class="k">private</span><span class="o">:</span>
+<span class="lineno" data-linenos="10 "></span>  <span class="kt">bool</span> <span class="n">isSameTree</span><span class="p">(</span><span class="n">TreeNode</span><span class="o">*</span> <span class="n">p</span><span class="p">,</span> <span class="n">TreeNode</span><span class="o">*</span> <span class="n">q</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos="11 "></span>    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">p</span> <span class="o">||</span> <span class="o">!</span><span class="n">q</span><span class="p">)</span> <span class="k">return</span> <span class="n">p</span> <span class="o">==</span> <span class="n">q</span><span class="p">;</span>
+<span class="lineno" data-linenos="12 "></span>
+<span class="lineno" data-linenos="13 "></span>    <span class="k">return</span> <span class="n">p</span><span class="o">-&gt;</span><span class="n">val</span> <span class="o">==</span> <span class="n">q</span><span class="o">-&gt;</span><span class="n">val</span> <span class="o">&amp;&amp;</span>
+<span class="lineno" data-linenos="14 "></span>           <span class="n">isSameTree</span><span class="p">(</span><span class="n">p</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">,</span> <span class="n">q</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">)</span> <span class="o">&amp;&amp;</span>
+<span class="lineno" data-linenos="15 "></span>           <span class="n">isSameTree</span><span class="p">(</span><span class="n">p</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">,</span> <span class="n">q</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">);</span>
+<span class="lineno" data-linenos="16 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos="17 "></span><span class="p">};</span>
+</code></pre></div>
+
 <h2 id="573-squirrel-simulation-starstar">573. Squirrel Simulation <a href="https://leetcode.com/problems/squirrel-simulation">$\star\star$</a> 🔒</h2>
 <h2 id="574-winning-candidate-starstar">574. Winning Candidate <a href="https://leetcode.com/problems/winning-candidate">$\star\star$</a> 🔒</h2>
 <h2 id="575-distribute-candies-star">575. Distribute Candies <a href="https://leetcode.com/problems/distribute-candies">$\star$</a> <img alt="👎" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44e.svg" title=":thumbsdown:" /></h2>
 <p><img alt="" src="https://img.shields.io/badge/-Hash%20Table-7BA23F.svg?style=flat-square" /></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(n)$</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(200001)$</li>
+</ul>
 <div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
 <span class="lineno" data-linenos=" 2 "></span> <span class="k">public</span><span class="o">:</span>
 <span class="lineno" data-linenos=" 3 "></span>  <span class="kt">int</span> <span class="n">distributeCandies</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">candies</span><span class="p">)</span> <span class="p">{</span>
 <span class="lineno" data-linenos=" 4 "></span>    <span class="n">bitset</span><span class="o">&lt;</span><span class="mi">200001</span><span class="o">&gt;</span> <span class="n">bitset</span><span class="p">;</span>
 <span class="lineno" data-linenos=" 5 "></span>
-<span class="lineno" data-linenos=" 6 "></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="nl">candy</span> <span class="p">:</span> <span class="n">candies</span><span class="p">)</span> <span class="n">bitset</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="n">candy</span> <span class="o">+</span> <span class="mi">100000</span><span class="p">);</span>
-<span class="lineno" data-linenos=" 7 "></span>
-<span class="lineno" data-linenos=" 8 "></span>    <span class="k">return</span> <span class="nf">min</span><span class="p">(</span><span class="n">candies</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">bitset</span><span class="p">.</span><span class="n">count</span><span class="p">());</span>
-<span class="lineno" data-linenos=" 9 "></span>  <span class="p">}</span>
-<span class="lineno" data-linenos="10 "></span><span class="p">};</span>
+<span class="lineno" data-linenos=" 6 "></span>    <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="kt">int</span> <span class="nl">candy</span> <span class="p">:</span> <span class="n">candies</span><span class="p">)</span>
+<span class="lineno" data-linenos=" 7 "></span>      <span class="n">bitset</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="n">candy</span> <span class="o">+</span> <span class="mi">100000</span><span class="p">);</span>
+<span class="lineno" data-linenos=" 8 "></span>
+<span class="lineno" data-linenos=" 9 "></span>    <span class="k">return</span> <span class="nf">min</span><span class="p">(</span><span class="n">candies</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">bitset</span><span class="p">.</span><span class="n">count</span><span class="p">());</span>
+<span class="lineno" data-linenos="10 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos="11 "></span><span class="p">};</span>
 </code></pre></div>
 
 <h2 id="576-out-of-boundary-paths-starstar">576. Out of Boundary Paths <a href="https://leetcode.com/problems/out-of-boundary-paths">$\star\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>

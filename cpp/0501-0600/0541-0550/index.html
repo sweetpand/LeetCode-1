@@ -1198,6 +1198,26 @@
     542. 01 Matrix $\star\star$
   </a>
   
+    <nav class="md-nav" aria-label="542. 01 Matrix $\star\star$">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#w-boolean-array" class="md-nav__link">
+    w/ boolean array
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wo-boolean-array" class="md-nav__link">
+    w/o boolean array
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -7302,6 +7322,26 @@
     542. 01 Matrix $\star\star$
   </a>
   
+    <nav class="md-nav" aria-label="542. 01 Matrix $\star\star$">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#w-boolean-array" class="md-nav__link">
+    w/ boolean array
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wo-boolean-array" class="md-nav__link">
+    w/o boolean array
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -7384,12 +7424,16 @@
                 
                 <h2 id="541-reverse-string-ii-star">541. Reverse String II <a href="https://leetcode.com/problems/reverse-string-ii">$\star$</a> <img alt="👎" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44e.svg" title=":thumbsdown:" /></h2>
 <p><img alt="" src="https://img.shields.io/badge/-String-60373E.svg?style=flat-square" /></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(|s|k)$</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(1)$</li>
+</ul>
 <div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
 <span class="lineno" data-linenos=" 2 "></span> <span class="k">public</span><span class="o">:</span>
 <span class="lineno" data-linenos=" 3 "></span>  <span class="n">string</span> <span class="n">reverseStr</span><span class="p">(</span><span class="n">string</span> <span class="n">s</span><span class="p">,</span> <span class="kt">int</span> <span class="n">k</span><span class="p">)</span> <span class="p">{</span>
-<span class="lineno" data-linenos=" 4 "></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">s</span><span class="p">.</span><span class="n">length</span><span class="p">();</span> <span class="n">i</span> <span class="o">+=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">k</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 4 "></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">s</span><span class="p">.</span><span class="n">length</span><span class="p">();</span> <span class="n">i</span> <span class="o">+=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">k</span><span class="p">)</span> <span class="p">{</span>
 <span class="lineno" data-linenos=" 5 "></span>      <span class="kt">int</span> <span class="n">l</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
-<span class="lineno" data-linenos=" 6 "></span>      <span class="kt">int</span> <span class="n">r</span> <span class="o">=</span> <span class="n">min</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">s</span><span class="p">.</span><span class="n">length</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+<span class="lineno" data-linenos=" 6 "></span>      <span class="kt">int</span> <span class="n">r</span> <span class="o">=</span> <span class="n">min</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">s</span><span class="p">.</span><span class="n">length</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
 <span class="lineno" data-linenos=" 7 "></span>      <span class="k">while</span> <span class="p">(</span><span class="n">l</span> <span class="o">&lt;</span> <span class="n">r</span><span class="p">)</span> <span class="n">swap</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">l</span><span class="o">++</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="n">r</span><span class="o">--</span><span class="p">]);</span>
 <span class="lineno" data-linenos=" 8 "></span>    <span class="p">}</span>
 <span class="lineno" data-linenos=" 9 "></span>
@@ -7400,29 +7444,70 @@
 
 <h2 id="542-01-matrix-starstar">542. 01 Matrix <a href="https://leetcode.com/problems/01-matrix">$\star\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>
 <p><img alt="" src="https://img.shields.io/badge/-Depth%20First%20Search-86C166.svg?style=flat-square" /></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(mn)$</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(mn)$</li>
+</ul>
+<h3 id="w-boolean-array">w/ boolean array</h3>
 <div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
 <span class="lineno" data-linenos=" 2 "></span> <span class="k">public</span><span class="o">:</span>
 <span class="lineno" data-linenos=" 3 "></span>  <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">updateMatrix</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;&amp;</span> <span class="n">matrix</span><span class="p">)</span> <span class="p">{</span>
-<span class="lineno" data-linenos=" 4 "></span>    <span class="k">const</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">dirs</span><span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">};</span>
-<span class="lineno" data-linenos=" 5 "></span>    <span class="n">queue</span><span class="o">&lt;</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">queue</span><span class="p">;</span>
-<span class="lineno" data-linenos=" 6 "></span>
-<span class="lineno" data-linenos=" 7 "></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">matrix</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
-<span class="lineno" data-linenos=" 8 "></span>      <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">matrix</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">size</span><span class="p">();</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span>
-<span class="lineno" data-linenos=" 9 "></span>        <span class="k">if</span> <span class="p">(</span><span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
-<span class="lineno" data-linenos="10 "></span>          <span class="n">queue</span><span class="p">.</span><span class="n">push</span><span class="p">({</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">});</span>
-<span class="lineno" data-linenos="11 "></span>        <span class="k">else</span>
-<span class="lineno" data-linenos="12 "></span>          <span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">INT_MAX</span><span class="p">;</span>
-<span class="lineno" data-linenos="13 "></span>
-<span class="lineno" data-linenos="14 "></span>    <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">queue</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="p">{</span>
-<span class="lineno" data-linenos="15 "></span>      <span class="k">const</span> <span class="k">auto</span> <span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">queue</span><span class="p">.</span><span class="n">front</span><span class="p">();</span>
-<span class="lineno" data-linenos="16 "></span>      <span class="n">queue</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
-<span class="lineno" data-linenos="17 "></span>      <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">;</span> <span class="o">++</span><span class="n">k</span><span class="p">)</span> <span class="p">{</span>
-<span class="lineno" data-linenos="18 "></span>        <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="n">dirs</span><span class="p">[</span><span class="n">k</span><span class="p">];</span>
-<span class="lineno" data-linenos="19 "></span>        <span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="n">j</span> <span class="o">+</span> <span class="n">dirs</span><span class="p">[</span><span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">];</span>
-<span class="lineno" data-linenos="20 "></span>        <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="n">matrix</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">||</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">y</span> <span class="o">&gt;=</span> <span class="n">matrix</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">size</span><span class="p">()</span> <span class="o">||</span>
-<span class="lineno" data-linenos="21 "></span>            <span class="n">matrix</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-<span class="lineno" data-linenos="22 "></span>          <span class="k">continue</span><span class="p">;</span>
-<span class="lineno" data-linenos="23 "></span>        <span class="n">queue</span><span class="p">.</span><span class="n">push</span><span class="p">({</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">});</span>
+<span class="lineno" data-linenos=" 4 "></span>    <span class="k">const</span> <span class="kt">int</span> <span class="n">m</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+<span class="lineno" data-linenos=" 5 "></span>    <span class="k">const</span> <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">size</span><span class="p">();</span>
+<span class="lineno" data-linenos=" 6 "></span>    <span class="k">const</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">dirs</span><span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">};</span>
+<span class="lineno" data-linenos=" 7 "></span>
+<span class="lineno" data-linenos=" 8 "></span>    <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;&gt;</span> <span class="n">seen</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="nb">false</span><span class="p">));</span>
+<span class="lineno" data-linenos=" 9 "></span>    <span class="n">queue</span><span class="o">&lt;</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">queue</span><span class="p">;</span>
+<span class="lineno" data-linenos="10 "></span>
+<span class="lineno" data-linenos="11 "></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">m</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+<span class="lineno" data-linenos="12 "></span>      <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span>
+<span class="lineno" data-linenos="13 "></span>        <span class="k">if</span> <span class="p">(</span><span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos="14 "></span>          <span class="n">seen</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+<span class="lineno" data-linenos="15 "></span>          <span class="n">queue</span><span class="p">.</span><span class="n">push</span><span class="p">({</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">});</span>
+<span class="lineno" data-linenos="16 "></span>        <span class="p">}</span>
+<span class="lineno" data-linenos="17 "></span>
+<span class="lineno" data-linenos="18 "></span>    <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">queue</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="p">{</span>
+<span class="lineno" data-linenos="19 "></span>      <span class="k">const</span> <span class="k">auto</span> <span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">queue</span><span class="p">.</span><span class="n">front</span><span class="p">();</span> <span class="n">queue</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+<span class="lineno" data-linenos="20 "></span>      <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">;</span> <span class="o">++</span><span class="n">k</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos="21 "></span>        <span class="k">const</span> <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="n">dirs</span><span class="p">[</span><span class="n">k</span><span class="p">];</span>
+<span class="lineno" data-linenos="22 "></span>        <span class="k">const</span> <span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="n">j</span> <span class="o">+</span> <span class="n">dirs</span><span class="p">[</span><span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">];</span>
+<span class="lineno" data-linenos="23 "></span>        <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">x</span> <span class="o">==</span> <span class="n">m</span> <span class="o">||</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">y</span> <span class="o">==</span> <span class="n">n</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
+<span class="lineno" data-linenos="24 "></span>        <span class="k">if</span> <span class="p">(</span><span class="n">seen</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">])</span> <span class="k">continue</span><span class="p">;</span>
+<span class="lineno" data-linenos="25 "></span>        <span class="n">seen</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+<span class="lineno" data-linenos="26 "></span>        <span class="n">matrix</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+<span class="lineno" data-linenos="27 "></span>        <span class="n">queue</span><span class="p">.</span><span class="n">push</span><span class="p">({</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">});</span>
+<span class="lineno" data-linenos="28 "></span>      <span class="p">}</span>
+<span class="lineno" data-linenos="29 "></span>    <span class="p">}</span>
+<span class="lineno" data-linenos="30 "></span>
+<span class="lineno" data-linenos="31 "></span>    <span class="k">return</span> <span class="n">matrix</span><span class="p">;</span>
+<span class="lineno" data-linenos="32 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos="33 "></span><span class="p">};</span>
+</code></pre></div>
+
+<h3 id="wo-boolean-array">w/o boolean array</h3>
+<div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 2 "></span> <span class="k">public</span><span class="o">:</span>
+<span class="lineno" data-linenos=" 3 "></span>  <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">updateMatrix</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;&amp;</span> <span class="n">matrix</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 4 "></span>    <span class="k">const</span> <span class="kt">int</span> <span class="n">m</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+<span class="lineno" data-linenos=" 5 "></span>    <span class="k">const</span> <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">size</span><span class="p">();</span>
+<span class="lineno" data-linenos=" 6 "></span>    <span class="k">const</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">dirs</span><span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">};</span>
+<span class="lineno" data-linenos=" 7 "></span>    <span class="n">queue</span><span class="o">&lt;</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">q</span><span class="p">;</span>
+<span class="lineno" data-linenos=" 8 "></span>
+<span class="lineno" data-linenos=" 9 "></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">m</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+<span class="lineno" data-linenos="10 "></span>      <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span>
+<span class="lineno" data-linenos="11 "></span>        <span class="k">if</span> <span class="p">(</span><span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+<span class="lineno" data-linenos="12 "></span>          <span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">({</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">});</span>
+<span class="lineno" data-linenos="13 "></span>        <span class="k">else</span>
+<span class="lineno" data-linenos="14 "></span>          <span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">INT_MAX</span><span class="p">;</span>
+<span class="lineno" data-linenos="15 "></span>
+<span class="lineno" data-linenos="16 "></span>    <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">q</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="p">{</span>
+<span class="lineno" data-linenos="17 "></span>      <span class="k">const</span> <span class="k">auto</span> <span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">q</span><span class="p">.</span><span class="n">front</span><span class="p">();</span> <span class="n">q</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+<span class="lineno" data-linenos="18 "></span>      <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">;</span> <span class="o">++</span><span class="n">k</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos="19 "></span>        <span class="k">const</span> <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="n">dirs</span><span class="p">[</span><span class="n">k</span><span class="p">];</span>
+<span class="lineno" data-linenos="20 "></span>        <span class="k">const</span> <span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="n">j</span> <span class="o">+</span> <span class="n">dirs</span><span class="p">[</span><span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">];</span>
+<span class="lineno" data-linenos="21 "></span>        <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">x</span> <span class="o">==</span> <span class="n">m</span> <span class="o">||</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">y</span> <span class="o">==</span> <span class="n">n</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
+<span class="lineno" data-linenos="22 "></span>        <span class="k">if</span> <span class="p">(</span><span class="n">matrix</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
+<span class="lineno" data-linenos="23 "></span>        <span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">({</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">});</span>
 <span class="lineno" data-linenos="24 "></span>        <span class="n">matrix</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
 <span class="lineno" data-linenos="25 "></span>      <span class="p">}</span>
 <span class="lineno" data-linenos="26 "></span>    <span class="p">}</span>
@@ -7433,59 +7518,127 @@
 </code></pre></div>
 
 <h2 id="543-diameter-of-binary-tree-star">543. Diameter of Binary Tree <a href="https://leetcode.com/problems/diameter-of-binary-tree">$\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>
+<p><img alt="" src="https://img.shields.io/badge/-Tree-227D51.svg?style=flat-square" /></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(n)$</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(\log n)$</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 2 "></span> <span class="k">public</span><span class="o">:</span>
+<span class="lineno" data-linenos=" 3 "></span>  <span class="kt">int</span> <span class="n">diameterOfBinaryTree</span><span class="p">(</span><span class="n">TreeNode</span><span class="o">*</span> <span class="n">root</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 4 "></span>    <span class="kt">int</span> <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="lineno" data-linenos=" 5 "></span>
+<span class="lineno" data-linenos=" 6 "></span>    <span class="n">function</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">(</span><span class="n">TreeNode</span><span class="o">*</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">maxDepth</span> <span class="o">=</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="n">TreeNode</span><span class="o">*</span> <span class="n">root</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 7 "></span>      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">root</span><span class="p">)</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="lineno" data-linenos=" 8 "></span>
+<span class="lineno" data-linenos=" 9 "></span>      <span class="k">const</span> <span class="kt">int</span> <span class="n">l</span> <span class="o">=</span> <span class="n">maxDepth</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">);</span>
+<span class="lineno" data-linenos="10 "></span>      <span class="k">const</span> <span class="kt">int</span> <span class="n">r</span> <span class="o">=</span> <span class="n">maxDepth</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">);</span>
+<span class="lineno" data-linenos="11 "></span>      <span class="n">ans</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">ans</span><span class="p">,</span> <span class="n">l</span> <span class="o">+</span> <span class="n">r</span><span class="p">);</span>
+<span class="lineno" data-linenos="12 "></span>
+<span class="lineno" data-linenos="13 "></span>      <span class="k">return</span> <span class="nf">max</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+<span class="lineno" data-linenos="14 "></span>    <span class="p">};</span>
+<span class="lineno" data-linenos="15 "></span>
+<span class="lineno" data-linenos="16 "></span>    <span class="n">maxDepth</span><span class="p">(</span><span class="n">root</span><span class="p">);</span>
+<span class="lineno" data-linenos="17 "></span>
+<span class="lineno" data-linenos="18 "></span>    <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
+<span class="lineno" data-linenos="19 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos="20 "></span><span class="p">};</span>
+</code></pre></div>
+
 <h2 id="544-output-contest-matches-starstar">544. Output Contest Matches <a href="https://leetcode.com/problems/output-contest-matches">$\star\star$</a> 🔒</h2>
 <h2 id="545-boundary-of-binary-tree-starstar">545. Boundary of Binary Tree <a href="https://leetcode.com/problems/boundary-of-binary-tree">$\star\star$</a> 🔒</h2>
-<h2 id="546-remove-boxes-starstarstar">546. Remove Boxes <a href="https://leetcode.com/problems/remove-boxes">$\star\star\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>
+<h2 id="546-remove-boxes-starstarstar">546. Remove Boxes <a href="https://leetcode.com/problems/remove-boxes">$\star\star\star$</a> <img alt="💪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4aa.svg" title=":muscle:" /></h2>
+<p><img alt="" src="https://img.shields.io/badge/-Depth%20First%20Search-86C166.svg?style=flat-square" /> <img alt="" src="https://img.shields.io/badge/-Dynamic%20Programming-113285.svg?style=flat-square" /></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(n^4)$</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(n^3)$</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 2 "></span> <span class="k">public</span><span class="o">:</span>
+<span class="lineno" data-linenos=" 3 "></span>  <span class="kt">int</span> <span class="n">removeBoxes</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">boxes</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 4 "></span>    <span class="k">const</span> <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">boxes</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+<span class="lineno" data-linenos=" 5 "></span>
+<span class="lineno" data-linenos=" 6 "></span>    <span class="c1">// dp[i][j][k] := max score of boxes[i..j]</span>
+<span class="lineno" data-linenos=" 7 "></span>    <span class="c1">// if k boxes having same color as boxes[j]</span>
+<span class="lineno" data-linenos=" 8 "></span>    <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;&gt;</span> <span class="n">memo</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">n</span><span class="p">)));</span>
+<span class="lineno" data-linenos=" 9 "></span>
+<span class="lineno" data-linenos="10 "></span>    <span class="n">function</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">dp</span> <span class="o">=</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="kt">int</span> <span class="n">j</span><span class="p">,</span> <span class="kt">int</span> <span class="n">k</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos="11 "></span>      <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&gt;</span> <span class="n">j</span><span class="p">)</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="lineno" data-linenos="12 "></span>      <span class="k">if</span> <span class="p">(</span><span class="n">memo</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">][</span><span class="n">k</span><span class="p">])</span> <span class="k">return</span> <span class="n">memo</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">][</span><span class="n">k</span><span class="p">];</span>
+<span class="lineno" data-linenos="13 "></span>
+<span class="lineno" data-linenos="14 "></span>      <span class="n">memo</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+<span class="lineno" data-linenos="15 "></span>
+<span class="lineno" data-linenos="16 "></span>      <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">p</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span> <span class="n">p</span> <span class="o">&lt;</span> <span class="n">j</span><span class="p">;</span> <span class="o">++</span><span class="n">p</span><span class="p">)</span>
+<span class="lineno" data-linenos="17 "></span>        <span class="k">if</span> <span class="p">(</span><span class="n">boxes</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">==</span> <span class="n">boxes</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+<span class="lineno" data-linenos="18 "></span>          <span class="n">memo</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span>
+<span class="lineno" data-linenos="19 "></span>              <span class="n">max</span><span class="p">(</span><span class="n">memo</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">][</span><span class="n">k</span><span class="p">],</span> <span class="n">dp</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">dp</span><span class="p">(</span><span class="n">p</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">));</span>
+<span class="lineno" data-linenos="20 "></span>
+<span class="lineno" data-linenos="21 "></span>      <span class="k">return</span> <span class="n">memo</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">][</span><span class="n">k</span><span class="p">];</span>
+<span class="lineno" data-linenos="22 "></span>    <span class="p">};</span>
+<span class="lineno" data-linenos="23 "></span>
+<span class="lineno" data-linenos="24 "></span>    <span class="k">return</span> <span class="nf">dp</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="lineno" data-linenos="25 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos="26 "></span><span class="p">};</span>
+</code></pre></div>
+
 <h2 id="547-friend-circles-starstar">547. Friend Circles <a href="https://leetcode.com/problems/friend-circles">$\star\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>
-<p><img alt="" src="https://img.shields.io/badge/-Depth%20First%20Search-86C166.svg?style=flat-square" /></p>
+<p><img alt="" src="https://img.shields.io/badge/-Depth%20First%20Search-86C166.svg?style=flat-square" /> <img alt="" src="https://img.shields.io/badge/-Union%20Find-535953.svg?style=flat-square" /></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(n^2)$</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(n)$</li>
+</ul>
 <div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">UF</span> <span class="p">{</span>
 <span class="lineno" data-linenos=" 2 "></span> <span class="k">public</span><span class="o">:</span>
 <span class="lineno" data-linenos=" 3 "></span>  <span class="n">UF</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="o">:</span> <span class="n">rank</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="n">parent</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="p">{</span>
-<span class="lineno" data-linenos=" 4 "></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">parent</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="n">parent</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
-<span class="lineno" data-linenos=" 5 "></span>  <span class="p">}</span>
-<span class="lineno" data-linenos=" 6 "></span>
-<span class="lineno" data-linenos=" 7 "></span>  <span class="kt">void</span> <span class="n">union_</span><span class="p">(</span><span class="kt">int</span> <span class="n">u</span><span class="p">,</span> <span class="kt">int</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span>
-<span class="lineno" data-linenos=" 8 "></span>    <span class="kt">int</span> <span class="n">pu</span> <span class="o">=</span> <span class="n">find</span><span class="p">(</span><span class="n">u</span><span class="p">);</span>
-<span class="lineno" data-linenos=" 9 "></span>    <span class="kt">int</span> <span class="n">pv</span> <span class="o">=</span> <span class="n">find</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
-<span class="lineno" data-linenos="10 "></span>    <span class="k">if</span> <span class="p">(</span><span class="n">pu</span> <span class="o">==</span> <span class="n">pv</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
-<span class="lineno" data-linenos="11 "></span>
-<span class="lineno" data-linenos="12 "></span>    <span class="k">if</span> <span class="p">(</span><span class="n">rank</span><span class="p">[</span><span class="n">pu</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">rank</span><span class="p">[</span><span class="n">pv</span><span class="p">])</span>
-<span class="lineno" data-linenos="13 "></span>      <span class="n">parent</span><span class="p">[</span><span class="n">pu</span><span class="p">]</span> <span class="o">=</span> <span class="n">pv</span><span class="p">;</span>
-<span class="lineno" data-linenos="14 "></span>    <span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">rank</span><span class="p">[</span><span class="n">pv</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">rank</span><span class="p">[</span><span class="n">pu</span><span class="p">])</span>
-<span class="lineno" data-linenos="15 "></span>      <span class="n">parent</span><span class="p">[</span><span class="n">pv</span><span class="p">]</span> <span class="o">=</span> <span class="n">pu</span><span class="p">;</span>
-<span class="lineno" data-linenos="16 "></span>    <span class="k">else</span> <span class="p">{</span>
-<span class="lineno" data-linenos="17 "></span>      <span class="n">parent</span><span class="p">[</span><span class="n">pu</span><span class="p">]</span> <span class="o">=</span> <span class="n">pv</span><span class="p">;</span>
-<span class="lineno" data-linenos="18 "></span>      <span class="o">++</span><span class="n">rank</span><span class="p">[</span><span class="n">pv</span><span class="p">];</span>
-<span class="lineno" data-linenos="19 "></span>    <span class="p">}</span>
-<span class="lineno" data-linenos="20 "></span>  <span class="p">}</span>
-<span class="lineno" data-linenos="21 "></span>
-<span class="lineno" data-linenos="22 "></span>  <span class="kt">int</span> <span class="n">find</span><span class="p">(</span><span class="kt">int</span> <span class="n">u</span><span class="p">)</span> <span class="p">{</span>
-<span class="lineno" data-linenos="23 "></span>    <span class="k">if</span> <span class="p">(</span><span class="n">u</span> <span class="o">!=</span> <span class="n">parent</span><span class="p">[</span><span class="n">u</span><span class="p">])</span> <span class="n">parent</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="n">find</span><span class="p">(</span><span class="n">parent</span><span class="p">[</span><span class="n">u</span><span class="p">]);</span>
-<span class="lineno" data-linenos="24 "></span>    <span class="k">return</span> <span class="n">parent</span><span class="p">[</span><span class="n">u</span><span class="p">];</span>
-<span class="lineno" data-linenos="25 "></span>  <span class="p">}</span>
-<span class="lineno" data-linenos="26 "></span>
-<span class="lineno" data-linenos="27 "></span> <span class="k">private</span><span class="o">:</span>
-<span class="lineno" data-linenos="28 "></span>  <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">rank</span><span class="p">;</span>
-<span class="lineno" data-linenos="29 "></span>  <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">parent</span><span class="p">;</span>
-<span class="lineno" data-linenos="30 "></span><span class="p">};</span>
-<span class="lineno" data-linenos="31 "></span>
-<span class="lineno" data-linenos="32 "></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
-<span class="lineno" data-linenos="33 "></span> <span class="k">public</span><span class="o">:</span>
-<span class="lineno" data-linenos="34 "></span>  <span class="kt">int</span> <span class="n">findCircleNum</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;&amp;</span> <span class="n">M</span><span class="p">)</span> <span class="p">{</span>
-<span class="lineno" data-linenos="35 "></span>    <span class="k">const</span> <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">M</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
-<span class="lineno" data-linenos="36 "></span>
-<span class="lineno" data-linenos="37 "></span>    <span class="n">UF</span> <span class="nf">uf</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
-<span class="lineno" data-linenos="38 "></span>    <span class="n">unordered_set</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">friendCircles</span><span class="p">;</span>
-<span class="lineno" data-linenos="39 "></span>
-<span class="lineno" data-linenos="40 "></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
-<span class="lineno" data-linenos="41 "></span>      <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span>
-<span class="lineno" data-linenos="42 "></span>        <span class="k">if</span> <span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="n">uf</span><span class="p">.</span><span class="n">union_</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">);</span>
-<span class="lineno" data-linenos="43 "></span>
-<span class="lineno" data-linenos="44 "></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="n">friendCircles</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">uf</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">i</span><span class="p">));</span>
-<span class="lineno" data-linenos="45 "></span>
-<span class="lineno" data-linenos="46 "></span>    <span class="k">return</span> <span class="n">friendCircles</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
-<span class="lineno" data-linenos="47 "></span>  <span class="p">}</span>
-<span class="lineno" data-linenos="48 "></span><span class="p">};</span>
+<span class="lineno" data-linenos=" 4 "></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+<span class="lineno" data-linenos=" 5 "></span>      <span class="n">parent</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+<span class="lineno" data-linenos=" 6 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos=" 7 "></span>
+<span class="lineno" data-linenos=" 8 "></span>  <span class="kt">void</span> <span class="n">union_</span><span class="p">(</span><span class="kt">int</span> <span class="n">u</span><span class="p">,</span> <span class="kt">int</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 9 "></span>    <span class="k">const</span> <span class="kt">int</span> <span class="n">pu</span> <span class="o">=</span> <span class="n">find</span><span class="p">(</span><span class="n">u</span><span class="p">);</span>
+<span class="lineno" data-linenos="10 "></span>    <span class="k">const</span> <span class="kt">int</span> <span class="n">pv</span> <span class="o">=</span> <span class="n">find</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
+<span class="lineno" data-linenos="11 "></span>    <span class="k">if</span> <span class="p">(</span><span class="n">pu</span> <span class="o">==</span> <span class="n">pv</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+<span class="lineno" data-linenos="12 "></span>
+<span class="lineno" data-linenos="13 "></span>    <span class="k">if</span> <span class="p">(</span><span class="n">rank</span><span class="p">[</span><span class="n">pu</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">rank</span><span class="p">[</span><span class="n">pv</span><span class="p">])</span>
+<span class="lineno" data-linenos="14 "></span>      <span class="n">parent</span><span class="p">[</span><span class="n">pu</span><span class="p">]</span> <span class="o">=</span> <span class="n">pv</span><span class="p">;</span>
+<span class="lineno" data-linenos="15 "></span>    <span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">rank</span><span class="p">[</span><span class="n">pv</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">rank</span><span class="p">[</span><span class="n">pu</span><span class="p">])</span>
+<span class="lineno" data-linenos="16 "></span>      <span class="n">parent</span><span class="p">[</span><span class="n">pv</span><span class="p">]</span> <span class="o">=</span> <span class="n">pu</span><span class="p">;</span>
+<span class="lineno" data-linenos="17 "></span>    <span class="k">else</span> <span class="p">{</span>
+<span class="lineno" data-linenos="18 "></span>      <span class="n">parent</span><span class="p">[</span><span class="n">pu</span><span class="p">]</span> <span class="o">=</span> <span class="n">pv</span><span class="p">;</span>
+<span class="lineno" data-linenos="19 "></span>      <span class="o">++</span><span class="n">rank</span><span class="p">[</span><span class="n">pv</span><span class="p">];</span>
+<span class="lineno" data-linenos="20 "></span>    <span class="p">}</span>
+<span class="lineno" data-linenos="21 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos="22 "></span>
+<span class="lineno" data-linenos="23 "></span>  <span class="kt">int</span> <span class="n">find</span><span class="p">(</span><span class="kt">int</span> <span class="n">u</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos="24 "></span>    <span class="k">if</span> <span class="p">(</span><span class="n">u</span> <span class="o">!=</span> <span class="n">parent</span><span class="p">[</span><span class="n">u</span><span class="p">])</span>
+<span class="lineno" data-linenos="25 "></span>      <span class="n">parent</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="n">find</span><span class="p">(</span><span class="n">parent</span><span class="p">[</span><span class="n">u</span><span class="p">]);</span>
+<span class="lineno" data-linenos="26 "></span>    <span class="k">return</span> <span class="n">parent</span><span class="p">[</span><span class="n">u</span><span class="p">];</span>
+<span class="lineno" data-linenos="27 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos="28 "></span>
+<span class="lineno" data-linenos="29 "></span> <span class="k">private</span><span class="o">:</span>
+<span class="lineno" data-linenos="30 "></span>  <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">rank</span><span class="p">;</span>
+<span class="lineno" data-linenos="31 "></span>  <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">parent</span><span class="p">;</span>
+<span class="lineno" data-linenos="32 "></span><span class="p">};</span>
+<span class="lineno" data-linenos="33 "></span>
+<span class="lineno" data-linenos="34 "></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="lineno" data-linenos="35 "></span> <span class="k">public</span><span class="o">:</span>
+<span class="lineno" data-linenos="36 "></span>  <span class="kt">int</span> <span class="n">findCircleNum</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;&amp;</span> <span class="n">M</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos="37 "></span>    <span class="k">const</span> <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">M</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+<span class="lineno" data-linenos="38 "></span>
+<span class="lineno" data-linenos="39 "></span>    <span class="n">UF</span> <span class="nf">uf</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+<span class="lineno" data-linenos="40 "></span>    <span class="n">unordered_set</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">friendCircles</span><span class="p">;</span>
+<span class="lineno" data-linenos="41 "></span>
+<span class="lineno" data-linenos="42 "></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+<span class="lineno" data-linenos="43 "></span>      <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span>
+<span class="lineno" data-linenos="44 "></span>        <span class="k">if</span> <span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
+<span class="lineno" data-linenos="45 "></span>          <span class="n">uf</span><span class="p">.</span><span class="n">union_</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">);</span>
+<span class="lineno" data-linenos="46 "></span>
+<span class="lineno" data-linenos="47 "></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+<span class="lineno" data-linenos="48 "></span>      <span class="n">friendCircles</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">uf</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">i</span><span class="p">));</span>
+<span class="lineno" data-linenos="49 "></span>
+<span class="lineno" data-linenos="50 "></span>    <span class="k">return</span> <span class="n">friendCircles</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+<span class="lineno" data-linenos="51 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos="52 "></span><span class="p">};</span>
 </code></pre></div>
 
 <h2 id="548-split-array-with-equal-sum-starstar">548. Split Array with Equal Sum <a href="https://leetcode.com/problems/split-array-with-equal-sum">$\star\star$</a> 🔒</h2>

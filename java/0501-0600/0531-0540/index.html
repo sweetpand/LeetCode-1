@@ -7384,7 +7384,11 @@
                 
                 <h2 id="531-lonely-pixel-i-starstar">531. Lonely Pixel I <a href="https://leetcode.com/problems/lonely-pixel-i">$\star\star$</a> 🔒</h2>
 <h2 id="532-k-diff-pairs-in-an-array-star">532. K-diff Pairs in an Array <a href="https://leetcode.com/problems/k-diff-pairs-in-an-array">$\star$</a> <img alt="👎" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44e.svg" title=":thumbsdown:" /></h2>
-<p><img alt="" src="https://img.shields.io/badge/-Two%20Pointers-2EA9DF.svg?style=flat-square" /></p>
+<p><img alt="" src="https://img.shields.io/badge/-Hash%20Table-7BA23F.svg?style=flat-square" /> <img alt="" src="https://img.shields.io/badge/-Two%20Pointers-2EA9DF.svg?style=flat-square" /></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(n)$</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(n)$</li>
+</ul>
 <div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="p">{</span>
 <span class="lineno" data-linenos=" 2 "></span>  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">findPairs</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">nums</span><span class="p">,</span> <span class="kt">int</span> <span class="n">k</span><span class="p">)</span> <span class="p">{</span>
 <span class="lineno" data-linenos=" 3 "></span>    <span class="k">if</span> <span class="p">(</span><span class="n">k</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span>
@@ -7461,7 +7465,11 @@
 
 <h2 id="538-convert-bst-to-greater-tree-star">538. Convert BST to Greater Tree <a href="https://leetcode.com/problems/convert-bst-to-greater-tree">$\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>
 <h2 id="539-minimum-time-difference-starstar">539. Minimum Time Difference <a href="https://leetcode.com/problems/minimum-time-difference">$\star\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>
-<p><img alt="" src="https://img.shields.io/badge/-String-60373E.svg?style=flat-square" /></p>
+<p><img alt="" src="https://img.shields.io/badge/-Bucket%20Sort-DB4D6D.svg?style=flat-square" /> <img alt="" src="https://img.shields.io/badge/-String-60373E.svg?style=flat-square" /></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(n)$</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(24 * 60)$</li>
+</ul>
 <div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="p">{</span>
 <span class="lineno" data-linenos=" 2 "></span>  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">findMinDifference</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">timePoints</span><span class="p">)</span> <span class="p">{</span>
 <span class="lineno" data-linenos=" 3 "></span>    <span class="kt">int</span> <span class="n">ans</span> <span class="o">=</span> <span class="mi">24</span> <span class="o">*</span> <span class="mi">60</span><span class="p">;</span>
@@ -7490,6 +7498,11 @@
 </code></pre></div>
 
 <h2 id="540-single-element-in-a-sorted-array-starstar">540. Single Element in a Sorted Array <a href="https://leetcode.com/problems/single-element-in-a-sorted-array">$\star\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>
+<p><img alt="" src="https://img.shields.io/badge/-Binary%20Search-1B813E.svg?style=flat-square" /></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(\log n)$</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(1)$</li>
+</ul>
 <div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="kd">class</span> <span class="nc">Solution</span> <span class="p">{</span>
 <span class="lineno" data-linenos=" 2 "></span>  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">singleNonDuplicate</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">nums</span><span class="p">)</span> <span class="p">{</span>
 <span class="lineno" data-linenos=" 3 "></span>    <span class="kt">int</span> <span class="n">l</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
