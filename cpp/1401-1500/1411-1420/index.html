@@ -2540,6 +2540,26 @@
     1416. Restore The Array $\star\star\star$
   </a>
   
+    <nav class="md-nav" aria-label="1416. Restore The Array $\star\star\star$">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bottom-up" class="md-nav__link">
+    Bottom-up
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#top-down" class="md-nav__link">
+    Top-down
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2655,7 +2675,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../1481-1490.md" title="1481-1490" class="md-nav__link">
+    <a href="../1481-1490/" title="1481-1490" class="md-nav__link">
       1481-1490
     </a>
   </li>
@@ -4947,7 +4967,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../java/1401-1500/1481-1490.md" title="1481-1490" class="md-nav__link">
+    <a href="../../../java/1401-1500/1481-1490/" title="1481-1490" class="md-nav__link">
       1481-1490
     </a>
   </li>
@@ -7239,7 +7259,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../python3/1401-1500/1481-1490.md" title="1481-1490" class="md-nav__link">
+    <a href="../../../python3/1401-1500/1481-1490/" title="1481-1490" class="md-nav__link">
       1481-1490
     </a>
   </li>
@@ -7330,6 +7350,26 @@
     1416. Restore The Array $\star\star\star$
   </a>
   
+    <nav class="md-nav" aria-label="1416. Restore The Array $\star\star\star$">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bottom-up" class="md-nav__link">
+    Bottom-up
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#top-down" class="md-nav__link">
+    Top-down
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -7389,27 +7429,66 @@
 <h2 id="1415-the-k-th-lexicographical-string-of-all-happy-strings-of-length-n-starstar">1415. The k-th Lexicographical String of All Happy Strings of Length n <a href="https://leetcode.com/problems/the-k-th-lexicographical-string-of-all-happy-strings-of-length-n">$\star\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>
 <h2 id="1416-restore-the-array-starstarstar">1416. Restore The Array <a href="https://leetcode.com/problems/restore-the-array">$\star\star\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>
 <p><img alt="" src="https://img.shields.io/badge/-Dynamic%20Programming-113285.svg?style=flat-square" /></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(n\log k)$</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(n)$</li>
+</ul>
+<h3 id="bottom-up">Bottom-up</h3>
 <div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
 <span class="lineno" data-linenos=" 2 "></span> <span class="k">public</span><span class="o">:</span>
 <span class="lineno" data-linenos=" 3 "></span>  <span class="kt">int</span> <span class="n">numberOfArrays</span><span class="p">(</span><span class="n">string</span> <span class="n">s</span><span class="p">,</span> <span class="kt">int</span> <span class="n">k</span><span class="p">)</span> <span class="p">{</span>
 <span class="lineno" data-linenos=" 4 "></span>    <span class="k">constexpr</span> <span class="kt">int</span> <span class="n">kMod</span> <span class="o">=</span> <span class="mf">1e9</span> <span class="o">+</span> <span class="mi">7</span><span class="p">;</span>
 <span class="lineno" data-linenos=" 5 "></span>    <span class="k">const</span> <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="n">length</span><span class="p">();</span>
 <span class="lineno" data-linenos=" 6 "></span>
-<span class="lineno" data-linenos=" 7 "></span>    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">dp</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
-<span class="lineno" data-linenos=" 8 "></span>    <span class="n">dp</span><span class="p">.</span><span class="n">back</span><span class="p">()</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-<span class="lineno" data-linenos=" 9 "></span>
-<span class="lineno" data-linenos="10 "></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="o">--</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
-<span class="lineno" data-linenos="11 "></span>      <span class="k">if</span> <span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;0&#39;</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
-<span class="lineno" data-linenos="12 "></span>      <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span> <span class="p">{</span>
-<span class="lineno" data-linenos="13 "></span>        <span class="kt">long</span> <span class="n">num</span> <span class="o">=</span> <span class="n">stol</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">substr</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">-</span> <span class="n">i</span><span class="p">));</span>
-<span class="lineno" data-linenos="14 "></span>        <span class="k">if</span> <span class="p">(</span><span class="n">num</span> <span class="o">&gt;</span> <span class="n">k</span><span class="p">)</span> <span class="k">break</span><span class="p">;</span>
-<span class="lineno" data-linenos="15 "></span>        <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="o">%</span> <span class="n">kMod</span><span class="p">;</span>
-<span class="lineno" data-linenos="16 "></span>      <span class="p">}</span>
-<span class="lineno" data-linenos="17 "></span>    <span class="p">}</span>
-<span class="lineno" data-linenos="18 "></span>
-<span class="lineno" data-linenos="19 "></span>    <span class="k">return</span> <span class="n">dp</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
-<span class="lineno" data-linenos="20 "></span>  <span class="p">}</span>
-<span class="lineno" data-linenos="21 "></span><span class="p">};</span>
+<span class="lineno" data-linenos=" 7 "></span>    <span class="c1">// dp[i] := # of arrays to restore s[i..n) with k</span>
+<span class="lineno" data-linenos=" 8 "></span>    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">dp</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+<span class="lineno" data-linenos=" 9 "></span>    <span class="n">dp</span><span class="p">.</span><span class="n">back</span><span class="p">()</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>  <span class="c1">// empty string &quot;&quot;</span>
+<span class="lineno" data-linenos="10 "></span>
+<span class="lineno" data-linenos="11 "></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="o">--</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos="12 "></span>      <span class="k">if</span> <span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;0&#39;</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>  <span class="c1">// leading zero</span>
+<span class="lineno" data-linenos="13 "></span>      <span class="kt">long</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="lineno" data-linenos="14 "></span>      <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos="15 "></span>        <span class="n">num</span> <span class="o">=</span> <span class="n">num</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">-</span> <span class="sc">&#39;0&#39;</span><span class="p">);</span>
+<span class="lineno" data-linenos="16 "></span>        <span class="k">if</span> <span class="p">(</span><span class="n">num</span> <span class="o">&gt;</span> <span class="n">k</span><span class="p">)</span> <span class="k">break</span><span class="p">;</span>
+<span class="lineno" data-linenos="17 "></span>        <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">dp</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span> <span class="o">%</span> <span class="n">kMod</span><span class="p">;</span>
+<span class="lineno" data-linenos="18 "></span>      <span class="p">}</span>
+<span class="lineno" data-linenos="19 "></span>    <span class="p">}</span>
+<span class="lineno" data-linenos="20 "></span>
+<span class="lineno" data-linenos="21 "></span>    <span class="k">return</span> <span class="n">dp</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<span class="lineno" data-linenos="22 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos="23 "></span><span class="p">};</span>
+</code></pre></div>
+
+<h3 id="top-down">Top-down</h3>
+<div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 2 "></span> <span class="k">public</span><span class="o">:</span>
+<span class="lineno" data-linenos=" 3 "></span>  <span class="kt">int</span> <span class="n">numberOfArrays</span><span class="p">(</span><span class="n">string</span> <span class="n">s</span><span class="p">,</span> <span class="kt">int</span> <span class="n">k</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 4 "></span>    <span class="k">constexpr</span> <span class="kt">int</span> <span class="n">kMod</span> <span class="o">=</span> <span class="mf">1e9</span> <span class="o">+</span> <span class="mi">7</span><span class="p">;</span>
+<span class="lineno" data-linenos=" 5 "></span>    <span class="k">const</span> <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="n">length</span><span class="p">();</span>
+<span class="lineno" data-linenos=" 6 "></span>
+<span class="lineno" data-linenos=" 7 "></span>    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">memo</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+<span class="lineno" data-linenos=" 8 "></span>
+<span class="lineno" data-linenos=" 9 "></span>    <span class="c1">// dp(i) := # of arrays to restore s[i..n) with k</span>
+<span class="lineno" data-linenos="10 "></span>    <span class="n">function</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">dp</span> <span class="o">=</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="kt">int</span> <span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos="11 "></span>      <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="n">n</span><span class="p">)</span> <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>       <span class="c1">// empty string &quot;&quot;</span>
+<span class="lineno" data-linenos="12 "></span>      <span class="k">if</span> <span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;0&#39;</span><span class="p">)</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>  <span class="c1">// leading zero</span>
+<span class="lineno" data-linenos="13 "></span>      <span class="k">if</span> <span class="p">(</span><span class="n">memo</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="n">memo</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="lineno" data-linenos="14 "></span>
+<span class="lineno" data-linenos="15 "></span>      <span class="kt">int</span> <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="lineno" data-linenos="16 "></span>      <span class="kt">long</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="lineno" data-linenos="17 "></span>
+<span class="lineno" data-linenos="18 "></span>      <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos="19 "></span>        <span class="n">num</span> <span class="o">=</span> <span class="n">num</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">-</span> <span class="sc">&#39;0&#39;</span><span class="p">);</span>
+<span class="lineno" data-linenos="20 "></span>        <span class="k">if</span> <span class="p">(</span><span class="n">num</span> <span class="o">&gt;</span> <span class="n">k</span><span class="p">)</span> <span class="k">break</span><span class="p">;</span>
+<span class="lineno" data-linenos="21 "></span>        <span class="n">ans</span> <span class="o">=</span> <span class="p">(</span><span class="n">ans</span> <span class="o">+</span> <span class="n">dp</span><span class="p">(</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span> <span class="o">%</span> <span class="n">kMod</span><span class="p">;</span>
+<span class="lineno" data-linenos="22 "></span>      <span class="p">}</span>
+<span class="lineno" data-linenos="23 "></span>
+<span class="lineno" data-linenos="24 "></span>      <span class="k">return</span> <span class="n">memo</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">ans</span><span class="p">;</span>
+<span class="lineno" data-linenos="25 "></span>    <span class="p">};</span>
+<span class="lineno" data-linenos="26 "></span>
+<span class="lineno" data-linenos="27 "></span>    <span class="k">return</span> <span class="nf">dp</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="lineno" data-linenos="28 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos="29 "></span><span class="p">};</span>
 </code></pre></div>
 
 <h2 id="1417-reformat-the-string-star">1417. Reformat The String <a href="https://leetcode.com/problems/reformat-the-string">$\star$</a></h2>
