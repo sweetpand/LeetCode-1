@@ -7383,6 +7383,73 @@
                   <h1>0641-0650</h1>
                 
                 <h2 id="641-design-circular-deque-starstar">641. Design Circular Deque <a href="https://leetcode.com/problems/design-circular-deque">$\star\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(1)$</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(k)$</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">MyCircularDeque</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 2 "></span> <span class="k">public</span><span class="o">:</span>
+<span class="lineno" data-linenos=" 3 "></span>  <span class="n">MyCircularDeque</span><span class="p">(</span><span class="kt">int</span> <span class="n">k</span><span class="p">)</span> <span class="o">:</span> <span class="n">k</span><span class="p">(</span><span class="n">k</span><span class="p">),</span> <span class="n">q</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">rear</span><span class="p">(</span><span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{}</span>
+<span class="lineno" data-linenos=" 4 "></span>
+<span class="lineno" data-linenos=" 5 "></span>  <span class="kt">bool</span> <span class="n">insertFront</span><span class="p">(</span><span class="kt">int</span> <span class="n">value</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 6 "></span>    <span class="k">if</span> <span class="p">(</span><span class="n">isFull</span><span class="p">())</span> <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+<span class="lineno" data-linenos=" 7 "></span>
+<span class="lineno" data-linenos=" 8 "></span>    <span class="n">front</span> <span class="o">=</span> <span class="p">(</span><span class="o">--</span><span class="n">front</span> <span class="o">+</span> <span class="n">k</span><span class="p">)</span> <span class="o">%</span> <span class="n">k</span><span class="p">;</span>
+<span class="lineno" data-linenos=" 9 "></span>    <span class="n">q</span><span class="p">[</span><span class="n">front</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span><span class="p">;</span>
+<span class="lineno" data-linenos="10 "></span>    <span class="o">++</span><span class="n">length</span><span class="p">;</span>
+<span class="lineno" data-linenos="11 "></span>    <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+<span class="lineno" data-linenos="12 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos="13 "></span>
+<span class="lineno" data-linenos="14 "></span>  <span class="kt">bool</span> <span class="n">insertLast</span><span class="p">(</span><span class="kt">int</span> <span class="n">value</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos="15 "></span>    <span class="k">if</span> <span class="p">(</span><span class="n">isFull</span><span class="p">())</span> <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+<span class="lineno" data-linenos="16 "></span>
+<span class="lineno" data-linenos="17 "></span>    <span class="n">rear</span> <span class="o">=</span> <span class="o">++</span><span class="n">rear</span> <span class="o">%</span> <span class="n">k</span><span class="p">;</span>
+<span class="lineno" data-linenos="18 "></span>    <span class="n">q</span><span class="p">[</span><span class="n">rear</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span><span class="p">;</span>
+<span class="lineno" data-linenos="19 "></span>    <span class="o">++</span><span class="n">length</span><span class="p">;</span>
+<span class="lineno" data-linenos="20 "></span>    <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+<span class="lineno" data-linenos="21 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos="22 "></span>
+<span class="lineno" data-linenos="23 "></span>  <span class="kt">bool</span> <span class="n">deleteFront</span><span class="p">()</span> <span class="p">{</span>
+<span class="lineno" data-linenos="24 "></span>    <span class="k">if</span> <span class="p">(</span><span class="n">isEmpty</span><span class="p">())</span> <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+<span class="lineno" data-linenos="25 "></span>
+<span class="lineno" data-linenos="26 "></span>    <span class="n">front</span> <span class="o">=</span> <span class="o">++</span><span class="n">front</span> <span class="o">%</span> <span class="n">k</span><span class="p">;</span>
+<span class="lineno" data-linenos="27 "></span>    <span class="o">--</span><span class="n">length</span><span class="p">;</span>
+<span class="lineno" data-linenos="28 "></span>    <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+<span class="lineno" data-linenos="29 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos="30 "></span>
+<span class="lineno" data-linenos="31 "></span>  <span class="kt">bool</span> <span class="n">deleteLast</span><span class="p">()</span> <span class="p">{</span>
+<span class="lineno" data-linenos="32 "></span>    <span class="k">if</span> <span class="p">(</span><span class="n">isEmpty</span><span class="p">())</span> <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+<span class="lineno" data-linenos="33 "></span>
+<span class="lineno" data-linenos="34 "></span>    <span class="n">rear</span> <span class="o">=</span> <span class="p">(</span><span class="o">--</span><span class="n">rear</span> <span class="o">+</span> <span class="n">k</span><span class="p">)</span> <span class="o">%</span> <span class="n">k</span><span class="p">;</span>
+<span class="lineno" data-linenos="35 "></span>    <span class="o">--</span><span class="n">length</span><span class="p">;</span>
+<span class="lineno" data-linenos="36 "></span>    <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+<span class="lineno" data-linenos="37 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos="38 "></span>
+<span class="lineno" data-linenos="39 "></span>  <span class="kt">int</span> <span class="n">getFront</span><span class="p">()</span> <span class="p">{</span>
+<span class="lineno" data-linenos="40 "></span>    <span class="k">return</span> <span class="n">isEmpty</span><span class="p">()</span> <span class="o">?</span> <span class="o">-</span><span class="mi">1</span> <span class="o">:</span> <span class="n">q</span><span class="p">[</span><span class="n">front</span><span class="p">];</span>
+<span class="lineno" data-linenos="41 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos="42 "></span>
+<span class="lineno" data-linenos="43 "></span>  <span class="kt">int</span> <span class="n">getRear</span><span class="p">()</span> <span class="p">{</span>
+<span class="lineno" data-linenos="44 "></span>    <span class="k">return</span> <span class="n">isEmpty</span><span class="p">()</span> <span class="o">?</span> <span class="o">-</span><span class="mi">1</span> <span class="o">:</span> <span class="n">q</span><span class="p">[</span><span class="n">rear</span><span class="p">];</span>
+<span class="lineno" data-linenos="45 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos="46 "></span>
+<span class="lineno" data-linenos="47 "></span>  <span class="kt">bool</span> <span class="n">isEmpty</span><span class="p">()</span> <span class="p">{</span>
+<span class="lineno" data-linenos="48 "></span>    <span class="k">return</span> <span class="n">length</span> <span class="o">==</span> <span class="mi">0</span><span class="p">;</span>
+<span class="lineno" data-linenos="49 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos="50 "></span>
+<span class="lineno" data-linenos="51 "></span>  <span class="kt">bool</span> <span class="n">isFull</span><span class="p">()</span> <span class="p">{</span>
+<span class="lineno" data-linenos="52 "></span>    <span class="k">return</span> <span class="n">length</span> <span class="o">==</span> <span class="n">k</span><span class="p">;</span>
+<span class="lineno" data-linenos="53 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos="54 "></span>
+<span class="lineno" data-linenos="55 "></span> <span class="k">private</span><span class="o">:</span>
+<span class="lineno" data-linenos="56 "></span>  <span class="k">const</span> <span class="kt">int</span> <span class="n">k</span><span class="p">;</span>
+<span class="lineno" data-linenos="57 "></span>  <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">q</span><span class="p">;</span>
+<span class="lineno" data-linenos="58 "></span>  <span class="kt">int</span> <span class="n">front</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="lineno" data-linenos="59 "></span>  <span class="kt">int</span> <span class="n">rear</span><span class="p">;</span>
+<span class="lineno" data-linenos="60 "></span>  <span class="kt">int</span> <span class="n">length</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="lineno" data-linenos="61 "></span><span class="p">};</span>
+</code></pre></div>
+
 <h2 id="642-design-search-autocomplete-system-starstarstar">642. Design Search Autocomplete System <a href="https://leetcode.com/problems/design-search-autocomplete-system">$\star\star\star$</a> 🔒</h2>
 <h2 id="643-maximum-average-subarray-i-star">643. Maximum Average Subarray I <a href="https://leetcode.com/problems/maximum-average-subarray-i">$\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>
 <div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>

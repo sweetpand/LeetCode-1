@@ -2605,6 +2605,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#1484-group-sold-products-by-the-date-star" class="md-nav__link">
+    1484. Group Sold Products By The Date $\star$
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1485-clone-binary-tree-with-random-pointer-starstar" class="md-nav__link">
+    1485. Clone Binary Tree With Random Pointer $\star\star$
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -7262,6 +7276,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#1484-group-sold-products-by-the-date-star" class="md-nav__link">
+    1484. Group Sold Products By The Date $\star$
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1485-clone-binary-tree-with-random-pointer-starstar" class="md-nav__link">
+    1485. Clone Binary Tree With Random Pointer $\star\star$
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -7286,7 +7314,41 @@
                 
                 <h2 id="1481-least-number-of-unique-integers-after-k-removals-starstar">1481. Least Number of Unique Integers after K Removals <a href="https://leetcode.com/problems/least-number-of-unique-integers-after-k-removals">$\star\star$</a></h2>
 <h2 id="1482-minimum-number-of-days-to-make-m-bouquets-starstar">1482. Minimum Number of Days to Make m Bouquets <a href="https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets">$\star\star$</a></h2>
-<h2 id="1483-kth-ancestor-of-a-tree-node-starstarstar">1483. Kth Ancestor of a Tree Node <a href="https://leetcode.com/problems/kth-ancestor-of-a-tree-node">$\star\star\star$</a></h2>
+<h2 id="1483-kth-ancestor-of-a-tree-node-starstarstar">1483. Kth Ancestor of a Tree Node <a href="https://leetcode.com/problems/kth-ancestor-of-a-tree-node">$\star\star\star$</a> <img alt="💪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4aa.svg" title=":muscle:" /></h2>
+<p><img alt="" src="https://img.shields.io/badge/-Dynamic%20Programming-113285.svg?style=flat-square" /> <img alt="" src="https://img.shields.io/badge/-Tree-227D51.svg?style=flat-square" /></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(n\log n)$</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(n\log n)$</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">TreeAncestor</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 2 "></span> <span class="k">public</span><span class="o">:</span>
+<span class="lineno" data-linenos=" 3 "></span>  <span class="n">TreeAncestor</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">parent</span><span class="p">)</span>
+<span class="lineno" data-linenos=" 4 "></span>      <span class="o">:</span> <span class="n">maxLevel</span><span class="p">(</span><span class="mi">32</span> <span class="o">-</span> <span class="n">__builtin_clz</span><span class="p">(</span><span class="n">n</span><span class="p">)),</span> <span class="n">dp</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">maxLevel</span><span class="p">))</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 5 "></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+<span class="lineno" data-linenos=" 6 "></span>      <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">maxLevel</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span>
+<span class="lineno" data-linenos=" 7 "></span>        <span class="k">if</span> <span class="p">(</span><span class="n">j</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1">// node i&#39;s 2^0 ancestor is its direct parent</span>
+<span class="lineno" data-linenos=" 8 "></span>          <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">parent</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="lineno" data-linenos=" 9 "></span>        <span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>  <span class="c1">// no such ancestor</span>
+<span class="lineno" data-linenos="10 "></span>          <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+<span class="lineno" data-linenos="11 "></span>        <span class="k">else</span>  <span class="c1">// A(i, 2^j) = A(A(i, 2^{j - 1}), 2^{j - 1})</span>
+<span class="lineno" data-linenos="12 "></span>          <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span>
+<span class="lineno" data-linenos="13 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos="14 "></span>
+<span class="lineno" data-linenos="15 "></span>  <span class="kt">int</span> <span class="n">getKthAncestor</span><span class="p">(</span><span class="kt">int</span> <span class="n">node</span><span class="p">,</span> <span class="kt">int</span> <span class="n">k</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos="16 "></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">maxLevel</span> <span class="o">&amp;&amp;</span> <span class="n">node</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span>
+<span class="lineno" data-linenos="17 "></span>      <span class="k">if</span> <span class="p">(</span><span class="n">k</span> <span class="o">&amp;</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">j</span><span class="p">))</span>
+<span class="lineno" data-linenos="18 "></span>        <span class="n">node</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">node</span><span class="p">][</span><span class="n">j</span><span class="p">];</span>
+<span class="lineno" data-linenos="19 "></span>    <span class="k">return</span> <span class="n">node</span><span class="p">;</span>
+<span class="lineno" data-linenos="20 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos="21 "></span>
+<span class="lineno" data-linenos="22 "></span> <span class="k">private</span><span class="o">:</span>
+<span class="lineno" data-linenos="23 "></span>  <span class="k">const</span> <span class="kt">int</span> <span class="n">maxLevel</span><span class="p">;</span>
+<span class="lineno" data-linenos="24 "></span>  <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">dp</span><span class="p">;</span>  <span class="c1">// dp[i][j] := node i&#39;s 2^j-th ancestor</span>
+<span class="lineno" data-linenos="25 "></span><span class="p">};</span>
+</code></pre></div>
+
+<h2 id="1484-group-sold-products-by-the-date-star">1484. Group Sold Products By The Date <a href="https://leetcode.com/problems/group-sold-products-by-the-date">$\star$</a></h2>
+<h2 id="1485-clone-binary-tree-with-random-pointer-starstar">1485. Clone Binary Tree With Random Pointer <a href="https://leetcode.com/problems/clone-binary-tree-with-random-pointer">$\star\star$</a></h2>
                 
               
               
