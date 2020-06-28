@@ -2687,7 +2687,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../1401-1500/1491-1500.md" title="1491-1500" class="md-nav__link">
+    <a href="../../1401-1500/1491-1500/" title="1491-1500" class="md-nav__link">
       1491-1500
     </a>
   </li>
@@ -4979,7 +4979,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../java/1401-1500/1491-1500.md" title="1491-1500" class="md-nav__link">
+    <a href="../../../java/1401-1500/1491-1500/" title="1491-1500" class="md-nav__link">
       1491-1500
     </a>
   </li>
@@ -7271,7 +7271,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../python3/1401-1500/1491-1500.md" title="1491-1500" class="md-nav__link">
+    <a href="../../../python3/1401-1500/1491-1500/" title="1491-1500" class="md-nav__link">
       1491-1500
     </a>
   </li>
@@ -7462,8 +7462,8 @@
 <span class="lineno" data-linenos="11 "></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">m</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
 <span class="lineno" data-linenos="12 "></span>      <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span>
 <span class="lineno" data-linenos="13 "></span>        <span class="k">if</span> <span class="p">(</span><span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-<span class="lineno" data-linenos="14 "></span>          <span class="n">seen</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
-<span class="lineno" data-linenos="15 "></span>          <span class="n">queue</span><span class="p">.</span><span class="n">push</span><span class="p">({</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">});</span>
+<span class="lineno" data-linenos="14 "></span>          <span class="n">queue</span><span class="p">.</span><span class="n">push</span><span class="p">({</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">});</span>
+<span class="lineno" data-linenos="15 "></span>          <span class="n">seen</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
 <span class="lineno" data-linenos="16 "></span>        <span class="p">}</span>
 <span class="lineno" data-linenos="17 "></span>
 <span class="lineno" data-linenos="18 "></span>    <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">queue</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="p">{</span>
@@ -7473,9 +7473,9 @@
 <span class="lineno" data-linenos="22 "></span>        <span class="k">const</span> <span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="n">j</span> <span class="o">+</span> <span class="n">dirs</span><span class="p">[</span><span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">];</span>
 <span class="lineno" data-linenos="23 "></span>        <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">x</span> <span class="o">==</span> <span class="n">m</span> <span class="o">||</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">y</span> <span class="o">==</span> <span class="n">n</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
 <span class="lineno" data-linenos="24 "></span>        <span class="k">if</span> <span class="p">(</span><span class="n">seen</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">])</span> <span class="k">continue</span><span class="p">;</span>
-<span class="lineno" data-linenos="25 "></span>        <span class="n">seen</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
-<span class="lineno" data-linenos="26 "></span>        <span class="n">matrix</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-<span class="lineno" data-linenos="27 "></span>        <span class="n">queue</span><span class="p">.</span><span class="n">push</span><span class="p">({</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">});</span>
+<span class="lineno" data-linenos="25 "></span>        <span class="n">matrix</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+<span class="lineno" data-linenos="26 "></span>        <span class="n">queue</span><span class="p">.</span><span class="n">push</span><span class="p">({</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">});</span>
+<span class="lineno" data-linenos="27 "></span>        <span class="n">seen</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
 <span class="lineno" data-linenos="28 "></span>      <span class="p">}</span>
 <span class="lineno" data-linenos="29 "></span>    <span class="p">}</span>
 <span class="lineno" data-linenos="30 "></span>

@@ -2667,7 +2667,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../1401-1500/1491-1500.md" title="1491-1500" class="md-nav__link">
+    <a href="../../1401-1500/1491-1500/" title="1491-1500" class="md-nav__link">
       1491-1500
     </a>
   </li>
@@ -4959,7 +4959,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../java/1401-1500/1491-1500.md" title="1491-1500" class="md-nav__link">
+    <a href="../../../java/1401-1500/1491-1500/" title="1491-1500" class="md-nav__link">
       1491-1500
     </a>
   </li>
@@ -7251,7 +7251,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../python3/1401-1500/1491-1500.md" title="1491-1500" class="md-nav__link">
+    <a href="../../../python3/1401-1500/1491-1500/" title="1491-1500" class="md-nav__link">
       1491-1500
     </a>
   </li>
@@ -7414,6 +7414,25 @@
 <h2 id="615-average-salary-departments-vs-company-starstarstar">615. Average Salary: Departments VS Company <a href="https://leetcode.com/problems/average-salary-departments-vs-company">$\star\star\star$</a> 🔒</h2>
 <h2 id="616-add-bold-tag-in-string-starstar">616. Add Bold Tag in String <a href="https://leetcode.com/problems/add-bold-tag-in-string">$\star\star$</a> 🔒</h2>
 <h2 id="617-merge-two-binary-trees-star">617. Merge Two Binary Trees <a href="https://leetcode.com/problems/merge-two-binary-trees">$\star$</a> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></h2>
+<p><img alt="" src="https://img.shields.io/badge/-Tree-227D51.svg?style=flat-square" /></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Time: $O(n)$</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(\log n)$</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 2 "></span> <span class="k">public</span><span class="o">:</span>
+<span class="lineno" data-linenos=" 3 "></span>  <span class="n">TreeNode</span><span class="o">*</span> <span class="n">mergeTrees</span><span class="p">(</span><span class="n">TreeNode</span><span class="o">*</span> <span class="n">t1</span><span class="p">,</span> <span class="n">TreeNode</span><span class="o">*</span> <span class="n">t2</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 4 "></span>    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">t1</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">t2</span><span class="p">)</span> <span class="k">return</span> <span class="k">nullptr</span><span class="p">;</span>
+<span class="lineno" data-linenos=" 5 "></span>
+<span class="lineno" data-linenos=" 6 "></span>    <span class="k">const</span> <span class="kt">int</span> <span class="n">val</span> <span class="o">=</span> <span class="p">(</span><span class="n">t1</span> <span class="o">?</span> <span class="n">t1</span><span class="o">-&gt;</span><span class="nl">val</span> <span class="p">:</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">t2</span> <span class="o">?</span> <span class="n">t2</span><span class="o">-&gt;</span><span class="nl">val</span> <span class="p">:</span> <span class="mi">0</span><span class="p">);</span>
+<span class="lineno" data-linenos=" 7 "></span>    <span class="n">TreeNode</span><span class="o">*</span> <span class="n">root</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TreeNode</span><span class="p">(</span><span class="n">val</span><span class="p">);</span>
+<span class="lineno" data-linenos=" 8 "></span>    <span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span> <span class="o">=</span> <span class="n">mergeTrees</span><span class="p">(</span><span class="n">t1</span> <span class="o">?</span> <span class="n">t1</span><span class="o">-&gt;</span><span class="nl">left</span> <span class="p">:</span> <span class="k">nullptr</span><span class="p">,</span> <span class="n">t2</span> <span class="o">?</span> <span class="n">t2</span><span class="o">-&gt;</span><span class="nl">left</span> <span class="p">:</span> <span class="k">nullptr</span><span class="p">);</span>
+<span class="lineno" data-linenos=" 9 "></span>    <span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span> <span class="o">=</span> <span class="n">mergeTrees</span><span class="p">(</span><span class="n">t1</span> <span class="o">?</span> <span class="n">t1</span><span class="o">-&gt;</span><span class="nl">right</span> <span class="p">:</span> <span class="k">nullptr</span><span class="p">,</span> <span class="n">t2</span> <span class="o">?</span> <span class="n">t2</span><span class="o">-&gt;</span><span class="nl">right</span> <span class="p">:</span> <span class="k">nullptr</span><span class="p">);</span>
+<span class="lineno" data-linenos="10 "></span>    <span class="k">return</span> <span class="n">root</span><span class="p">;</span>
+<span class="lineno" data-linenos="11 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos="12 "></span><span class="p">};</span>
+</code></pre></div>
+
 <h2 id="618-students-report-by-geography-starstarstar">618. Students Report By Geography <a href="https://leetcode.com/problems/students-report-by-geography">$\star\star\star$</a> 🔒</h2>
 <h2 id="619-biggest-single-number-star">619. Biggest Single Number <a href="https://leetcode.com/problems/biggest-single-number">$\star$</a> 🔒</h2>
 <h2 id="620-not-boring-movies-star">620. Not Boring Movies <a href="https://leetcode.com/problems/not-boring-movies">$\star$</a> <img alt="👎" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44e.svg" title=":thumbsdown:" /></h2>
