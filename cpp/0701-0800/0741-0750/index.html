@@ -2755,6 +2755,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../1501-1600/1511-1520/" title="1511-1520" class="md-nav__link">
+      1511-1520
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -5085,6 +5097,18 @@
   <li class="md-nav__item">
     <a href="../../../java/1501-1600/1501-1510/" title="1501-1510" class="md-nav__link">
       1501-1510
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../java/1501-1600/1511-1520/" title="1511-1520" class="md-nav__link">
+      1511-1520
     </a>
   </li>
 
@@ -7423,6 +7447,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../python3/1501-1600/1511-1520/" title="1511-1520" class="md-nav__link">
+      1511-1520
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -7905,6 +7941,89 @@
 </code></pre></div>
 
 <h2 id="749-contain-virus-starstarstar">749. Contain Virus <a href="https://leetcode.com/problems/contain-virus">$\star\star\star$</a> <img alt="👎" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44e.svg" title=":thumbsdown:" /></h2>
+<p><img alt="" src="https://img.shields.io/badge/-Depth%20First%20Search-86C166.svg?style=flat-square" /></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Space: $O(mn)$</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="lineno" data-linenos=" 1 "></span><span class="k">struct</span> <span class="n">Region</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 2 "></span>  <span class="c1">// given m = # of rows and n = # of cols, (x, y) will be hashed as x * n + y</span>
+<span class="lineno" data-linenos=" 3 "></span>  <span class="n">unordered_set</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">infected</span><span class="p">;</span>
+<span class="lineno" data-linenos=" 4 "></span>  <span class="n">unordered_set</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">noninfected</span><span class="p">;</span>  <span class="c1">// noninfected neighbors</span>
+<span class="lineno" data-linenos=" 5 "></span>  <span class="kt">int</span> <span class="n">wallsRequired</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="lineno" data-linenos=" 6 "></span><span class="p">};</span>
+<span class="lineno" data-linenos=" 7 "></span>
+<span class="lineno" data-linenos=" 8 "></span><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="lineno" data-linenos=" 9 "></span> <span class="k">public</span><span class="o">:</span>
+<span class="lineno" data-linenos="10 "></span>  <span class="kt">int</span> <span class="n">containVirus</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;&amp;</span> <span class="n">grid</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos="11 "></span>    <span class="k">const</span> <span class="kt">int</span> <span class="n">m</span> <span class="o">=</span> <span class="n">grid</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+<span class="lineno" data-linenos="12 "></span>    <span class="k">const</span> <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">grid</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">size</span><span class="p">();</span>
+<span class="lineno" data-linenos="13 "></span>
+<span class="lineno" data-linenos="14 "></span>    <span class="kt">int</span> <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="lineno" data-linenos="15 "></span>
+<span class="lineno" data-linenos="16 "></span>    <span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">,</span> <span class="n">Region</span><span class="o">&amp;</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;&gt;&amp;</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">dfs</span> <span class="o">=</span>
+<span class="lineno" data-linenos="17 "></span>        <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="kt">int</span> <span class="n">j</span><span class="p">,</span> <span class="n">Region</span><span class="o">&amp;</span> <span class="n">region</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;&gt;&amp;</span> <span class="n">seen</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos="18 "></span>          <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">i</span> <span class="o">==</span> <span class="n">m</span> <span class="o">||</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">j</span> <span class="o">==</span> <span class="n">n</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+<span class="lineno" data-linenos="19 "></span>          <span class="k">if</span> <span class="p">(</span><span class="n">seen</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">||</span> <span class="n">grid</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+<span class="lineno" data-linenos="20 "></span>          <span class="k">if</span> <span class="p">(</span><span class="n">grid</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos="21 "></span>            <span class="n">region</span><span class="p">.</span><span class="n">noninfected</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">i</span> <span class="o">*</span> <span class="n">n</span> <span class="o">+</span> <span class="n">j</span><span class="p">);</span>
+<span class="lineno" data-linenos="22 "></span>            <span class="o">++</span><span class="n">region</span><span class="p">.</span><span class="n">wallsRequired</span><span class="p">;</span>
+<span class="lineno" data-linenos="23 "></span>            <span class="k">return</span><span class="p">;</span>
+<span class="lineno" data-linenos="24 "></span>          <span class="p">}</span>
+<span class="lineno" data-linenos="25 "></span>
+<span class="lineno" data-linenos="26 "></span>          <span class="c1">// grid[i][j] == 1</span>
+<span class="lineno" data-linenos="27 "></span>          <span class="n">seen</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+<span class="lineno" data-linenos="28 "></span>          <span class="n">region</span><span class="p">.</span><span class="n">infected</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">i</span> <span class="o">*</span> <span class="n">n</span> <span class="o">+</span> <span class="n">j</span><span class="p">);</span>
+<span class="lineno" data-linenos="29 "></span>          <span class="n">dfs</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">region</span><span class="p">,</span> <span class="n">seen</span><span class="p">);</span>
+<span class="lineno" data-linenos="30 "></span>          <span class="n">dfs</span><span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">region</span><span class="p">,</span> <span class="n">seen</span><span class="p">);</span>
+<span class="lineno" data-linenos="31 "></span>          <span class="n">dfs</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">region</span><span class="p">,</span> <span class="n">seen</span><span class="p">);</span>
+<span class="lineno" data-linenos="32 "></span>          <span class="n">dfs</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">region</span><span class="p">,</span> <span class="n">seen</span><span class="p">);</span>
+<span class="lineno" data-linenos="33 "></span>        <span class="p">};</span>
+<span class="lineno" data-linenos="34 "></span>
+<span class="lineno" data-linenos="35 "></span>    <span class="k">while</span> <span class="p">(</span><span class="nb">true</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos="36 "></span>      <span class="n">vector</span><span class="o">&lt;</span><span class="n">Region</span><span class="o">&gt;</span> <span class="n">regions</span><span class="p">;</span>
+<span class="lineno" data-linenos="37 "></span>      <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;&gt;</span> <span class="n">seen</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span><span class="p">(</span><span class="n">n</span><span class="p">));</span>
+<span class="lineno" data-linenos="38 "></span>
+<span class="lineno" data-linenos="39 "></span>      <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">m</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+<span class="lineno" data-linenos="40 "></span>        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span>
+<span class="lineno" data-linenos="41 "></span>          <span class="k">if</span> <span class="p">(</span><span class="n">grid</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">seen</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">])</span> <span class="p">{</span>
+<span class="lineno" data-linenos="42 "></span>            <span class="n">Region</span> <span class="n">region</span><span class="p">;</span>
+<span class="lineno" data-linenos="43 "></span>            <span class="n">dfs</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">region</span><span class="p">,</span> <span class="n">seen</span><span class="p">);</span>  <span class="c1">// use DFS to find all regions (1s)</span>
+<span class="lineno" data-linenos="44 "></span>            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">region</span><span class="p">.</span><span class="n">noninfected</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span>
+<span class="lineno" data-linenos="45 "></span>              <span class="n">regions</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">region</span><span class="p">);</span>
+<span class="lineno" data-linenos="46 "></span>          <span class="p">}</span>
+<span class="lineno" data-linenos="47 "></span>
+<span class="lineno" data-linenos="48 "></span>      <span class="k">if</span> <span class="p">(</span><span class="n">regions</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="k">break</span><span class="p">;</span>  <span class="c1">// no region causes further infection</span>
+<span class="lineno" data-linenos="49 "></span>
+<span class="lineno" data-linenos="50 "></span>      <span class="c1">// region which infects most neighbors is in the back</span>
+<span class="lineno" data-linenos="51 "></span>      <span class="n">sort</span><span class="p">(</span><span class="n">begin</span><span class="p">(</span><span class="n">regions</span><span class="p">),</span> <span class="n">end</span><span class="p">(</span><span class="n">regions</span><span class="p">),</span> <span class="p">[](</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="n">a</span><span class="p">,</span> <span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos="52 "></span>        <span class="k">return</span> <span class="n">a</span><span class="p">.</span><span class="n">noninfected</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">.</span><span class="n">noninfected</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+<span class="lineno" data-linenos="53 "></span>      <span class="p">});</span>
+<span class="lineno" data-linenos="54 "></span>
+<span class="lineno" data-linenos="55 "></span>      <span class="c1">// build walls around the region which infects most neighbors</span>
+<span class="lineno" data-linenos="56 "></span>      <span class="n">Region</span> <span class="n">region</span> <span class="o">=</span> <span class="n">regions</span><span class="p">.</span><span class="n">back</span><span class="p">();</span>
+<span class="lineno" data-linenos="57 "></span>      <span class="n">regions</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span>
+<span class="lineno" data-linenos="58 "></span>      <span class="n">ans</span> <span class="o">+=</span> <span class="n">region</span><span class="p">.</span><span class="n">wallsRequired</span><span class="p">;</span>
+<span class="lineno" data-linenos="59 "></span>
+<span class="lineno" data-linenos="60 "></span>      <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="kt">int</span> <span class="nl">neighbor</span> <span class="p">:</span> <span class="n">region</span><span class="p">.</span><span class="n">infected</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos="61 "></span>        <span class="k">const</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">neighbor</span> <span class="o">/</span> <span class="n">n</span><span class="p">;</span>
+<span class="lineno" data-linenos="62 "></span>        <span class="k">const</span> <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">neighbor</span> <span class="o">%</span> <span class="n">n</span><span class="p">;</span>
+<span class="lineno" data-linenos="63 "></span>        <span class="n">grid</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>  <span class="c1">// the grid is now contained and won&#39;t be infected anymore</span>
+<span class="lineno" data-linenos="64 "></span>      <span class="p">}</span>
+<span class="lineno" data-linenos="65 "></span>
+<span class="lineno" data-linenos="66 "></span>      <span class="c1">// for remaining regions, expand (infect their neighbors)</span>
+<span class="lineno" data-linenos="67 "></span>      <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="n">Region</span><span class="o">&amp;</span> <span class="nl">region</span> <span class="p">:</span> <span class="n">regions</span><span class="p">)</span>
+<span class="lineno" data-linenos="68 "></span>        <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="kt">int</span> <span class="nl">neighbor</span> <span class="p">:</span> <span class="n">region</span><span class="p">.</span><span class="n">noninfected</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos="69 "></span>          <span class="k">const</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">neighbor</span> <span class="o">/</span> <span class="n">n</span><span class="p">;</span>
+<span class="lineno" data-linenos="70 "></span>          <span class="k">const</span> <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">neighbor</span> <span class="o">%</span> <span class="n">n</span><span class="p">;</span>
+<span class="lineno" data-linenos="71 "></span>          <span class="n">grid</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="lineno" data-linenos="72 "></span>        <span class="p">}</span>
+<span class="lineno" data-linenos="73 "></span>    <span class="p">}</span>
+<span class="lineno" data-linenos="74 "></span>
+<span class="lineno" data-linenos="75 "></span>    <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
+<span class="lineno" data-linenos="76 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos="77 "></span><span class="p">};</span>
+</code></pre></div>
+
 <h2 id="750-number-of-corner-rectangles-starstar">750. Number Of Corner Rectangles <a href="https://leetcode.com/problems/number-of-corner-rectangles">$\star\star$</a> 🔒</h2>
                 
               

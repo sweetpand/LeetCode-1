@@ -2735,6 +2735,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../1501-1600/1511-1520/" title="1511-1520" class="md-nav__link">
+      1511-1520
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -5065,6 +5077,18 @@
   <li class="md-nav__item">
     <a href="../../../java/1501-1600/1501-1510/" title="1501-1510" class="md-nav__link">
       1501-1510
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../java/1501-1600/1511-1520/" title="1511-1520" class="md-nav__link">
+      1511-1520
     </a>
   </li>
 
@@ -7403,6 +7427,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../python3/1501-1600/1511-1520/" title="1511-1520" class="md-nav__link">
+      1511-1520
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -7770,27 +7806,29 @@
 <span class="lineno" data-linenos=" 6 "></span>    <span class="kt">int</span> <span class="n">l</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 <span class="lineno" data-linenos=" 7 "></span>    <span class="kt">int</span> <span class="n">r</span> <span class="o">=</span> <span class="n">nums</span><span class="p">.</span><span class="n">back</span><span class="p">()</span> <span class="o">-</span> <span class="n">nums</span><span class="p">.</span><span class="n">front</span><span class="p">();</span>
 <span class="lineno" data-linenos=" 8 "></span>
-<span class="lineno" data-linenos=" 9 "></span>    <span class="k">while</span> <span class="p">(</span><span class="n">l</span> <span class="o">&lt;</span> <span class="n">r</span><span class="p">)</span> <span class="p">{</span>
-<span class="lineno" data-linenos="10 "></span>      <span class="k">const</span> <span class="kt">int</span> <span class="n">m</span> <span class="o">=</span> <span class="n">l</span> <span class="o">+</span> <span class="p">(</span><span class="n">r</span> <span class="o">-</span> <span class="n">l</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
-<span class="lineno" data-linenos="11 "></span>      <span class="kt">int</span> <span class="n">countM</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>  <span class="c1">// # of pair distances &lt;= m</span>
-<span class="lineno" data-linenos="12 "></span>
-<span class="lineno" data-linenos="13 "></span>      <span class="c1">// for each index i, find the first index j s.t. nums[j] &gt; nums[i] + m,</span>
-<span class="lineno" data-linenos="14 "></span>      <span class="c1">// so countM for index i will be j - i - 1</span>
-<span class="lineno" data-linenos="15 "></span>      <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
-<span class="lineno" data-linenos="16 "></span>        <span class="k">while</span> <span class="p">(</span><span class="n">j</span> <span class="o">&lt;</span> <span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">nums</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">m</span><span class="p">)</span>
-<span class="lineno" data-linenos="17 "></span>          <span class="o">++</span><span class="n">j</span><span class="p">;</span>
-<span class="lineno" data-linenos="18 "></span>        <span class="n">countM</span> <span class="o">+=</span> <span class="n">j</span> <span class="o">-</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
-<span class="lineno" data-linenos="19 "></span>      <span class="p">}</span>
+<span class="lineno" data-linenos=" 9 "></span>    <span class="k">auto</span> <span class="n">pairDistancesNoGreaterThan</span> <span class="o">=</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="kt">int</span> <span class="n">m</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos="10 "></span>      <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="lineno" data-linenos="11 "></span>      <span class="c1">// for each index i, find the first index j s.t. nums[j] &gt; nums[i] + m,</span>
+<span class="lineno" data-linenos="12 "></span>      <span class="c1">// so pairDistancesNoGreaterThan for index i will be j - i - 1</span>
+<span class="lineno" data-linenos="13 "></span>      <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos="14 "></span>        <span class="k">while</span> <span class="p">(</span><span class="n">j</span> <span class="o">&lt;</span> <span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">nums</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">m</span><span class="p">)</span>
+<span class="lineno" data-linenos="15 "></span>          <span class="o">++</span><span class="n">j</span><span class="p">;</span>
+<span class="lineno" data-linenos="16 "></span>        <span class="n">count</span> <span class="o">+=</span> <span class="n">j</span> <span class="o">-</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+<span class="lineno" data-linenos="17 "></span>      <span class="p">}</span>
+<span class="lineno" data-linenos="18 "></span>      <span class="k">return</span> <span class="n">count</span><span class="p">;</span>
+<span class="lineno" data-linenos="19 "></span>    <span class="p">};</span>
 <span class="lineno" data-linenos="20 "></span>
-<span class="lineno" data-linenos="21 "></span>      <span class="k">if</span> <span class="p">(</span><span class="n">countM</span> <span class="o">&lt;</span> <span class="n">k</span><span class="p">)</span>
-<span class="lineno" data-linenos="22 "></span>        <span class="n">l</span> <span class="o">=</span> <span class="n">m</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-<span class="lineno" data-linenos="23 "></span>      <span class="k">else</span>
-<span class="lineno" data-linenos="24 "></span>        <span class="n">r</span> <span class="o">=</span> <span class="n">m</span><span class="p">;</span>
-<span class="lineno" data-linenos="25 "></span>    <span class="p">}</span>
-<span class="lineno" data-linenos="26 "></span>
-<span class="lineno" data-linenos="27 "></span>    <span class="k">return</span> <span class="n">l</span><span class="p">;</span>
-<span class="lineno" data-linenos="28 "></span>  <span class="p">}</span>
-<span class="lineno" data-linenos="29 "></span><span class="p">};</span>
+<span class="lineno" data-linenos="21 "></span>    <span class="k">while</span> <span class="p">(</span><span class="n">l</span> <span class="o">&lt;</span> <span class="n">r</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno" data-linenos="22 "></span>      <span class="k">const</span> <span class="kt">int</span> <span class="n">m</span> <span class="o">=</span> <span class="n">l</span> <span class="o">+</span> <span class="p">(</span><span class="n">r</span> <span class="o">-</span> <span class="n">l</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+<span class="lineno" data-linenos="23 "></span>      <span class="k">if</span> <span class="p">(</span><span class="n">pairDistancesNoGreaterThan</span><span class="p">(</span><span class="n">m</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">k</span><span class="p">)</span>
+<span class="lineno" data-linenos="24 "></span>        <span class="n">l</span> <span class="o">=</span> <span class="n">m</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+<span class="lineno" data-linenos="25 "></span>      <span class="k">else</span>
+<span class="lineno" data-linenos="26 "></span>        <span class="n">r</span> <span class="o">=</span> <span class="n">m</span><span class="p">;</span>
+<span class="lineno" data-linenos="27 "></span>    <span class="p">}</span>
+<span class="lineno" data-linenos="28 "></span>
+<span class="lineno" data-linenos="29 "></span>    <span class="k">return</span> <span class="n">l</span><span class="p">;</span>
+<span class="lineno" data-linenos="30 "></span>  <span class="p">}</span>
+<span class="lineno" data-linenos="31 "></span><span class="p">};</span>
 </code></pre></div>
 
 <h2 id="720-longest-word-in-dictionary-star">720. Longest Word in Dictionary <a href="https://leetcode.com/problems/longest-word-in-dictionary">$\star$</a> <img alt="👎" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44e.svg" title=":thumbsdown:" /></h2>
